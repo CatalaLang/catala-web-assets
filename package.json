@@ -1,0 +1,12 @@
+{
+  "name": "catala-web-assets",
+  "version": "0.1.0",
+  "description": "Web assets generated from Catala programs about the French law",
+  "repository": "git@github.com:CatalaLang/catala-web-assets.git",
+  "author": "Emile Rolley <emile.rolley@tuta.io>",
+  "license": "GLPL-3.0",
+  "main": "index.js",
+  "files": [
+    "assets"
+  ]
+}
