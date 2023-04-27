@@ -4,9 +4,15 @@
   "description": "Web assets generated from Catala programs about the French law",
   "repository": "git@github.com:CatalaLang/catala-web-assets.git",
   "author": "Emile Rolley <emile.rolley@tuta.io>",
+  "homepage": "https://github.com/CatalaLang/catala-web-assets#readme",
   "license": "GLPL-3.0",
-  "main": "index.js",
+  "main": "null",
   "files": [
     "assets"
+  ],
+  "keywords": [
+    "catala",
+    "assets",
+    "law"
   ]
 }
