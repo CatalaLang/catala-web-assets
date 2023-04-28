@@ -10,7 +10,7 @@
 * [Websites using this assets](#websites-using-this-assets)
 * [Note on the redaction of schemas](#note-on-the-redaction-of-schemas)
   * [Title](#title)
-  * [Dsfr dedicated tags](#dsfr-dedicated-tags)
+  * [Dsfr dedicated UI options](#dsfr-dedicated-ui-options)
     * [`ui:tabLabel` and `ui:hideTitle`](#uitablabel-and-uihidetitle)
 
 <!-- vim-markdown-toc -->
@@ -68,9 +68,9 @@ definition but just before the `"$ref"` of the calling parent:
 }
 ```
 
-### Dsfr dedicated tags
+### Dsfr dedicated UI options
 
-To be used with the Dsfr, there dedicated tag for the UI schemas:
+To be used with the Dsfr, there dedicated options for the UI schemas:
 
 #### `ui:tabLabel` and `ui:hideTitle`
 
