@@ -1,6 +1,67 @@
 {
   "type": "object",
   "definitions": {
+    "accord_financement_representant_etat_outre_mer": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "title": " ",
+          "type": "string",
+          "default": "PasdAccord",
+          "anyOf": [
+            {
+              "title": "Oui",
+              "type": "string",
+              "enum": ["Accord"]
+            },
+            {
+              "title": "Non",
+              "type": "string",
+              "enum": ["PasdAccord"]
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Accord"
+              }
+            }
+          },
+          "then": {
+            "required": ["payload"],
+            "properties": {
+              "payload": {
+                "title": "Date de l'accord",
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "PasdAccord"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "title": " ",
+                "type": "null",
+                "default": null
+              }
+            }
+          }
+        }
+      ]
+    },
     "ameliore_par_occupant": {
       "type": "object",
       "properties": {
@@ -11,15 +72,11 @@
           "anyOf": [
             {
               "type": "string",
-              "enum": [
-                "Oui"
-              ]
+              "enum": ["Oui"]
             },
             {
               "type": "string",
-              "enum": [
-                "Non"
-              ]
+              "enum": ["Non"]
             }
           ]
         }
@@ -31,10 +88,7 @@
     },
     "autre_personne_a_charge": {
       "type": "object",
-      "required": [
-        "dateNaissance",
-        "ressources"
-      ],
+      "required": ["dateNaissance", "ressources"],
       "properties": {
         "dateNaissance": {
           "title": "Date de naissance",
@@ -76,37 +130,29 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Catégorie de personnes résidant en logement-foyer",
+          "title": " ",
           "type": "string",
           "default": "AutresPersonnes",
           "anyOf": [
             {
               "title": "Étudiant logé en chambre du CROUS",
               "type": "string",
-              "enum": [
-                "EtudiantLogeEnChambreCROUS"
-              ]
+              "enum": ["EtudiantLogeEnChambreCROUS"]
             },
             {
               "title": "Étudiant logé en chambre du CROUS réhabilitée",
               "type": "string",
-              "enum": [
-                "EtudiantLogeEnChambreCROUSRehabilitee"
-              ]
+              "enum": ["EtudiantLogeEnChambreCROUSRehabilitee"]
             },
             {
               "title": "Personne âgée",
               "type": "string",
-              "enum": [
-                "PersonnesAgeesSelon3DeD842_16"
-              ]
+              "enum": ["PersonnesAgeesSelon3DeD842_16"]
             },
             {
               "title": "Autre situation",
               "type": "string",
-              "enum": [
-                "AutresPersonnes"
-              ]
+              "enum": ["AutresPersonnes"]
             }
           ]
         }
@@ -120,23 +166,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Le ménage a été relogé par les pouvoirs publics",
+          "title": " ",
           "type": "string",
           "default": "PasDeChangement",
           "anyOf": [
             {
               "title": "Oui",
               "type": "string",
-              "enum": [
-                "Changement"
-              ]
+              "enum": ["Changement"]
             },
             {
               "title": "Non",
               "type": "string",
-              "enum": [
-                "PasDeChangement"
-              ]
+              "enum": ["PasDeChangement"]
             }
           ]
         }
@@ -179,13 +221,76 @@
         }
       ]
     },
+    "collectivite": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "title": " ",
+          "default": "Metropole",
+          "type": "string",
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": ["Guadeloupe"]
+            },
+            {
+              "type": "string",
+              "enum": ["Guyane"]
+            },
+            {
+              "type": "string",
+              "enum": ["Martinique"]
+            },
+            {
+              "type": "string",
+              "title": "La Réunion",
+              "enum": ["LaReunion"]
+            },
+            {
+              "title": "Saint Barthélémy",
+              "type": "string",
+              "enum": ["SaintBarthelemy"]
+            },
+            {
+              "title": "Saint Martin",
+              "type": "string",
+              "enum": ["SaintMartin"]
+            },
+            {
+              "title": "Métropole",
+              "type": "string",
+              "enum": ["Metropole"]
+            },
+            {
+              "title": "Saint-Pierre-et-Miquelon",
+              "type": "string",
+              "enum": ["SaintPierreEtMiquelon"]
+            },
+            {
+              "type": "string",
+              "enum": ["Mayotte"]
+            }
+          ]
+        },
+        "payload": {
+          "title": " ",
+          "type": "null",
+          "default": null
+        }
+      }
+    },
     "conditions_etrangers": {
       "type": "object",
       "properties": {
         "satisfaitConditionsL5122CodeSecuriteSociale": {
-          "title": "Le demandeur réside de manière régulière en France",
+          "title": "La personne réside de manière régulière en France",
           "type": "boolean",
           "default": true
+        },
+        "satisfaitArt4Ordonnance2002Mayotte": {
+          "type": "boolean",
+          "title": "La personne réside de manière régulière à Mayotte",
+          "default": false
         }
       }
     },
@@ -201,9 +306,7 @@
     },
     "convention_bailleur_social": {
       "type": "object",
-      "required": [
-        "reductionLoyerSolidaritePercue"
-      ],
+      "required": ["reductionLoyerSolidaritePercue"],
       "properties": {
         "conventionneLivreIIITitreVChapIII": {
           "title": "Le bailleur est conventionné pour le logement social",
@@ -219,9 +322,7 @@
     },
     "demandeur": {
       "type": "object",
-      "required": [
-        "dateNaissance"
-      ],
+      "required": ["dateNaissance"],
       "properties": {
         "dateNaissance": {
           "title": "Date de naissance du demandeur",
@@ -232,12 +333,18 @@
           "title": " ",
           "$ref": "#/definitions/nationalite"
         },
-        "patrimoine": {
-          "title": " ",
-          "$ref": "#/definitions/patrimoine"
-        },
         "personneHebergeeCentreSoinLL162223SecuriteSociale": {
           "title": "Le demandeur est hébergé dans une unité ou centre de soins de longue durée",
+          "type": "boolean",
+          "default": false
+        },
+        "estNonSalarieAgricoleL7818L78146CodeRural": {
+          "title": "Le demandeur exerce une activité agricole non salariée dans une collectivité d'outre-mer",
+          "type": "boolean",
+          "default": false
+        },
+        "magistratFonctionnaireCentreInteretsMaterielsFamiliauxHorsMayotte": {
+          "title": "Le demandeur est un magistrat ou fonctionnaire à Mayotte dont le centre des intérêts matériels et familiaux est situé hors de Mayotte.",
           "type": "boolean",
           "default": false
         }
@@ -245,10 +352,12 @@
     },
     "enfant_a_charge": {
       "type": "object",
-      "required": [
-        "dateDeNaissance"
-      ],
+      "required": ["dateDeNaissance"],
       "properties": {
+        "nationalite": {
+          "title": " ",
+          "$ref": "#/definitions/nationalite"
+        },
         "beneficieTitrePersonnelAidePersonnelleLogement": {
           "title": "L'enfant béneficie à titre personnel des aides au logement",
           "type": "boolean",
@@ -271,12 +380,17 @@
           "default": 0
         },
         "obligationScolaire": {
-          "title": " ",
+          "title": "Situation scolaire",
           "$ref": "#/definitions/situation_obligation_scolaire"
         },
         "situationGardeAlternee": {
-          "title": " ",
+          "title": "Caractéristiques de la garde alternée",
           "$ref": "#/definitions/situation_garde_alternee"
+        },
+        "etudesApprentissageStageFormationProImpossibiliteTravail": {
+          "title": "L'enfant, dans une collectivité d'outre-mer, poursuit des études ou est placé en apprentissage ou en stage de formation professionnelle ou est dans l'impossibilité de travailler.",
+          "type": "boolean",
+          "default": false
         }
       }
     },
@@ -299,12 +413,10 @@
     },
     "location": {
       "type": "object",
-      "required": [
-        "loyerPrincipal"
-      ],
+      "required": ["loyerPrincipal"],
       "properties": {
         "bailleur": {
-          "title": " ",
+          "title": "Type de bailleur",
           "$ref": "#/definitions/type_bailleur"
         },
         "loyerPrincipal": {
@@ -338,7 +450,7 @@
           "default": false
         },
         "changementLogementD8424": {
-          "title": " ",
+          "title": "Le ménage a été relogé par les pouvoirs publics",
           "$ref": "#/definitions/changement_logement_d842_4"
         }
       }
@@ -346,19 +458,12 @@
     "logement": {
       "title": " ",
       "type": "object",
-      "required": [
-        "surfaceMCarres"
-      ],
+      "required": ["surfaceMCarres"],
       "properties": {
         "residencePrincipale": {
           "title": "Le logement concerné par la demande d'aide est la résidence principale du ménage",
           "type": "boolean",
           "default": true
-        },
-        "estEhpadOuMaisonAutonomieL31312Asf": {
-          "title": "Le logement est un EHPAD ou une résidence autonomie",
-          "type": "boolean",
-          "default": false
         },
         "modeOccupation": {
           "title": "Mode d'occupation du logement",
@@ -386,20 +491,17 @@
           "type": "number"
         },
         "zone": {
-          "title": " ",
+          "title": "Zone de la commune du logement",
           "$ref": "#/definitions/zone_d_habitation"
         }
       }
     },
     "logement_foyer": {
       "type": "object",
-      "required": [
-        "dateConventionnement",
-        "redevance"
-      ],
+      "required": ["dateConventionnement", "redevance"],
       "properties": {
         "typeUser": {
-          "title": " ",
+          "title": "Type de logement foyer",
           "$ref": "#/definitions/type_logement_foyer"
         },
         "remplitConditionsR83221": {
@@ -408,9 +510,14 @@
           "default": true
         },
         "conventionneLivreIIITitreVChapIII": {
-          "title": "Le logement-foyer est conventionné pour le logement social",
+          "title": "Le logement-foyer est conventionné pour le logement social (métropole)",
           "type": "boolean",
           "default": true
+        },
+        "conventionneSelonReglesDrom": {
+          "title": "Le logement-foyer est conventionné pour le logement social (outre-mer)",
+          "type": "boolean",
+          "default": false
         },
         "dateConventionnement": {
           "title": "Date du conventionnement du logement-foyer en tant que bailleur social",
@@ -429,8 +536,18 @@
           "default": 0
         },
         "categorieEquivalenceLoyerD84216": {
-          "title": " ",
+          "title": "Catégorie de personnes résidant en logement-foyer",
           "$ref": "#/definitions/categorie_equivalence_loyer_allocation_logement_foyer"
+        },
+        "beneficiaireAideAdulteOuEnfantHandicapes": {
+          "title": "Le demandeur ou son conjoint sont bénéficiaires de l'allocation aux adultes handicapés ou de l'allocation d'éducation de l'enfant handicapé.",
+          "type": "boolean",
+          "default": false
+        },
+        "logementMeubleD8422": {
+          "title": "Le logement est loué meublé",
+          "type": "boolean",
+          "default": false
         }
       }
     },
@@ -444,15 +561,11 @@
           "anyOf": [
             {
               "type": "string",
-              "enum": [
-                "Non"
-              ]
+              "enum": ["Non"]
             },
             {
               "type": "string",
-              "enum": [
-                "Oui"
-              ]
+              "enum": ["Oui"]
             }
           ]
         }
@@ -496,6 +609,15 @@
           "type": "boolean",
           "default": false
         },
+        "personnesAgeesHandicapeesFoyerR8444": {
+          "title": "Le demandeur vit en maison de retraite non médicalisée ou en foyer pour personnes handicapées",
+          "type": "boolean",
+          "default": false
+        },
+        "residence": {
+          "title": "Résidence du ménage",
+          "$ref": "#/definitions/collectivite"
+        },
         "prestationsRecues": {
           "title": "Autres prestations sociales déjà reçues par le ménage",
           "type": "array",
@@ -517,37 +639,27 @@
             {
               "title": "Locataire",
               "type": "string",
-              "enum": [
-                "Locataire"
-              ]
+              "enum": ["Locataire"]
             },
             {
               "title": "Résident en logement foyer",
               "type": "string",
-              "enum": [
-                "ResidentLogementFoyer"
-              ]
+              "enum": ["ResidentLogementFoyer"]
             },
             {
               "title": "Accession à la propriété",
               "type": "string",
-              "enum": [
-                "AccessionProprieteLocalUsageExclusifHabitation"
-              ]
+              "enum": ["AccessionProprieteLocalUsageExclusifHabitation"]
             },
             {
               "title": "Sous-locataire",
               "type": "string",
-              "enum": [
-                "SousLocataire"
-              ]
+              "enum": ["SousLocataire"]
             },
             {
               "title": "Location-accession",
               "type": "string",
-              "enum": [
-                "LocationAccession"
-              ]
+              "enum": ["LocationAccession"]
             }
           ]
         }
@@ -644,23 +756,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Nationalité du demandeur",
+          "title": "Nationalité de la personne",
           "type": "string",
           "default": "Francaise",
           "anyOf": [
             {
               "title": "Française",
               "type": "string",
-              "enum": [
-                "Francaise"
-              ]
+              "enum": ["Francaise"]
             },
             {
               "title": "Étrangère",
               "type": "string",
-              "enum": [
-                "Etrangere"
-              ]
+              "enum": ["Etrangere"]
             }
           ]
         }
@@ -707,21 +815,17 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Ancienneté du logement",
+          "title": " ",
           "default": "Neuf",
           "type": "string",
           "anyOf": [
             {
               "type": "string",
-              "enum": [
-                "Neuf"
-              ]
+              "enum": ["Neuf"]
             },
             {
               "type": "string",
-              "enum": [
-                "Ancien"
-              ]
+              "enum": ["Ancien"]
             }
           ]
         }
@@ -775,16 +879,12 @@
             {
               "title": "Demandeur de l'aide au logement ou sa famille",
               "type": "string",
-              "enum": [
-                "DemandeurOuConjointOuParentOuViaPartsSocietes"
-              ]
+              "enum": ["DemandeurOuConjointOuParentOuViaPartsSocietes"]
             },
             {
               "title": "Autre",
               "type": "string",
-              "enum": [
-                "Autre"
-              ]
+              "enum": ["Autre"]
             }
           ]
         }
@@ -799,9 +899,7 @@
             }
           },
           "then": {
-            "required": [
-              "payload"
-            ],
+            "required": ["payload"],
             "properties": {
               "payload": {
                 "title": "Fraction du logement revenant au demandeur ou à sa famille",
@@ -842,23 +940,17 @@
             {
               "title": "Ascendant",
               "type": "string",
-              "enum": [
-                "Ascendant"
-              ]
+              "enum": ["Ascendant"]
             },
             {
               "title": "Descendant",
               "type": "string",
-              "enum": [
-                "Descendant"
-              ]
+              "enum": ["Descendant"]
             },
             {
               "title": "Collatéral au deuxième ou troisième degré",
               "type": "string",
-              "enum": [
-                "CollateralDeuxiemeTroisiemeDegre"
-              ]
+              "enum": ["CollateralDeuxiemeTroisiemeDegre"]
             }
           ]
         }
@@ -866,23 +958,6 @@
       "payload": {
         "type": "null",
         "default": null
-      }
-    },
-    "patrimoine": {
-      "type": "object",
-      "properties": {
-        "produisantRevenuPeriodeR82233R8224": {
-          "title": "Patrimoine produisant un revenu (€)",
-          "type": "number",
-          "minimum": 0,
-          "default": 0
-        },
-        "neProduisantPasRevenuPeriodeR82233R8224": {
-          "title": "Patrimoine ne produisant pas de revenu (€)",
-          "type": "number",
-          "minimum": 0,
-          "default": 0
-        }
       }
     },
     "personne_a_charge": {
@@ -896,16 +971,12 @@
             {
               "title": "Enfant",
               "type": "string",
-              "enum": [
-                "EnfantACharge"
-              ]
+              "enum": ["EnfantACharge"]
             },
             {
               "title": "Autre lien de parenté",
               "type": "string",
-              "enum": [
-                "AutrePersonneACharge"
-              ]
+              "enum": ["AutrePersonneACharge"]
             }
           ]
         }
@@ -949,9 +1020,7 @@
     },
     "prestation_recue": {
       "type": "object",
-      "required": [
-        "kind"
-      ],
+      "required": ["kind"],
       "properties": {
         "kind": {
           "title": "Prestation reçue",
@@ -959,45 +1028,23 @@
           "anyOf": [
             {
               "type": "string",
-              "enum": [
-                "AllocationsFamiliales"
-              ],
+              "enum": ["AllocationsFamiliales"],
               "title": "Allocations familiales"
             },
             {
               "type": "string",
-              "enum": [
-                "ComplementFamilial"
-              ],
+              "enum": ["ComplementFamilial"],
               "title": "Complément familial"
             },
             {
               "type": "string",
-              "enum": [
-                "AllocationJeuneEnfant"
-              ],
-              "title": "Prestation d'accueil du jeune enfant"
-            },
-            {
-              "type": "string",
-              "enum": [
-                "AllocationSoutienFamilial"
-              ],
+              "enum": ["AllocationSoutienFamilial"],
               "title": "Allocation de soutien familial"
             },
             {
               "type": "string",
-              "enum": [
-                "AllocationSoutienEnfantHandicape"
-              ],
+              "enum": ["AllocationSoutienEnfantHandicape"],
               "title": "Allocation de soutien à l'enfant handicapé"
-            },
-            {
-              "type": "string",
-              "enum": [
-                "AllocationAdulteHandicape"
-              ],
-              "title": "Allocation adulte handicapé"
             }
           ]
         }
@@ -1010,12 +1057,10 @@
     },
     "pret": {
       "type": "object",
-      "required": [
-        "dateSignature"
-      ],
+      "required": ["dateSignature"],
       "properties": {
         "typePret": {
-          "title": " ",
+          "title": "Articles du code de la construction de de l'habitation régissant le prêt souscrit",
           "$ref": "#/definitions/type_pret"
         },
         "dateSignature": {
@@ -1024,8 +1069,12 @@
           "format": "date"
         },
         "titulairePret": {
-          "title": " ",
+          "title": "Titulaire du prêt",
           "$ref": "#/definitions/titulaire_pret"
+        },
+        "accordFinancementRepresentantEtatOutreMer": {
+          "title": "Décision favorable de financement du logement par le représentant de l'État en outre-mer",
+          "$ref": "#/definitions/accord_financement_representant_etat_outre_mer"
         }
       }
     },
@@ -1037,11 +1086,6 @@
         "dateEntreeLogement"
       ],
       "properties": {
-        "logementSitueCommuneDesequilibreL8312": {
-          "title": "Le logement est situé dans une commune ne se caractérisant pas par un déséquilibre important entre l'offre et la demande de logements entraînant des difficultés d'accès au logement dans le parc résidentiel existant",
-          "type": "boolean",
-          "default": false
-        },
         "pret": {
           "title": " ",
           "$ref": "#/definitions/pret"
@@ -1062,11 +1106,11 @@
           "format": "date"
         },
         "typeTravauxLogementD83215": {
-          "title": " ",
+          "title": "Financement par prêt de travaux après ou pour l'acquisition du logement",
           "$ref": "#/definitions/type_travaux_logement_d832_15"
         },
         "typeTravauxLogementR8425": {
-          "title": " ",
+          "title": "Objectif des travaux financés par le prêt",
           "$ref": "#/definitions/type_travaux_logement_r842_5"
         },
         "localHabitePremiereFoisBeneficiaire": {
@@ -1085,8 +1129,13 @@
           "default": false
         },
         "ancienneteLogement": {
-          "title": " ",
+          "title": "Ancienneté du logement",
           "$ref": "#/definitions/neuf_ou_ancien"
+        },
+        "operationsLogementEvolutifsSociauxAccessionProprieteAideeEtat": {
+          "title": "Logement évolutif social ou logement très social, en accession à la propriété aidée par l'État",
+          "type": "boolean",
+          "default": false
         }
       }
     },
@@ -1101,44 +1150,32 @@
             {
               "title": "Célibataire",
               "type": "string",
-              "enum": [
-                "Celibataire"
-              ]
+              "enum": ["Celibataire"]
             },
             {
               "title": "Mariés",
               "type": "string",
-              "enum": [
-                "Maries"
-              ]
+              "enum": ["Maries"]
             },
             {
               "title": "PACSés",
               "type": "string",
-              "enum": [
-                "Pacses"
-              ]
+              "enum": ["Pacses"]
             },
             {
               "title": "Concubins",
               "type": "string",
-              "enum": [
-                "Concubins"
-              ]
+              "enum": ["Concubins"]
             },
             {
               "title": "Célibataire séparé·e de fait",
               "type": "string",
-              "enum": [
-                "CelibataireSepareDeFait"
-              ]
+              "enum": ["CelibataireSepareDeFait"]
             },
             {
               "title": "Concubins dont séparé·e·s de fait",
               "type": "string",
-              "enum": [
-                "ConcubinageDontSepareDeFait"
-              ]
+              "enum": ["ConcubinageDontSepareDeFait"]
             }
           ]
         }
@@ -1258,23 +1295,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Caractéristiques de la garde alternée",
+          "title": " ",
           "default": "PasDeGardeAlternee",
           "type": "string",
           "anyOf": [
             {
               "title": "Pas de garde alternée",
               "type": "string",
-              "enum": [
-                "PasDeGardeAlternee"
-              ]
+              "enum": ["PasDeGardeAlternee"]
             },
             {
               "title": "Garde alternée",
               "type": "string",
-              "enum": [
-                "GardeAlterneeCoefficientPriseEnCharge"
-              ]
+              "enum": ["GardeAlterneeCoefficientPriseEnCharge"]
             }
           ]
         }
@@ -1284,14 +1317,30 @@
           "if": {
             "properties": {
               "kind": {
+                "const": "PasDeGardeAlternee"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "title": " ",
+                "type": "null",
+                "default": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
                 "const": "GardeAlterneeCoefficientPriseEnCharge"
               }
             }
           },
           "then": {
-            "required": [
-              "payload"
-            ],
+            "required": ["payload"],
             "properties": {
               "payload": {
                 "title": "Coefficient de prise en charge",
@@ -1306,30 +1355,24 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Situation scolaire",
+          "title": " ",
           "default": "Pendant",
           "type": "string",
           "anyOf": [
             {
               "title": "Avant l'obligation scolaire",
               "type": "string",
-              "enum": [
-                "Avant"
-              ]
+              "enum": ["Avant"]
             },
             {
               "title": "Pendant l'obligation scolaire",
               "type": "string",
-              "enum": [
-                "Pendant"
-              ]
+              "enum": ["Pendant"]
             },
             {
               "title": "Après l'obligation scolaire",
               "type": "string",
-              "enum": [
-                "Apres"
-              ]
+              "enum": ["Apres"]
             }
           ]
         }
@@ -1343,23 +1386,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Titulaire du prêt",
+          "title": " ",
           "type": "string",
           "default": "Demandeur",
           "anyOf": [
             {
               "title": "Demandeur de l'aide au logement",
               "type": "string",
-              "enum": [
-                "Demandeur"
-              ]
+              "enum": ["Demandeur"]
             },
             {
               "title": "Vendeur du logement (si location-accession)",
               "type": "string",
-              "enum": [
-                "VendeurQuandDemandeurAContratLocationAccession"
-              ]
+              "enum": ["VendeurQuandDemandeurAContratLocationAccession"]
             }
           ]
         }
@@ -1373,30 +1412,24 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Type de bailleur",
+          "title": " ",
           "default": "BailleurPrive",
           "type": "string",
           "anyOf": [
             {
               "type": "string",
               "title": "Bailleur social",
-              "enum": [
-                "BailleurSocial"
-              ]
+              "enum": ["BailleurSocial"]
             },
             {
               "type": "string",
               "title": "Bailleur privé avec conventionnement social",
-              "enum": [
-                "BailleurPriveAvecConventionnementSocial"
-              ]
+              "enum": ["BailleurPriveAvecConventionnementSocial"]
             },
             {
               "type": "string",
               "title": "Bailleur privé",
-              "enum": [
-                "BailleurPrive"
-              ]
+              "enum": ["BailleurPrive"]
             }
           ]
         }
@@ -1460,23 +1493,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Type de logement foyer",
+          "title": " ",
           "type": "string",
           "default": "Autre",
           "anyOf": [
             {
               "title": "Logement pour personnes âgées ou handicapées",
               "type": "string",
-              "enum": [
-                "LogementPersonnesAgeesOuHandicapees"
-              ]
+              "enum": ["LogementPersonnesAgeesOuHandicapees"]
             },
             {
               "title": "Résidence sociale",
               "type": "string",
-              "enum": [
-                "ResidenceSociale"
-              ]
+              "enum": ["ResidenceSociale"]
             },
             {
               "title": "Foyer pour jeunes travailleurs ou migrants conventionné L. 353-2 avant 1995",
@@ -1488,9 +1517,7 @@
             {
               "title": "Autre",
               "type": "string",
-              "enum": [
-                "Autre"
-              ]
+              "enum": ["Autre"]
             }
           ]
         }
@@ -1505,44 +1532,34 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Articles du code de la construction de de l'habitation régissant le prêt souscrit",
+          "title": " ",
           "type": "string",
           "default": "D331_63_64",
           "anyOf": [
             {
               "type": "string",
               "title": "Article D331-32 (PAP)",
-              "enum": [
-                "D331_32"
-              ]
+              "enum": ["D331_32"]
             },
             {
               "title": "Articles D331-63 et D331-64 (prêt conventionné)",
               "type": "string",
-              "enum": [
-                "D331_63_64"
-              ]
+              "enum": ["D331_63_64"]
             },
             {
               "title": "Article D331-59-8 (PAP fractionné)",
               "type": "string",
-              "enum": [
-                "D331_59_8"
-              ]
+              "enum": ["D331_59_8"]
             },
             {
               "title": "Article D331-76-1 (prêt conventionné fractionné)",
               "type": "string",
-              "enum": [
-                "D331_76_1"
-              ]
+              "enum": ["D331_76_1"]
             },
             {
               "title": "Autre",
               "type": "string",
-              "enum": [
-                "Autre"
-              ]
+              "enum": ["Autre"]
             }
           ]
         }
@@ -1557,29 +1574,23 @@
       "properties": {
         "kind": {
           "type": "string",
-          "title": "Financement par prêt de travaux après ou pour l'acquisition du logement",
+          "title": " ",
           "default": "PasDeTravaux",
           "anyOf": [
             {
               "title": "Travaux réalisés lors de l'acquisition du logement",
               "type": "string",
-              "enum": [
-                "TravauxPourAcquisitionD832_15_1"
-              ]
+              "enum": ["TravauxPourAcquisitionD832_15_1"]
             },
             {
               "title": "Travaux réalisés après l'acquisition du logement",
               "type": "string",
-              "enum": [
-                "TravauxSurLogementDejaAcquisD832_15_2"
-              ]
+              "enum": ["TravauxSurLogementDejaAcquisD832_15_2"]
             },
             {
               "title": "Pas de travaux réalisés",
               "type": "string",
-              "enum": [
-                "PasDeTravaux"
-              ]
+              "enum": ["PasDeTravaux"]
             }
           ]
         }
@@ -1593,37 +1604,29 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Objectif des travaux financés par le prêt",
+          "title": " ",
           "default": "PasDeTravaux",
           "type": "string",
           "anyOf": [
             {
               "title": "Décence du logement",
               "type": "string",
-              "enum": [
-                "ObjectifDecenceLogement"
-              ]
+              "enum": ["ObjectifDecenceLogement"]
             },
             {
               "title": "Prévu par l'article R321-15",
               "type": "string",
-              "enum": [
-                "PrevuDansListeR321_15"
-              ]
+              "enum": ["PrevuDansListeR321_15"]
             },
             {
               "title": "Agrandir ou rendre habitable le logement (prêt conventionné)",
               "type": "string",
-              "enum": [
-                "AgrandirOuRendreHabitableD331_63"
-              ]
+              "enum": ["AgrandirOuRendreHabitableD331_63"]
             },
             {
               "title": "Pas de travaux réalisés",
               "type": "string",
-              "enum": [
-                "PasDeTravaux"
-              ]
+              "enum": ["PasDeTravaux"]
             }
           ]
         }
@@ -1637,30 +1640,24 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Zone de la commune du logement",
+          "title": " ",
           "default": "Zone1",
           "type": "string",
           "anyOf": [
             {
               "title": "Zone I",
               "type": "string",
-              "enum": [
-                "Zone1"
-              ]
+              "enum": ["Zone1"]
             },
             {
               "title": "Zone II",
               "type": "string",
-              "enum": [
-                "Zone2"
-              ]
+              "enum": ["Zone2"]
             },
             {
               "title": "Zone III",
               "type": "string",
-              "enum": [
-                "Zone3"
-              ]
+              "enum": ["Zone3"]
             }
           ]
         }
@@ -1691,8 +1688,5 @@
       "minimum": 0
     }
   },
-  "required": [
-    "dateCouranteIn",
-    "ressourcesMenagePrisesEnCompteIn"
-  ]
+  "required": ["dateCouranteIn", "ressourcesMenagePrisesEnCompteIn"]
 }
