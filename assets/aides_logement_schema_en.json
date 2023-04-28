@@ -1,6 +1,67 @@
 {
   "type": "object",
   "definitions": {
+    "accord_financement_representant_etat_outre_mer": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "title": " ",
+          "type": "string",
+          "default": "PasdAccord",
+          "anyOf": [
+            {
+              "title": "Yes",
+              "type": "string",
+              "enum": ["Accord"]
+            },
+            {
+              "title": "No",
+              "type": "string",
+              "enum": ["PasdAccord"]
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Accord"
+              }
+            }
+          },
+          "then": {
+            "required": ["payload"],
+            "properties": {
+              "payload": {
+                "title": "Date of the greenlighting decision",
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "PasdAccord"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "title": " ",
+                "type": "null",
+                "default": null
+              }
+            }
+          }
+        }
+      ]
+    },
     "ameliore_par_occupant": {
       "type": "object",
       "properties": {
@@ -11,15 +72,11 @@
           "anyOf": [
             {
               "type": "string",
-              "enum": [
-                "Oui"
-              ]
+              "enum": ["Oui"]
             },
             {
               "type": "string",
-              "enum": [
-                "Non"
-              ]
+              "enum": ["Non"]
             }
           ]
         }
@@ -31,10 +88,7 @@
     },
     "autre_personne_a_charge": {
       "type": "object",
-      "required": [
-        "dateNaissance",
-        "ressources"
-      ],
+      "required": ["dateNaissance", "ressources"],
       "properties": {
         "dateNaissance": {
           "title": "Birth date",
@@ -76,37 +130,29 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Category of people in a the residential accomodation",
+          "title": " ",
           "type": "string",
           "default": "AutresPersonnes",
           "anyOf": [
             {
               "title": "Student lodged in a CROUS room",
               "type": "string",
-              "enum": [
-                "EtudiantLogeEnChambreCROUS"
-              ]
+              "enum": ["EtudiantLogeEnChambreCROUS"]
             },
             {
               "title": "Student lodged in a rehabilitated CROUS room",
               "type": "string",
-              "enum": [
-                "EtudiantLogeEnChambreCROUSRehabilitee"
-              ]
+              "enum": ["EtudiantLogeEnChambreCROUSRehabilitee"]
             },
             {
               "title": "Elderly person",
               "type": "string",
-              "enum": [
-                "PersonnesAgeesSelon3DeD842_16"
-              ]
+              "enum": ["PersonnesAgeesSelon3DeD842_16"]
             },
             {
               "title": "Other situation",
               "type": "string",
-              "enum": [
-                "AutresPersonnes"
-              ]
+              "enum": ["AutresPersonnes"]
             }
           ]
         }
@@ -120,23 +166,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "The household has been forcibly moved by the authorities",
+          "title": " ",
           "type": "string",
           "default": "PasDeChangement",
           "anyOf": [
             {
               "title": "Yes",
               "type": "string",
-              "enum": [
-                "Changement"
-              ]
+              "enum": ["Changement"]
             },
             {
               "title": "No",
               "type": "string",
-              "enum": [
-                "PasDeChangement"
-              ]
+              "enum": ["PasDeChangement"]
             }
           ]
         }
@@ -179,13 +221,76 @@
         }
       ]
     },
+    "collectivite": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "title": " ",
+          "default": "Metropole",
+          "type": "string",
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": ["Guadeloupe"]
+            },
+            {
+              "type": "string",
+              "enum": ["Guyane"]
+            },
+            {
+              "type": "string",
+              "enum": ["Martinique"]
+            },
+            {
+              "type": "string",
+              "title": "La Réunion",
+              "enum": ["LaReunion"]
+            },
+            {
+              "title": "Saint Barthélémy",
+              "type": "string",
+              "enum": ["SaintBarthelemy"]
+            },
+            {
+              "title": "Saint Martin",
+              "type": "string",
+              "enum": ["SaintMartin"]
+            },
+            {
+              "title": "Métropole",
+              "type": "string",
+              "enum": ["Metropole"]
+            },
+            {
+              "title": "Saint-Pierre-et-Miquelon",
+              "type": "string",
+              "enum": ["SaintPierreEtMiquelon"]
+            },
+            {
+              "type": "string",
+              "enum": ["Mayotte"]
+            }
+          ]
+        },
+        "payload": {
+          "title": " ",
+          "type": "null",
+          "default": null
+        }
+      }
+    },
     "conditions_etrangers": {
       "type": "object",
       "properties": {
         "satisfaitConditionsL5122CodeSecuriteSociale": {
-          "title": "The applicant lawfully resides in France",
+          "title": "The person lawfully resides in France",
           "type": "boolean",
           "default": true
+        },
+        "satisfaitArt4Ordonnance2002Mayotte": {
+          "type": "boolean",
+          "title": "The person lawfully resides in Mayotte",
+          "default": false
         }
       }
     },
@@ -201,9 +306,7 @@
     },
     "convention_bailleur_social": {
       "type": "object",
-      "required": [
-        "reductionLoyerSolidaritePercue"
-      ],
+      "required": ["reductionLoyerSolidaritePercue"],
       "properties": {
         "conventionneLivreIIITitreVChapIII": {
           "title": "The landlord has signed a convention for social housing",
@@ -219,9 +322,7 @@
     },
     "demandeur": {
       "type": "object",
-      "required": [
-        "dateNaissance"
-      ],
+      "required": ["dateNaissance"],
       "properties": {
         "dateNaissance": {
           "title": "Birth date of the applicant",
@@ -232,12 +333,18 @@
           "title": " ",
           "$ref": "#/definitions/nationalite"
         },
-        "patrimoine": {
-          "title": " ",
-          "$ref": "#/definitions/patrimoine"
-        },
         "personneHebergeeCentreSoinLL162223SecuriteSociale": {
           "title": "The applicant is lodged in a healthcare center or unit for long-term stays",
+          "type": "boolean",
+          "default": false
+        },
+        "estNonSalarieAgricoleL7818L78146CodeRural": {
+          "title": "The applicant is a non-employee agricultural worker in an overseas territory.",
+          "type": "boolean",
+          "default": false
+        },
+        "magistratFonctionnaireCentreInteretsMaterielsFamiliauxHorsMayotte": {
+          "title": "The applicant is a judge or civil servant in Mayotte whose center of material and familial interests is located outside of Mayotte.",
           "type": "boolean",
           "default": false
         }
@@ -245,10 +352,12 @@
     },
     "enfant_a_charge": {
       "type": "object",
-      "required": [
-        "dateDeNaissance"
-      ],
+      "required": ["dateDeNaissance"],
       "properties": {
+        "nationalite": {
+          "title": " ",
+          "$ref": "#/definitions/nationalite"
+        },
         "beneficieTitrePersonnelAidePersonnelleLogement": {
           "title": "The child personally benefits from housing benefits",
           "type": "boolean",
@@ -271,12 +380,17 @@
           "default": 0
         },
         "obligationScolaire": {
-          "title": " ",
+          "title": "Educational situation",
           "$ref": "#/definitions/situation_obligation_scolaire"
         },
         "situationGardeAlternee": {
-          "title": " ",
+          "title": "Characteristics of split custody",
           "$ref": "#/definitions/situation_garde_alternee"
+        },
+        "etudesApprentissageStageFormationProImpossibiliteTravail": {
+          "title": "The child, in an overseas territory, is a student or an apprentice or an intern, or is unable to work.",
+          "type": "boolean",
+          "default": false
         }
       }
     },
@@ -299,9 +413,7 @@
     },
     "location": {
       "type": "object",
-      "required": [
-        "loyerPrincipal"
-      ],
+      "required": ["loyerPrincipal"],
       "properties": {
         "bailleur": {
           "title": " ",
@@ -338,7 +450,7 @@
           "default": false
         },
         "changementLogementD8424": {
-          "title": " ",
+          "title": "The household has been forcibly moved by the authorities",
           "$ref": "#/definitions/changement_logement_d842_4"
         }
       }
@@ -346,19 +458,12 @@
     "logement": {
       "title": " ",
       "type": "object",
-      "required": [
-        "surfaceMCarres"
-      ],
+      "required": ["surfaceMCarres"],
       "properties": {
         "residencePrincipale": {
           "title": "The housing concerned by the benefit application is the primary residence of the household",
           "type": "boolean",
           "default": true
-        },
-        "estEhpadOuMaisonAutonomieL31312Asf": {
-          "title": "The housing is a retirement home (EHPAD) or a \"résidence autonomie\"",
-          "type": "boolean",
-          "default": false
         },
         "modeOccupation": {
           "title": "Type of housing tenure",
@@ -393,13 +498,10 @@
     },
     "logement_foyer": {
       "type": "object",
-      "required": [
-        "dateConventionnement",
-        "redevance"
-      ],
+      "required": ["dateConventionnement", "redevance"],
       "properties": {
         "typeUser": {
-          "title": " ",
+          "title": "Kind of residential accomodation",
           "$ref": "#/definitions/type_logement_foyer"
         },
         "remplitConditionsR83221": {
@@ -408,9 +510,14 @@
           "default": true
         },
         "conventionneLivreIIITitreVChapIII": {
-          "title": "The residential accomodation has signed a convention for social housing",
+          "title": "The residential accomodation has signed a convention for social housing (mainland)",
           "type": "boolean",
           "default": true
+        },
+        "conventionneSelonReglesDrom": {
+          "title": "The residential accomodation has signed a convention for social housing (overseas)",
+          "type": "boolean",
+          "default": false
         },
         "dateConventionnement": {
           "title": "Signature date of the social housing convention",
@@ -429,8 +536,18 @@
           "default": 0
         },
         "categorieEquivalenceLoyerD84216": {
-          "title": " ",
+          "title": "Category of people in a the residential accomodation",
           "$ref": "#/definitions/categorie_equivalence_loyer_allocation_logement_foyer"
+        },
+        "beneficiaireAideAdulteOuEnfantHandicapes": {
+          "title": "The applicant or their partner benefit from the disabled adult benefit or the disabled child education benefit",
+          "type": "boolean",
+          "default": false
+        },
+        "logementMeubleD8422": {
+          "title": "The housing is rented with furniture",
+          "type": "boolean",
+          "default": false
         }
       }
     },
@@ -445,16 +562,12 @@
             {
               "type": "string",
               "title": "No",
-              "enum": [
-                "Non"
-              ]
+              "enum": ["Non"]
             },
             {
               "type": "string",
               "title": "Yes",
-              "enum": [
-                "Oui"
-              ]
+              "enum": ["Oui"]
             }
           ]
         }
@@ -498,6 +611,15 @@
           "type": "boolean",
           "default": false
         },
+        "personnesAgeesHandicapeesFoyerR8444": {
+          "title": "The applicant lives in a non-medical retirement home or in collective housing for disabled people",
+          "type": "boolean",
+          "default": false
+        },
+        "residence": {
+          "title": "Location of the household's residence",
+          "$ref": "#/definitions/collectivite"
+        },
         "prestationsRecues": {
           "title": "Other social benefits already received by the household",
           "type": "array",
@@ -519,37 +641,27 @@
             {
               "title": "Tenant",
               "type": "string",
-              "enum": [
-                "Locataire"
-              ]
+              "enum": ["Locataire"]
             },
             {
               "title": "Dweller in a residential accomodation",
               "type": "string",
-              "enum": [
-                "ResidentLogementFoyer"
-              ]
+              "enum": ["ResidentLogementFoyer"]
             },
             {
               "title": "Home buyer",
               "type": "string",
-              "enum": [
-                "AccessionProprieteLocalUsageExclusifHabitation"
-              ]
+              "enum": ["AccessionProprieteLocalUsageExclusifHabitation"]
             },
             {
               "title": "Subletter",
               "type": "string",
-              "enum": [
-                "SousLocataire"
-              ]
+              "enum": ["SousLocataire"]
             },
             {
               "title": "Life-annuity renting",
               "type": "string",
-              "enum": [
-                "LocationAccession"
-              ]
+              "enum": ["LocationAccession"]
             }
           ]
         }
@@ -646,23 +758,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Applicant's nationality",
+          "title": "Person's nationality",
           "type": "string",
           "default": "Francaise",
           "anyOf": [
             {
               "title": "French",
               "type": "string",
-              "enum": [
-                "Francaise"
-              ]
+              "enum": ["Francaise"]
             },
             {
               "title": "Other",
               "type": "string",
-              "enum": [
-                "Etrangere"
-              ]
+              "enum": ["Etrangere"]
             }
           ]
         }
@@ -709,23 +817,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Age of the housing",
+          "title": " ",
           "default": "Neuf",
           "type": "string",
           "anyOf": [
             {
               "type": "string",
               "title": "New",
-              "enum": [
-                "Neuf"
-              ]
+              "enum": ["Neuf"]
             },
             {
               "type": "string",
               "title": "Old",
-              "enum": [
-                "Ancien"
-              ]
+              "enum": ["Ancien"]
             }
           ]
         }
@@ -779,16 +883,12 @@
             {
               "title": "Applicant or his family",
               "type": "string",
-              "enum": [
-                "DemandeurOuConjointOuParentOuViaPartsSocietes"
-              ]
+              "enum": ["DemandeurOuConjointOuParentOuViaPartsSocietes"]
             },
             {
               "title": "Other",
               "type": "string",
-              "enum": [
-                "Autre"
-              ]
+              "enum": ["Autre"]
             }
           ]
         }
@@ -803,9 +903,7 @@
             }
           },
           "then": {
-            "required": [
-              "payload"
-            ],
+            "required": ["payload"],
             "properties": {
               "payload": {
                 "title": "Fraction of the housing ownership possessed by the applicant or family",
@@ -846,23 +944,17 @@
             {
               "title": "Ascendant",
               "type": "string",
-              "enum": [
-                "Ascendant"
-              ]
+              "enum": ["Ascendant"]
             },
             {
               "title": "Descendant",
               "type": "string",
-              "enum": [
-                "Descendant"
-              ]
+              "enum": ["Descendant"]
             },
             {
               "title": "Cousin at the first or second degree",
               "type": "string",
-              "enum": [
-                "CollateralDeuxiemeTroisiemeDegre"
-              ]
+              "enum": ["CollateralDeuxiemeTroisiemeDegre"]
             }
           ]
         }
@@ -870,23 +962,6 @@
       "payload": {
         "type": "null",
         "default": null
-      }
-    },
-    "patrimoine": {
-      "type": "object",
-      "properties": {
-        "produisantRevenuPeriodeR82233R8224": {
-          "title": "Income-producing wealth (€)",
-          "type": "number",
-          "minimum": 0,
-          "default": 0
-        },
-        "neProduisantPasRevenuPeriodeR82233R8224": {
-          "title": "Non-income-procuding wealth (€)",
-          "type": "number",
-          "minimum": 0,
-          "default": 0
-        }
       }
     },
     "personne_a_charge": {
@@ -900,16 +975,12 @@
             {
               "title": "Child",
               "type": "string",
-              "enum": [
-                "EnfantACharge"
-              ]
+              "enum": ["EnfantACharge"]
             },
             {
               "title": "Other relationship",
               "type": "string",
-              "enum": [
-                "AutrePersonneACharge"
-              ]
+              "enum": ["AutrePersonneACharge"]
             }
           ]
         }
@@ -953,9 +1024,7 @@
     },
     "prestation_recue": {
       "type": "object",
-      "required": [
-        "kind"
-      ],
+      "required": ["kind"],
       "properties": {
         "kind": {
           "title": "Benefit received",
@@ -963,45 +1032,23 @@
           "anyOf": [
             {
               "type": "string",
-              "enum": [
-                "AllocationsFamiliales"
-              ],
+              "enum": ["AllocationsFamiliales"],
               "title": "Family benefits"
             },
             {
               "type": "string",
-              "enum": [
-                "ComplementFamilial"
-              ],
+              "enum": ["ComplementFamilial"],
               "title": "Family complement"
             },
             {
               "type": "string",
-              "enum": [
-                "AllocationJeuneEnfant"
-              ],
-              "title": "Young child welcome benefit"
-            },
-            {
-              "type": "string",
-              "enum": [
-                "AllocationSoutienFamilial"
-              ],
+              "enum": ["AllocationSoutienFamilial"],
               "title": "Family support benefit"
             },
             {
               "type": "string",
-              "enum": [
-                "AllocationSoutienEnfantHandicape"
-              ],
+              "enum": ["AllocationSoutienEnfantHandicape"],
               "title": "Disabled child support benefit"
-            },
-            {
-              "type": "string",
-              "enum": [
-                "AllocationAdulteHandicape"
-              ],
-              "title": "Disabled adult benefit"
             }
           ]
         }
@@ -1014,12 +1061,10 @@
     },
     "pret": {
       "type": "object",
-      "required": [
-        "dateSignature"
-      ],
+      "required": ["dateSignature"],
       "properties": {
         "typePret": {
-          "title": " ",
+          "title": "Articles of the construction and housing code ruling the subscribed loan",
           "$ref": "#/definitions/type_pret"
         },
         "dateSignature": {
@@ -1028,8 +1073,12 @@
           "format": "date"
         },
         "titulairePret": {
-          "title": " ",
+          "title": "Loan holder",
           "$ref": "#/definitions/titulaire_pret"
+        },
+        "accordFinancementRepresentantEtatOutreMer": {
+          "title": "The overseas representative of the State greenlighted the housing's funding",
+          "$ref": "#/definitions/accord_financement_representant_etat_outre_mer"
         }
       }
     },
@@ -1041,11 +1090,6 @@
         "dateEntreeLogement"
       ],
       "properties": {
-        "logementSitueCommuneDesequilibreL8312": {
-          "title": "The housing is located in a municipality that cannot be characterized by an important unbalance between supply and demand for housing that triggers hardships in accessing the existing residential offer",
-          "type": "boolean",
-          "default": false
-        },
         "pret": {
           "title": " ",
           "$ref": "#/definitions/pret"
@@ -1066,11 +1110,11 @@
           "format": "date"
         },
         "typeTravauxLogementD83215": {
-          "title": " ",
+          "title": "The loan finances construction or renovation work after or for the acquisition of the housing",
           "$ref": "#/definitions/type_travaux_logement_d832_15"
         },
         "typeTravauxLogementR8425": {
-          "title": " ",
+          "title": "Objectives of the work financed by the loan",
           "$ref": "#/definitions/type_travaux_logement_r842_5"
         },
         "localHabitePremiereFoisBeneficiaire": {
@@ -1089,8 +1133,13 @@
           "default": false
         },
         "ancienneteLogement": {
-          "title": " ",
+          "title": "Age of the housing",
           "$ref": "#/definitions/neuf_ou_ancien"
+        },
+        "operationsLogementEvolutifsSociauxAccessionProprieteAideeEtat": {
+          "title": "Evolutive social and very social housing, with State-subsidised home owernership accession",
+          "type": "boolean",
+          "default": false
         }
       }
     },
@@ -1105,44 +1154,32 @@
             {
               "title": "Single",
               "type": "string",
-              "enum": [
-                "Celibataire"
-              ]
+              "enum": ["Celibataire"]
             },
             {
               "title": "Married",
               "type": "string",
-              "enum": [
-                "Maries"
-              ]
+              "enum": ["Maries"]
             },
             {
               "title": "Civil union (PACS)",
               "type": "string",
-              "enum": [
-                "Pacses"
-              ]
+              "enum": ["Pacses"]
             },
             {
               "title": "Live-in partnership",
               "type": "string",
-              "enum": [
-                "Concubins"
-              ]
+              "enum": ["Concubins"]
             },
             {
               "title": "Single, separated de facto",
               "type": "string",
-              "enum": [
-                "CelibataireSepareDeFait"
-              ]
+              "enum": ["CelibataireSepareDeFait"]
             },
             {
               "title": "Live-in partnership with some separated de facto",
               "type": "string",
-              "enum": [
-                "ConcubinageDontSepareDeFait"
-              ]
+              "enum": ["ConcubinageDontSepareDeFait"]
             }
           ]
         }
@@ -1262,23 +1299,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Characteristics of split custody",
+          "title": " ",
           "default": "PasDeGardeAlternee",
           "type": "string",
           "anyOf": [
             {
               "title": "No split custody",
               "type": "string",
-              "enum": [
-                "PasDeGardeAlternee"
-              ]
+              "enum": ["PasDeGardeAlternee"]
             },
             {
               "title": "Split custody",
               "type": "string",
-              "enum": [
-                "GardeAlterneeCoefficientPriseEnCharge"
-              ]
+              "enum": ["GardeAlterneeCoefficientPriseEnCharge"]
             }
           ]
         }
@@ -1311,9 +1344,7 @@
             }
           },
           "then": {
-            "required": [
-              "payload"
-            ],
+            "required": ["payload"],
             "properties": {
               "payload": {
                 "title": "Childcare coefficient",
@@ -1328,30 +1359,24 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Educational situation",
+          "title": " ",
           "default": "Pendant",
           "type": "string",
           "anyOf": [
             {
               "title": "Before the period of mandated education",
               "type": "string",
-              "enum": [
-                "Avant"
-              ]
+              "enum": ["Avant"]
             },
             {
               "title": "During the period of mandated education",
               "type": "string",
-              "enum": [
-                "Pendant"
-              ]
+              "enum": ["Pendant"]
             },
             {
               "title": "After the period of mandated education",
               "type": "string",
-              "enum": [
-                "Apres"
-              ]
+              "enum": ["Apres"]
             }
           ]
         }
@@ -1365,23 +1390,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Loan holder",
+          "title": " ",
           "type": "string",
           "default": "Demandeur",
           "anyOf": [
             {
               "title": "Housing benefits applicant",
               "type": "string",
-              "enum": [
-                "Demandeur"
-              ]
+              "enum": ["Demandeur"]
             },
             {
               "title": "Seller of the housing (if life-annuity renting)",
               "type": "string",
-              "enum": [
-                "VendeurQuandDemandeurAContratLocationAccession"
-              ]
+              "enum": ["VendeurQuandDemandeurAContratLocationAccession"]
             }
           ]
         }
@@ -1402,23 +1423,17 @@
             {
               "type": "string",
               "title": "Social housing landlord",
-              "enum": [
-                "BailleurSocial"
-              ]
+              "enum": ["BailleurSocial"]
             },
             {
               "type": "string",
               "title": "Private landlord with social housing convention",
-              "enum": [
-                "BailleurPriveAvecConventionnementSocial"
-              ]
+              "enum": ["BailleurPriveAvecConventionnementSocial"]
             },
             {
               "type": "string",
               "title": "Private landlord",
-              "enum": [
-                "BailleurPrive"
-              ]
+              "enum": ["BailleurPrive"]
             }
           ]
         }
@@ -1482,23 +1497,19 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Kind of residential accomodation",
+          "title": " ",
           "type": "string",
           "default": "Autre",
           "anyOf": [
             {
               "title": "Accomodation for elderly or disabled persons",
               "type": "string",
-              "enum": [
-                "LogementPersonnesAgeesOuHandicapees"
-              ]
+              "enum": ["LogementPersonnesAgeesOuHandicapees"]
             },
             {
               "title": "Social residence",
               "type": "string",
-              "enum": [
-                "ResidenceSociale"
-              ]
+              "enum": ["ResidenceSociale"]
             },
             {
               "title": "Hostel for young workers or migrants ruled by a L.353-2 convention since before 1995",
@@ -1510,9 +1521,7 @@
             {
               "title": "Other",
               "type": "string",
-              "enum": [
-                "Autre"
-              ]
+              "enum": ["Autre"]
             }
           ]
         }
@@ -1527,44 +1536,34 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Articles of the construction and housing code ruling the subscribed loan",
+          "title": " ",
           "type": "string",
           "default": "D331_63_64",
           "anyOf": [
             {
               "type": "string",
               "title": "Article D331-32 (PAP)",
-              "enum": [
-                "D331_32"
-              ]
+              "enum": ["D331_32"]
             },
             {
               "title": "Articles D331-63 and D331-64 (state-approved loan)",
               "type": "string",
-              "enum": [
-                "D331_63_64"
-              ]
+              "enum": ["D331_63_64"]
             },
             {
               "title": "Article D331-59-8 (subdivided PAP)",
               "type": "string",
-              "enum": [
-                "D331_59_8"
-              ]
+              "enum": ["D331_59_8"]
             },
             {
               "title": "Article D331-76-1 (subdivided state-approved loan)",
               "type": "string",
-              "enum": [
-                "D331_76_1"
-              ]
+              "enum": ["D331_76_1"]
             },
             {
               "title": "Other",
               "type": "string",
-              "enum": [
-                "Autre"
-              ]
+              "enum": ["Autre"]
             }
           ]
         }
@@ -1579,29 +1578,23 @@
       "properties": {
         "kind": {
           "type": "string",
-          "title": "The loan finances construction or renovation work after or for the acquisition of the housing",
+          "title": " ",
           "default": "PasDeTravaux",
           "anyOf": [
             {
               "title": "The loan finances construction or renovation work for the acquisition of the housing",
               "type": "string",
-              "enum": [
-                "TravauxPourAcquisitionD832_15_1"
-              ]
+              "enum": ["TravauxPourAcquisitionD832_15_1"]
             },
             {
               "title": "The loan finances construction or renovation work after the acquisition of the housing",
               "type": "string",
-              "enum": [
-                "TravauxSurLogementDejaAcquisD832_15_2"
-              ]
+              "enum": ["TravauxSurLogementDejaAcquisD832_15_2"]
             },
             {
               "title": "No construction or renovation work",
               "type": "string",
-              "enum": [
-                "PasDeTravaux"
-              ]
+              "enum": ["PasDeTravaux"]
             }
           ]
         }
@@ -1615,37 +1608,29 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Objectives of the work financed by the loan",
+          "title": " ",
           "default": "PasDeTravaux",
           "type": "string",
           "anyOf": [
             {
               "title": "Decency of the housing",
               "type": "string",
-              "enum": [
-                "ObjectifDecenceLogement"
-              ]
+              "enum": ["ObjectifDecenceLogement"]
             },
             {
               "title": "Listed by article R321-15",
               "type": "string",
-              "enum": [
-                "PrevuDansListeR321_15"
-              ]
+              "enum": ["PrevuDansListeR321_15"]
             },
             {
               "title": "Extend or make the housing habitable (state-approved loan)",
               "type": "string",
-              "enum": [
-                "AgrandirOuRendreHabitableD331_63"
-              ]
+              "enum": ["AgrandirOuRendreHabitableD331_63"]
             },
             {
               "title": "No construction or renovation work",
               "type": "string",
-              "enum": [
-                "PasDeTravaux"
-              ]
+              "enum": ["PasDeTravaux"]
             }
           ]
         }
@@ -1666,23 +1651,17 @@
             {
               "title": "Zone I",
               "type": "string",
-              "enum": [
-                "Zone1"
-              ]
+              "enum": ["Zone1"]
             },
             {
               "title": "Zone II",
               "type": "string",
-              "enum": [
-                "Zone2"
-              ]
+              "enum": ["Zone2"]
             },
             {
               "title": "Zone III",
               "type": "string",
-              "enum": [
-                "Zone3"
-              ]
+              "enum": ["Zone3"]
             }
           ]
         }
@@ -1713,8 +1692,5 @@
       "minimum": 0
     }
   },
-  "required": [
-    "dateCouranteIn",
-    "ressourcesMenagePrisesEnCompteIn"
-  ]
+  "required": ["dateCouranteIn", "ressourcesMenagePrisesEnCompteIn"]
 }
