@@ -53,9 +53,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -82,8 +80,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     },
     "autre_personne_a_charge": {
@@ -158,8 +155,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     },
     "changement_logement_d842_4": {
@@ -212,9 +208,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -273,9 +267,7 @@
           ]
         },
         "payload": {
-          "title": " ",
-          "type": "null",
-          "default": null
+
         }
       }
     },
@@ -571,8 +563,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     },
     "menage": {
@@ -785,9 +776,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -842,9 +831,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -920,9 +907,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -956,8 +941,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     },
     "personne_a_charge": {
@@ -1050,9 +1034,7 @@
         }
       },
       "payload": {
-        "title": " ",
-        "type": "null",
-        "default": null
+
       }
     },
     "pret": {
@@ -1192,9 +1174,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -1228,9 +1208,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -1246,9 +1224,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -1264,9 +1240,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -1282,9 +1256,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -1324,9 +1296,7 @@
           "then": {
             "properties": {
               "payload": {
-                "title": " ",
-                "type": "null",
-                "default": null
+
               }
             }
           }
@@ -1378,8 +1348,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     },
     "titulaire_pret": {
@@ -1404,8 +1373,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     },
     "type_bailleur": {
@@ -1480,9 +1448,7 @@
           "then": {
             "properties": {
               "payload": {
-                "type": "null",
-                "title": " ",
-                "default": null
+
               }
             }
           }
@@ -1523,9 +1489,7 @@
         }
       },
       "payload": {
-        "title": " ",
-        "type": "null",
-        "default": null
+
       }
     },
     "type_pret": {
@@ -1565,8 +1529,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     },
     "type_travaux_logement_d832_15": {
@@ -1596,8 +1559,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     },
     "type_travaux_logement_r842_5": {
@@ -1632,8 +1594,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     },
     "zone_d_habitation": {
@@ -1663,8 +1624,7 @@
         }
       },
       "payload": {
-        "type": "null",
-        "default": null
+
       }
     }
   },

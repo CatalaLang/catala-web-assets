@@ -57,9 +57,7 @@
           ]
         },
         "payload": {
-          "title": " ",
-          "type": "null",
-          "default": null
+
         }
       }
     },
@@ -130,9 +128,7 @@
           ]
         },
         "payload": {
-          "title": " ",
-          "type": "null",
-          "default": null
+
         }
       }
     }
