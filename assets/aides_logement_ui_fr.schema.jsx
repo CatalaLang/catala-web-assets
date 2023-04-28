@@ -164,6 +164,12 @@ export const uiSchema = {
         },
         "residence": {
             "ui:help": <span>Indiquez si le logement se situe en métropole ou dans une collectivité d'outre-mer.</span>
+        },
+        "prestationsRecues": {
+            "ui:tabLabel": "Prestation",
+            "items": {
+                "ui:hideTitle": true,
+            }
         }
     },
     "demandeurIn": {
