@@ -5,7 +5,7 @@
   "repository": "git@github.com:CatalaLang/catala-web-assets.git",
   "author": "Emile Rolley <emile.rolley@tuta.io>",
   "homepage": "https://github.com/CatalaLang/catala-web-assets#readme",
-  "license": "GLPL-3.0",
+  "license": "Apache-2.0",
   "main": "null",
   "files": [
     "assets"
