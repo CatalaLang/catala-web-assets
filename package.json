@@ -1,6 +1,6 @@
 {
-  "name": "catala-web-assets",
-  "version": "0.1.0-b.1",
+  "name": "@catala-lang/catala-web-assets",
+  "version": "0.1.0-b.2",
   "description": "Web assets generated from Catala programs about the French law",
   "repository": "git@github.com:CatalaLang/catala-web-assets.git",
   "author": "Emile Rolley <emile.rolley@tuta.io>",
@@ -14,5 +14,8 @@
     "catala",
     "assets",
     "law"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
