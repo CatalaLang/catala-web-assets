@@ -550,10 +550,6 @@
     "nationalite": {
       "$ref": "#/definitions/nationalite"
     },
-    "beneficieTitrePersonnelAidePersonnelleLogement": {
-      "type": "boolean",
-      "default": false
-    },
     "aDejaOuvertDroitAuxAllocationsFamiliales": {
       "type": "boolean",
       "default": false
@@ -668,6 +664,10 @@
     "typeUser": {
       "$ref": "#/definitions/type_logement_foyer"
     },
+    "logementFoyerJeunesTravailleurs": {
+      "type": "boolean",
+      "default": false
+    },
     "remplitConditionsR83221": {
       "type": "boolean",
       "default": false
@@ -701,6 +701,14 @@
       "default": false
     },
     "logementMeubleD8422": {
+      "type": "boolean",
+      "default": false
+    },
+    "logementEstChambre": {
+      "type": "boolean",
+      "default": false
+    },
+    "colocation": {
       "type": "boolean",
       "default": false
     }
@@ -1776,7 +1784,7 @@
         },
         {
           "type": "string",
-          "enum": ["FoyerJeunesTrvailleursOuMigrantsConventionneL353_2Avant1995"]
+          "enum": ["FoyerJeunesTravailleursOuMigrantsConventionneL353_2Avant1995"]
         },
         {
           "type": "string",
@@ -1822,7 +1830,7 @@
         "if": {
           "properties": {
             "kind": {
-              "const": "FoyerJeunesTrvailleursOuMigrantsConventionneL353_2Avant1995"
+              "const": "FoyerJeunesTravailleursOuMigrantsConventionneL353_2Avant1995"
             }
           }
         },

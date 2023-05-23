@@ -87,6 +87,9 @@ export const uiSchema = {
                     "typeUser": {
                         "ui:help": <span>Type of housing according to the classification of <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038878722/">article R832-20 of the construction and housing code</a>.</span>
                     },
+                    "logementFoyerJeunesTravailleurs": {
+                        "ui:help": <span>This distinction can activate the 2° of <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038878710">article D832-25 of the construction and housing code</a>.</span>
+                    },
                     "remplitConditionsR83221": {
                         "ui:help": <span>See <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039048891/" target="_blank">article R832-21 of the construction and housing code</a> for more information.</span>
                     },

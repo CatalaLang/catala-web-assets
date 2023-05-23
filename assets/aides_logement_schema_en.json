@@ -350,11 +350,6 @@
           "title": " ",
           "$ref": "#/definitions/nationalite"
         },
-        "beneficieTitrePersonnelAidePersonnelleLogement": {
-          "title": "The child personally benefits from housing benefits",
-          "type": "boolean",
-          "default": false
-        },
         "aDejaOuvertDroitAuxAllocationsFamiliales": {
           "title": "The child has already opened rights to family benefits",
           "type": "boolean",
@@ -496,6 +491,11 @@
           "title": "Kind of residential accomodation",
           "$ref": "#/definitions/type_logement_foyer"
         },
+        "logementFoyerJeunesTravailleurs": {
+          "type": "boolean",
+          "default": false,
+          "title": "The residential accomodation is for young workers"
+        },
         "remplitConditionsR83221": {
           "title": "The residential accomodation satisfies the regulations for housing benefits eligibility",
           "type": "boolean",
@@ -538,6 +538,16 @@
         },
         "logementMeubleD8422": {
           "title": "The housing is rented with furniture",
+          "type": "boolean",
+          "default": false
+        },
+        "logementEstChambre": {
+          "title": "The housing is just a room",
+          "type": "boolean",
+          "default": false
+        },
+        "colocation": {
+          "title": "The housing is flatshared",
           "type": "boolean",
           "default": false
         }
@@ -1481,7 +1491,7 @@
               "title": "Hostel for young workers or migrants ruled by a L.353-2 convention since before 1995",
               "type": "string",
               "enum": [
-                "FoyerJeunesTrvailleursOuMigrantsConventionneL353_2Avant1995"
+                "FoyerJeunesTravailleursOuMigrantsConventionneL353_2Avant1995"
               ]
             },
             {

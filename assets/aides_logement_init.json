@@ -43,7 +43,6 @@
       {
         "kind": "EnfantACharge",
         "payload": {
-          "beneficieTitrePersonnelAidePersonnelleLogement": false,
           "aDejaOuvertDroitAuxAllocationsFamiliales": true,
           "remunerationMensuelle": 0,
           "nationalite": {
@@ -66,7 +65,6 @@
       {
         "kind": "EnfantACharge",
         "payload": {
-          "beneficieTitrePersonnelAidePersonnelleLogement": false,
           "aDejaOuvertDroitAuxAllocationsFamiliales": true,
           "remunerationMensuelle": 0,
           "nationalite": {

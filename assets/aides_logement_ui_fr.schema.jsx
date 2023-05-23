@@ -87,6 +87,9 @@ export const uiSchema = {
                     "typeUser": {
                         "ui:help": <span>Type de logement foyer selon la classification de l'<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038878722/">article R832-20 du code de la construction et de l'habitation</a>.</span>
                     },
+                    "logementFoyerJeunesTravailleurs": {
+                        "ui:help": <span>Cette distinction peut activer le 2° de l'<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038878710">article D832-25 du code de la construction et de l'habitation</a>.</span>
+                    },
                     "remplitConditionsR83221": {
                         "ui:help": <span>Voir l'<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039048891/" target="_blank">article R832-21 du code de la construction et de l'habitation pour plus d'informations</a>. Attention, pour la Guadeloupe, la Guyane, la Martinique, La Réunion et Mayotte, voir l'<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047398875" target="_blank">article R861-20</a> pour des conditions alternatives.</span>
                     },

@@ -350,11 +350,6 @@
           "title": " ",
           "$ref": "#/definitions/nationalite"
         },
-        "beneficieTitrePersonnelAidePersonnelleLogement": {
-          "title": "L'enfant béneficie à titre personnel des aides au logement",
-          "type": "boolean",
-          "default": false
-        },
         "aDejaOuvertDroitAuxAllocationsFamiliales": {
           "title": "L'enfant à déjà ouvert droit aux allocations familiales",
           "type": "boolean",
@@ -496,6 +491,11 @@
           "title": "Type de logement foyer",
           "$ref": "#/definitions/type_logement_foyer"
         },
+        "logementFoyerJeunesTravailleurs": {
+          "type": "boolean",
+          "default": false,
+          "title": "Le logement-foyer est un logement-foyer de jeunes travailleurs"
+        },
         "remplitConditionsR83221": {
           "title": "Le logement-foyer satisfait les conditions réglementaires pour les aides au logement",
           "type": "boolean",
@@ -538,6 +538,16 @@
         },
         "logementMeubleD8422": {
           "title": "Le logement est loué meublé",
+          "type": "boolean",
+          "default": false
+        },
+        "logementEstChambre": {
+          "title": "Le logement est une chambre",
+          "type": "boolean",
+          "default": false
+        },
+        "colocation": {
+          "title": "Le logement est partagé en colocation",
           "type": "boolean",
           "default": false
         }
@@ -1477,7 +1487,7 @@
               "title": "Foyer pour jeunes travailleurs ou migrants conventionné L. 353-2 avant 1995",
               "type": "string",
               "enum": [
-                "FoyerJeunesTrvailleursOuMigrantsConventionneL353_2Avant1995"
+                "FoyerJeunesTravailleursOuMigrantsConventionneL353_2Avant1995"
               ]
             },
             {
