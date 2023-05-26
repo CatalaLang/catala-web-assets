@@ -91,7 +91,7 @@ Fichiers sources tissés dans ce document:
 <ul>
 <li><tt>allocations_familiales.catala_fr</tt>, dernière modification le 2023-03-30, 15:57</li>
 <li><tt>prologue.catala_fr</tt>, dernière modification le 2023-05-05, 18:52</li>
-<li><tt>smic.catala_fr</tt>, dernière modification le 2023-04-18, 9:49</li>
+<li><tt>smic.catala_fr</tt>, dernière modification le 2023-05-25, 18:26</li>
 <li><tt>prologue.catala_fr</tt>, dernière modification le 2023-04-18, 9:49</li>
 <li><tt>bmaf.catala_fr</tt>, dernière modification le 2023-05-05, 18:52</li>
 <li><tt>autres_codes.catala_fr</tt>, dernière modification le 2023-03-30, 15:57</li>
@@ -252,6 +252,21 @@ Fichiers sources tissés dans ce document:
                 <li class="toc-item">
                   <div>
                     <a href="#Montant%20du%20salaire%20minimum%20de%20croissance-Decret%20n%20%20%202022-1608%20du%2022%20decembre%202022%20portant%20relevement%20du%20salaire%20minimum%20de%20croissance-Article%201">Article 1</a>
+                    <ol class="toc-3">
+                      
+                      </ol>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </li>
+          <li class="toc-item">
+            <div>
+              <a href="#Montant%20du%20salaire%20minimum%20de%20croissance-Arrete%20du%2026%20avril%202023%20relatif%20au%20relevement%20du%20salaire%20minimum%20de%20croissance">Arrêté du 26 avril 2023 relatif au relèvement du salaire minimum de croissance</a>
+              <ol class="toc-2">
+                <li class="toc-item">
+                  <div>
+                    <a href="#Montant%20du%20salaire%20minimum%20de%20croissance-Arrete%20du%2026%20avril%202023%20relatif%20au%20relevement%20du%20salaire%20minimum%20de%20croissance-Article%202">Article 2</a>
                     <ol class="toc-3">
                       
                       </ol>
@@ -1687,7 +1702,7 @@ Fichiers sources tissés dans ce document:
 </pre></div></td><td class="code"><div class="highlight"><pre>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-268" name="examples/allocations_familiales/../smic/smic.catala_fr-268"></a><span class="kr">champ d&#39;application</span><span class="s"> </span><span class="nc">Smic</span><span class="s"> </span><span class="o">:</span><span class="s"></span>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-269" name="examples/allocations_familiales/../smic/smic.catala_fr-269"></a><span class="s">  </span><span class="kr">définition</span><span class="s"> </span><span class="nv">brut_horaire</span><span class="s"> </span><span class="kr">sous condition</span><span class="s"></span>
-<a id="examples/allocations_familiales/../smic/smic.catala_fr-270" name="examples/allocations_familiales/../smic/smic.catala_fr-270"></a><span class="s">    </span><span class="nv">date_courante</span><span class="s"> </span><span class="o">&gt;=</span><span class="s"> </span><span class="mi">|2023-01-01|</span><span class="s"> </span><span class="o">et</span><span class="s"> </span><span class="o">(</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-270" name="examples/allocations_familiales/../smic/smic.catala_fr-270"></a><span class="s">    </span><span class="nv">date_courante</span><span class="s"> </span><span class="o">&gt;=</span><span class="s"> </span><span class="mi">|2023-01-01|</span><span class="s"> </span><span class="o">et</span><span class="s"> </span><span class="nv">date_courante</span><span class="s"> </span><span class="o">&lt;</span><span class="s"> </span><span class="mi">|2023-05-01|</span><span class="s"> </span><span class="o">et</span><span class="s"> </span><span class="o">(</span><span class="s"></span>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-271" name="examples/allocations_familiales/../smic/smic.catala_fr-271"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">Métropole</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-272" name="examples/allocations_familiales/../smic/smic.catala_fr-272"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">Guadeloupe</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-273" name="examples/allocations_familiales/../smic/smic.catala_fr-273"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">Guyane</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
@@ -1714,7 +1729,7 @@ Fichiers sources tissés dans ce document:
 </pre></div></td><td class="code"><div class="highlight"><pre>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-286" name="examples/allocations_familiales/../smic/smic.catala_fr-286"></a><span class="kr">champ d&#39;application</span><span class="s"> </span><span class="nc">Smic</span><span class="s"> </span><span class="o">:</span><span class="s"></span>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-287" name="examples/allocations_familiales/../smic/smic.catala_fr-287"></a><span class="s">  </span><span class="kr">définition</span><span class="s"> </span><span class="nv">brut_horaire</span><span class="s"> </span><span class="kr">sous condition</span><span class="s"></span>
-<a id="examples/allocations_familiales/../smic/smic.catala_fr-288" name="examples/allocations_familiales/../smic/smic.catala_fr-288"></a><span class="s">    </span><span class="nv">date_courante</span><span class="s"> </span><span class="o">&gt;=</span><span class="s"> </span><span class="mi">|2023-01-01|</span><span class="s"> </span><span class="o">et</span><span class="s"> </span><span class="o">(</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-288" name="examples/allocations_familiales/../smic/smic.catala_fr-288"></a><span class="s">    </span><span class="nv">date_courante</span><span class="s"> </span><span class="o">&gt;=</span><span class="s"> </span><span class="mi">|2023-01-01|</span><span class="s"> </span><span class="o">et</span><span class="s"> </span><span class="nv">date_courante</span><span class="s"> </span><span class="o">&lt;</span><span class="s"> </span><span class="mi">|2023-05-01|</span><span class="s"> </span><span class="o">et</span><span class="s"> </span><span class="o">(</span><span class="s"></span>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-289" name="examples/allocations_familiales/../smic/smic.catala_fr-289"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">Mayotte</span><span class="o">)</span><span class="s"></span>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-290" name="examples/allocations_familiales/../smic/smic.catala_fr-290"></a><span class="s">    </span><span class="o">)</span><span class="s"></span>
 <a id="examples/allocations_familiales/../smic/smic.catala_fr-291" name="examples/allocations_familiales/../smic/smic.catala_fr-291"></a><span class="s">  </span><span class="kr">conséquence</span><span class="s"> </span><span class="kr">égal à</span><span class="s"> </span><span class="mi">8,51</span><span class="s"> </span><span class="o">€</span><span class="s"></span>
@@ -1722,6 +1737,68 @@ Fichiers sources tissés dans ce document:
 </td></tr></table>
 </div>
 
+
+</details>
+<h2 class='law-heading' id="Montant%20du%20salaire%20minimum%20de%20croissance-Arrete%20du%2026%20avril%202023%20relatif%20au%20relevement%20du%20salaire%20minimum%20de%20croissance"><a href="#Montant%20du%20salaire%20minimum%20de%20croissance-Arrete%20du%2026%20avril%202023%20relatif%20au%20relevement%20du%20salaire%20minimum%20de%20croissance">Arrêté du 26 avril 2023 relatif au relèvement du salaire minimum de croissance</a></h2>
+<details><summary>Arrêté du 26 avril 2023 relatif au relèvement du salaire minimum de croissance</summary>
+
+<h3 class='law-heading' id="Montant%20du%20salaire%20minimum%20de%20croissance-Arrete%20du%2026%20avril%202023%20relatif%20au%20relevement%20du%20salaire%20minimum%20de%20croissance-Article%202"><a href="#Montant%20du%20salaire%20minimum%20de%20croissance-Arrete%20du%2026%20avril%202023%20relatif%20au%20relevement%20du%20salaire%20minimum%20de%20croissance-Article%202">Article 2</a><a class="link-article" href="https://legifrance.gouv.fr/jorf/id/JORFARTI000047495827" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h3>
+
+<div class='law-text'><p>En conséquence, à compter du 1er mai 2023, pour les catégories de travailleurs mentionnés à l’article L. 2211-1 du code du travail, le montant du salaire minimum de croissance est relevé dans les conditions ci-après :</p>
+<p>1° En métropole, en Guadeloupe, en Guyane, en Martinique, à La Réunion, à Saint-Barthélemy, à Saint-Martin et à Saint-Pierre-et-Miquelon, son montant est porté à 11,52 € l’heure ;</p></div>
+<div class='code-wrapper catala-code'>
+<div class='filename'>examples/allocations_familiales/../smic/smic.catala_fr</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-307">307</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-308">308</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-309">309</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-310">310</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-311">311</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-312">312</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-313">313</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-314">314</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-315">315</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-316">316</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-317">317</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-318">318</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-319">319</a></span>
+</pre></div></td><td class="code"><div class="highlight"><pre>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-307" name="examples/allocations_familiales/../smic/smic.catala_fr-307"></a><span class="kr">champ d&#39;application</span><span class="s"> </span><span class="nc">Smic</span><span class="s"> </span><span class="o">:</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-308" name="examples/allocations_familiales/../smic/smic.catala_fr-308"></a><span class="s">  </span><span class="kr">définition</span><span class="s"> </span><span class="nv">brut_horaire</span><span class="s"> </span><span class="kr">sous condition</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-309" name="examples/allocations_familiales/../smic/smic.catala_fr-309"></a><span class="s">    </span><span class="nv">date_courante</span><span class="s"> </span><span class="o">&gt;=</span><span class="s"> </span><span class="mi">|2023-05-01|</span><span class="s"> </span><span class="o">et</span><span class="s"> </span><span class="o">(</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-310" name="examples/allocations_familiales/../smic/smic.catala_fr-310"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">Métropole</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-311" name="examples/allocations_familiales/../smic/smic.catala_fr-311"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">Guadeloupe</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-312" name="examples/allocations_familiales/../smic/smic.catala_fr-312"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">Guyane</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-313" name="examples/allocations_familiales/../smic/smic.catala_fr-313"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">Martinique</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-314" name="examples/allocations_familiales/../smic/smic.catala_fr-314"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">LaRéunion</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-315" name="examples/allocations_familiales/../smic/smic.catala_fr-315"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">SaintBarthélemy</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-316" name="examples/allocations_familiales/../smic/smic.catala_fr-316"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">SaintMartin</span><span class="o">)</span><span class="s"> </span><span class="o">ou</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-317" name="examples/allocations_familiales/../smic/smic.catala_fr-317"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">SaintPierreEtMiquelon</span><span class="o">)</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-318" name="examples/allocations_familiales/../smic/smic.catala_fr-318"></a><span class="s">    </span><span class="o">)</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-319" name="examples/allocations_familiales/../smic/smic.catala_fr-319"></a><span class="s">  </span><span class="kr">conséquence</span><span class="s"> </span><span class="kr">égal à</span><span class="s"> </span><span class="mi">11,52</span><span class="s"> </span><span class="o">€</span><span class="s"></span>
+</pre></div>
+</td></tr></table>
+</div>
+<div class='law-text'><p>2° A Mayotte, son montant est fixé à 8,70 € l’heure.</p></div>
+<div class='code-wrapper catala-code'>
+<div class='filename'>examples/allocations_familiales/../smic/smic.catala_fr</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-325">325</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-326">326</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-327">327</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-328">328</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-329">329</a></span>
+<span class="normal"><a href="#examples/allocations_familiales/../smic/smic.catala_fr-330">330</a></span>
+</pre></div></td><td class="code"><div class="highlight"><pre>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-325" name="examples/allocations_familiales/../smic/smic.catala_fr-325"></a><span class="kr">champ d&#39;application</span><span class="s"> </span><span class="nc">Smic</span><span class="s"> </span><span class="o">:</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-326" name="examples/allocations_familiales/../smic/smic.catala_fr-326"></a><span class="s">  </span><span class="kr">définition</span><span class="s"> </span><span class="nv">brut_horaire</span><span class="s"> </span><span class="kr">sous condition</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-327" name="examples/allocations_familiales/../smic/smic.catala_fr-327"></a><span class="s">    </span><span class="nv">date_courante</span><span class="s"> </span><span class="o">&gt;=</span><span class="s"> </span><span class="mi">|2023-05-01|</span><span class="s"> </span><span class="o">et</span><span class="s"> </span><span class="o">(</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-328" name="examples/allocations_familiales/../smic/smic.catala_fr-328"></a><span class="s">      </span><span class="o">(</span><span class="nv">résidence</span><span class="s"> </span><span class="o">=</span><span class="s"> </span><span class="nc">Mayotte</span><span class="o">)</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-329" name="examples/allocations_familiales/../smic/smic.catala_fr-329"></a><span class="s">    </span><span class="o">)</span><span class="s"></span>
+<a id="examples/allocations_familiales/../smic/smic.catala_fr-330" name="examples/allocations_familiales/../smic/smic.catala_fr-330"></a><span class="s">  </span><span class="kr">conséquence</span><span class="s"> </span><span class="kr">égal à</span><span class="s"> </span><span class="mi">8,70</span><span class="s"> </span><span class="o">€</span><span class="s"></span>
+</pre></div>
+</td></tr></table>
+</div>
 
 
 </details>
