@@ -3,7 +3,9 @@ export const uiSchema = {
         "submitText": "Launch the computation! "
     },
     "menageIn": {
+		"ui:heading": "h3",
         "logement": {
+			"ui:heading": "h4",
             "modeOccupation": {
                 "payload": {
                     "bailleur": {
@@ -112,7 +114,10 @@ export const uiSchema = {
             }
         },
         "personnesACharge": {
+			"ui:heading": "h4",
+            "ui:tabLabel": "Dependant",
             "items": {
+                "ui:hideTitle": true,
                 "payload": {
                     "nationalite": {
                         "payload": {
@@ -165,9 +170,16 @@ export const uiSchema = {
         },
         "residence": {
             "ui:help": <span>Indicate whether the household lives in overseas territories of France or in the mainland.</span>
+        },
+        "prestationsRecues": {
+            "ui:tabLabel": "Benefit",
+            "items": {
+                "ui:hideTitle": true,
+            }
         }
     },
     "demandeurIn": {
+		"ui:heading": "h3",
         "personneHebergeeCentreSoinLL162223SecuriteSociale": {
             "ui:help": <span>These long-terme healthcare centers or units are mentioned by paragraph 3° of <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031688064" target="_blank">article L162-22 of the social security code</a>.</span>
         },
