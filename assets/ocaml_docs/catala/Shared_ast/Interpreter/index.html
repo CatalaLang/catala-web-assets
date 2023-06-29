@@ -1,30 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Interpreter (catala.Shared_ast.Interpreter)</title><link rel="stylesheet" href="../../../_odoc_support/odoc.css"/><meta charset="utf-8"/><meta name="generator" content="odoc 2.1.1"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body class="odoc"><nav class="odoc-nav"><a href="../index.html">Up</a> – <a href="../../index.html">catala</a> &#x00BB; <a href="../index.html">Shared_ast</a> &#x00BB; Interpreter</nav><header class="odoc-preamble"><h1>Module <code><span>Shared_ast.Interpreter</span></code></h1><p>Reference interpreter for the default calculus</p></header><div class="odoc-content"><div class="odoc-spec"><div class="spec value" id="val-evaluate_operator" class="anchored"><a href="#val-evaluate_operator" class="anchor"></a><code><span><span class="keyword">val</span> evaluate_operator : 
-  <span><span>( <span><span><span>( <span><span>( <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; resolved : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; syntacticNames : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; resolvedNames : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; scopeVarStates : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; scopeVarSimpl : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; defaultTerms : <span class="type-var">_</span>
-        ; exceptions : <span class="type-var">_</span> &gt;</span> <span class="keyword">as</span> 'a,
-        <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; resolved : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; syntacticNames : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; resolvedNames : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; scopeVarStates : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; scopeVarSimpl : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-        ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-        ; defaultTerms : <span class="type-var">_</span>
-        ; exceptions : <span class="type-var">_</span> &gt;</span> <span class="keyword">as</span> 'a,
-        <span class="type-var">'m</span> )</span>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Interpreter (catala.Shared_ast.Interpreter)</title><link rel="stylesheet" href="../../../odoc.css"/><meta charset="utf-8"/><meta name="generator" content="odoc 2.1.1"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body class="odoc"><nav class="odoc-nav"><a href="../index.html">Up</a> – <a href="../../index.html">catala</a> &#x00BB; <a href="../index.html">Shared_ast</a> &#x00BB; Interpreter</nav><header class="odoc-preamble"><h1>Module <code><span>Shared_ast.Interpreter</span></code></h1><p>Reference interpreter for the default calculus</p></header><div class="odoc-content"><div class="odoc-spec"><div class="spec exception" id="exception-CatalaException" class="anchored"><a href="#exception-CatalaException" class="anchor"></a><code><span><span class="keyword">exception</span> </span><span><span class="exception">CatalaException</span> <span class="keyword">of</span> <span class="xref-unresolved">Shared_ast__Definitions.except</span></span></code></div></div><div class="odoc-spec"><div class="spec type" id="type-features" class="anchored"><a href="#type-features" class="anchor"></a><code><span><span class="keyword">type</span> features</span><span> =
+  <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
+  ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
+  ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
+  ; resolved : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
+  ; syntacticNames : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
+  ; resolvedNames : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
+  ; scopeVarStates : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
+  ; scopeVarSimpl : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
+  ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
+  ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span> &gt;</span></span></code></div><div class="spec-doc"><p>The interpreter only works on dcalc and lcalc, which share these features</p></div></div><div class="odoc-spec"><div class="spec value" id="val-evaluate_operator" class="anchored"><a href="#val-evaluate_operator" class="anchor"></a><code><span><span class="keyword">val</span> evaluate_operator : 
+  <span><span>( <span><span><span>( <span><span>( <span>&lt; <a href="#type-features">features</a>.. &gt;</span> <span class="keyword">as</span> 'a, <span>&lt; <a href="#type-features">features</a>.. &gt;</span> <span class="keyword">as</span> 'a, <span class="type-var">'m</span> )</span>
         <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
       <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
       <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
@@ -51,8 +37,9 @@
       ; scopeVarSimpl : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
       ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
       ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; defaultTerms : <span class="type-var">'a</span>
-      ; exceptions : <span class="type-var">'b</span> &gt;</span>,
+      ; defaultTerms : <span class="type-var">_</span>
+      ; exceptions : <span class="type-var">_</span>
+      ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span> <span class="keyword">as</span> 'a,
       <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
@@ -63,38 +50,14 @@
       ; scopeVarSimpl : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
       ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
       ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; defaultTerms : <span class="type-var">'a</span>
-      ; exceptions : <span class="type-var">'b</span> &gt;</span>,
+      ; defaultTerms : <span class="type-var">_</span>
+      ; exceptions : <span class="type-var">_</span>
+      ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span> <span class="keyword">as</span> 'a,
       <span class="type-var">'m</span> )</span>
       <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span>( <span><span>( <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; resolved : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; syntacticNames : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; resolvedNames : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; scopeVarStates : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; scopeVarSimpl : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; defaultTerms : <span class="type-var">'a</span>
-      ; exceptions : <span class="type-var">'b</span> &gt;</span>,
-      <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; resolved : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; syntacticNames : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; resolvedNames : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; scopeVarStates : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; scopeVarSimpl : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; defaultTerms : <span class="type-var">'a</span>
-      ; exceptions : <span class="type-var">'b</span> &gt;</span>,
-      <span class="type-var">'m</span> )</span>
-      <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
+  <span><span>( <span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div><div class="spec-doc"><p>Evaluates an expression according to the semantics of the default calculus.</p></div></div><div class="odoc-spec"><div class="spec value" id="val-interpret_program_dcalc" class="anchored"><a href="#val-interpret_program_dcalc" class="anchor"></a><code><span><span class="keyword">val</span> interpret_program_dcalc : 
   <span><span><span><span>( <span><span>( <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
@@ -108,7 +71,8 @@
       ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
       ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; defaultTerms : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
+      ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
+      ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
       <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
@@ -120,7 +84,8 @@
       ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
       ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; defaultTerms : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-      ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
+      ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
+      ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
       <span class="type-var">'m</span> )</span>
       <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
@@ -139,7 +104,8 @@
          ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
          ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
          ; defaultTerms : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-         ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
+         ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
+         ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
          <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
          ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
          ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
@@ -151,7 +117,8 @@
          ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
          ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
          ; defaultTerms : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
-         ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
+         ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
+         ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
          <span class="type-var">'m</span> )</span>
          <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
        <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
@@ -168,7 +135,8 @@
       ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
       ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; defaultTerms : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span> &gt;</span>,
+      ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
+      ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
       <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
@@ -180,7 +148,8 @@
       ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
       ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
       ; defaultTerms : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-      ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span> &gt;</span>,
+      ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
+      ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
       <span class="type-var">'m</span> )</span>
       <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
@@ -199,7 +168,8 @@
          ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
          ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
          ; defaultTerms : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-         ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span> &gt;</span>,
+         ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
+         ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
          <span>&lt; monomorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
          ; polymorphic : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
          ; overloaded : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
@@ -211,7 +181,8 @@
          ; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
          ; assertions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
          ; defaultTerms : <span class="xref-unresolved">Shared_ast__Definitions.no</span>
-         ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span> &gt;</span>,
+         ; exceptions : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>
+         ; custom : <span class="xref-unresolved">Shared_ast__Definitions.no</span> &gt;</span>,
          <span class="type-var">'m</span> )</span>
          <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
        <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
