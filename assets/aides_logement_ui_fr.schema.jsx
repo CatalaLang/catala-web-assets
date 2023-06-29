@@ -3,7 +3,9 @@ export const uiSchema = {
         "submitText": "Lancer le calcul ! "
     },
     "menageIn": {
+		"ui:heading": "h3",
         "logement": {
+			"ui:heading": "h4",
             "modeOccupation": {
                 "payload": {
                     "bailleur": {
@@ -112,6 +114,7 @@ export const uiSchema = {
             }
         },
         "personnesACharge": {
+			"ui:heading": "h4",
             "ui:tabLabel": "Personne",
             "items": {
                 "ui:hideTitle": true,
@@ -176,6 +179,7 @@ export const uiSchema = {
         }
     },
     "demandeurIn": {
+		"ui:heading": "h3",
         "personneHebergeeCentreSoinLL162223SecuriteSociale": {
             "ui:help": <span>Ces unités ou centres de soins sont mentionnées mentionnés au 3° de l'<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031688064" target="_blank">article L162-22 du code de la sécurité sociale</a>.</span>
         },

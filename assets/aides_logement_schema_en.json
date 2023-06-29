@@ -322,7 +322,7 @@
           "format": "date"
         },
         "nationalite": {
-          "title": " ",
+          "title": "Nationality of the applicant",
           "$ref": "#/definitions/nationalite"
         },
         "personneHebergeeCentreSoinLL162223SecuriteSociale": {
@@ -347,7 +347,7 @@
       "required": ["dateDeNaissance"],
       "properties": {
         "nationalite": {
-          "title": " ",
+          "title": "Nationality of the child",
           "$ref": "#/definitions/nationalite"
         },
         "aDejaOuvertDroitAuxAllocationsFamiliales": {
@@ -461,7 +461,7 @@
           "$ref": "#/definitions/parent_ou_autre"
         },
         "loueOuSousLoueADesTiers": {
-          "title": " ",
+          "title": "The housing is rented or sublet to third parties",
           "$ref": "#/definitions/loue_ou_sous_loue_a_des_tiers"
         },
         "usufruit": {
@@ -478,7 +478,7 @@
           "type": "number"
         },
         "zone": {
-          "title": " ",
+          "title": "Zone where the municipality of the housing belongs",
           "$ref": "#/definitions/zone_d_habitation"
         }
       }
@@ -557,7 +557,7 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Housing rented or sublet to others",
+          "title": " ",
           "type": "string",
           "default": "Non",
           "anyOf": [
@@ -583,6 +583,7 @@
       "title": " ",
       "properties": {
         "logement": {
+		  "title": "Housing",
           "$ref": "#/definitions/logement"
         },
         "personnesACharge": {
@@ -599,7 +600,7 @@
           "default": 0
         },
         "situationFamiliale": {
-          "title": " ",
+          "title": "Applicant's family situation",
           "$ref": "#/definitions/situation_familiale"
         },
         "conditionRattacheFoyerFiscalParentIfi": {
@@ -759,7 +760,7 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Person's nationality",
+          "title": " ",
           "type": "string",
           "default": "Francaise",
           "anyOf": [
@@ -1139,7 +1140,7 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Family situation",
+          "title": " ",
           "default": "Celibataire",
           "type": "string",
           "anyOf": [
@@ -1615,7 +1616,7 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Zone where the municipality of the housing belongs",
+          "title": " ",
           "default": "Zone1",
           "type": "string",
           "anyOf": [
@@ -1644,11 +1645,11 @@
   },
   "properties": {
     "menageIn": {
-      "title": " ",
+      "title": "Information about the household",
       "$ref": "#/definitions/menage"
     },
     "demandeurIn": {
-      "title": " ",
+      "title": "Identity of the applicant",
       "$ref": "#/definitions/demandeur"
     },
     "dateCouranteIn": {

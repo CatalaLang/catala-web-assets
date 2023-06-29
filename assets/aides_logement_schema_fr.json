@@ -322,7 +322,7 @@
           "format": "date"
         },
         "nationalite": {
-          "title": " ",
+          "title": "Nationalité du demandeur",
           "$ref": "#/definitions/nationalite"
         },
         "personneHebergeeCentreSoinLL162223SecuriteSociale": {
@@ -336,7 +336,7 @@
           "default": false
         },
         "magistratFonctionnaireCentreInteretsMaterielsFamiliauxHorsMayotte": {
-          "title": "Le demandeur est un magistrat ou fonctionnaire à Mayotte dont le centre des intérêts matériels et familiaux est situé hors de Mayotte.",
+          "title": "Le demandeur est un magistrat ou fonctionnaire à Mayotte dont le centre des intérêts matériels et familiaux est situé hors de Mayotte",
           "type": "boolean",
           "default": false
         }
@@ -347,7 +347,7 @@
       "required": ["dateDeNaissance"],
       "properties": {
         "nationalite": {
-          "title": " ",
+          "title": "Nationalité de l'enfant",
           "$ref": "#/definitions/nationalite"
         },
         "aDejaOuvertDroitAuxAllocationsFamiliales": {
@@ -578,9 +578,9 @@
     },
     "menage": {
       "type": "object",
-      "title": " ",
       "properties": {
         "logement": {
+		  "title": "Logement",
           "$ref": "#/definitions/logement"
         },
         "personnesACharge": {
@@ -597,7 +597,7 @@
           "default": 0
         },
         "situationFamiliale": {
-          "title": " ",
+          "title": "Situation familiale du demandeur",
           "$ref": "#/definitions/situation_familiale"
         },
         "conditionRattacheFoyerFiscalParentIfi": {
@@ -757,7 +757,7 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Nationalité de la personne",
+          "title": " ",
           "type": "string",
           "default": "Francaise",
           "anyOf": [
@@ -1135,7 +1135,7 @@
       "type": "object",
       "properties": {
         "kind": {
-          "title": "Situation familiale",
+          "title": " ",
           "default": "Celibataire",
           "type": "string",
           "anyOf": [
@@ -1640,11 +1640,11 @@
   },
   "properties": {
     "menageIn": {
-      "title": " ",
+      "title": "Information sur le ménage",
       "$ref": "#/definitions/menage"
     },
     "demandeurIn": {
-      "title": " ",
+      "title": "Identité du demandeur",
       "$ref": "#/definitions/demandeur"
     },
     "dateCouranteIn": {

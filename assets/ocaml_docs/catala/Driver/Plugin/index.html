@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Plugin (catala.Driver.Plugin)</title><link rel="stylesheet" href="../../../odoc.css"/><meta charset="utf-8"/><meta name="generator" content="odoc 2.1.1"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script src="../../../highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body class="odoc"><nav class="odoc-nav"><a href="../index.html">Up</a> – <a href="../../index.html">catala</a> &#x00BB; <a href="../index.html">Driver</a> &#x00BB; Plugin</nav><header class="odoc-preamble"><h1>Module <code><span>Driver.Plugin</span></code></h1></header><div class="odoc-content"><div class="odoc-include"><details open="open"><summary class="spec include"><code><span><span class="keyword">include</span> <span class="keyword">module</span> <span class="keyword">type</span> <span class="keyword">of</span> <a href="PluginAPI/index.html">Plugin.PluginAPI</a></span></code></summary><p>The following are used by <code>Driver.Plugin</code> to provide a higher-level interface, registering plugins that rely on the <code>Driver.driver</code> function.</p><div class="odoc-spec"><div class="spec type" id="type-plugin_apply_fun_typ" class="anchored"><a href="#type-plugin_apply_fun_typ" class="anchor"></a><code><span><span class="keyword">type</span> <span>'ast plugin_apply_fun_typ</span></span><span> =
+  <span>source_file:<a href="../../Catala_utils/Pos/index.html#type-input_file">Catala_utils.Pos.input_file</a> <span class="arrow">&#45;&gt;</span></span>
+  <span>output_file:<span>string option</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>scope:<span><a href="../../Shared_ast/ScopeName/index.html#type-t">Shared_ast.ScopeName.t</a> option</span> <span class="arrow">&#45;&gt;</span></span>
+  <span><span class="type-var">'ast</span> <span class="arrow">&#45;&gt;</span></span>
+  <span><span><a href="../../Scopelang/Dependency/TVertex/index.html#type-t">Scopelang.Dependency.TVertex.t</a> list</span> <span class="arrow">&#45;&gt;</span></span>
+  unit</span></code></div></div></details></div><div class="odoc-spec"><div class="spec value" id="val-register_generic" class="anchored"><a href="#val-register_generic" class="anchor"></a><code><span><span class="keyword">val</span> register_generic : 
+  <span><span class="xref-unresolved">Cmdliner</span>.Cmd.info <span class="arrow">&#45;&gt;</span></span>
+  <span><span><span class="xref-unresolved">Cmdliner</span>.Cmd.Exit.code <span class="xref-unresolved">Cmdliner</span>.Term.t</span> <span class="arrow">&#45;&gt;</span></span>
+  unit</span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-register_dcalc" class="anchored"><a href="#val-register_dcalc" class="anchor"></a><code><span><span class="keyword">val</span> register_dcalc : 
+  <span><span class="xref-unresolved">Cmdliner</span>.Cmd.info <span class="arrow">&#45;&gt;</span></span>
+  <span>extension:string <span class="arrow">&#45;&gt;</span></span>
+  <span><span><span><a href="../../Shared_ast/index.html#type-untyped">Shared_ast.untyped</a> <a href="../../Dcalc/Ast/index.html#type-program">Dcalc.Ast.program</a></span> <a href="#type-plugin_apply_fun_typ">plugin_apply_fun_typ</a></span> <span class="arrow">&#45;&gt;</span></span>
+  unit</span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-register_lcalc" class="anchored"><a href="#val-register_lcalc" class="anchor"></a><code><span><span class="keyword">val</span> register_lcalc : 
+  <span><span class="xref-unresolved">Cmdliner</span>.Cmd.info <span class="arrow">&#45;&gt;</span></span>
+  <span>extension:string <span class="arrow">&#45;&gt;</span></span>
+  <span><span><span><a href="../../Shared_ast/index.html#type-untyped">Shared_ast.untyped</a> <a href="../../Lcalc/Ast/index.html#type-program">Lcalc.Ast.program</a></span> <a href="#type-plugin_apply_fun_typ">plugin_apply_fun_typ</a></span> <span class="arrow">&#45;&gt;</span></span>
+  unit</span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-register_scalc" class="anchored"><a href="#val-register_scalc" class="anchor"></a><code><span><span class="keyword">val</span> register_scalc : 
+  <span><span class="xref-unresolved">Cmdliner</span>.Cmd.info <span class="arrow">&#45;&gt;</span></span>
+  <span>extension:string <span class="arrow">&#45;&gt;</span></span>
+  <span><span><a href="../../Scalc/Ast/index.html#type-program">Scalc.Ast.program</a> <a href="#type-plugin_apply_fun_typ">plugin_apply_fun_typ</a></span> <span class="arrow">&#45;&gt;</span></span>
+  unit</span></code></div></div></div></body></html>
