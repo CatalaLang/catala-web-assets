@@ -3,7 +3,6 @@
     "prestationsRecues": [],
     "logement": {
       "residencePrincipale": true,
-      "estEhpadOuMaisonAutonomieL31312Asf": false,
       "modeOccupation": {
         "kind": "Locataire",
         "payload": {
@@ -105,10 +104,6 @@
     },
     "estNonSalarieAgricoleL7818L78146CodeRural": false,
     "magistratFonctionnaireCentreInteretsMaterielsFamiliauxHorsMayotte": false,
-    "patrimoine": {
-      "produisantRevenuPeriodeR82233R8224": 0,
-      "neProduisantPasRevenuPeriodeR82233R8224": 0
-    },
     "personneHebergeeCentreSoinLL162223SecuriteSociale": false,
     "dateNaissance": "1992-01-01"
   },
