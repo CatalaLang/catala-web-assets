@@ -6,12 +6,13 @@
 <!-- vim-markdown-toc GitLab -->
 
 * [To use](#to-use)
-  * [In local dev](#in-local-dev)
+    * [In local dev](#in-local-dev)
+* [Generating assets](#generating-assets)
 * [Websites using this assets](#websites-using-this-assets)
 * [Note on the redaction of schemas](#note-on-the-redaction-of-schemas)
-  * [Title](#title)
-  * [Dsfr dedicated UI options](#dsfr-dedicated-ui-options)
-    * [`ui:tabLabel` and `ui:hideTitle`](#uitablabel-and-uihidetitle)
+    * [Title](#title)
+    * [Dsfr dedicated UI options](#dsfr-dedicated-ui-options)
+        * [`ui:tabLabel` and `ui:hideTitle`](#uitablabel-and-uihidetitle)
 
 <!-- vim-markdown-toc -->
 </details>
@@ -48,6 +49,12 @@ yarn link
 # In the website repo
 yarn link catala-web-assets
 ```
+
+## Generating assets
+
+The `assets` folder is generated from the Catala compiler. To generate these
+assets, please refer to the [dedicated section of the Catala compiler
+`INSTALL.md`](https://github.com/CatalaLang/catala/blob/master/INSTALL.md#generating-website-assets).
 
 ## Websites using this assets
 

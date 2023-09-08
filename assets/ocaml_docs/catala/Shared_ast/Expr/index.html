@@ -33,9 +33,11 @@
   <span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-eexternal" class="anchored"><a href="#val-eexternal" class="anchor"></a><code><span><span class="keyword">val</span> eexternal : 
-  <span><a href="../Qident/index.html#type-t">Qident.t</a> <span class="arrow">&#45;&gt;</span></span>
+  <span>name:<span><span class="xref-unresolved">Shared_ast__Definitions.external_ref</span> <a href="../../Catala_utils/Mark/index.html#type-pos">Catala_utils.Mark.pos</a></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span>( <span><span><span>( <span><span class="type-var">'a</span> <span class="xref-unresolved">Shared_ast__Definitions.any</span></span>, <span><span class="type-var">'a</span> <span class="xref-unresolved">Shared_ast__Definitions.any</span></span>, <span class="type-var">'m</span> )</span>
+  <span><span>( <span><span><span>( <span>&lt; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>.. &gt;</span>,
+      <span>&lt; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.no</span>.. &gt;</span>,
+      <span class="type-var">'m</span> )</span>
       <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>
       <span class="xref-unresolved">Bindlib</span>.box</span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
@@ -231,22 +233,24 @@
       <span class="xref-unresolved">Bindlib</span>.box</span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-estruct" class="anchored"><a href="#val-estruct" class="anchor"></a><code><span><span class="keyword">val</span> estruct : 
-  <span><span class="xref-unresolved">Shared_ast__Definitions.StructName.t</span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
-    <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
-    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span>
-    <span class="xref-unresolved">Shared_ast__Definitions.StructField.Map.t</span></span> <span class="arrow">&#45;&gt;</span></span>
+  <span>name:<span class="xref-unresolved">Shared_ast__Definitions.StructName.t</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>fields:
+    <span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
+      <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
+      <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span>
+      <span class="xref-unresolved">Shared_ast__Definitions.StructField.Map.t</span></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span>( <span><span><span>( <span><span class="type-var">'a</span> <span class="xref-unresolved">Shared_ast__Definitions.any</span></span>, <span><span class="type-var">'a</span> <span class="xref-unresolved">Shared_ast__Definitions.any</span></span>, <span class="type-var">'m</span> )</span>
       <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>
       <span class="xref-unresolved">Bindlib</span>.box</span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-edstructaccess" class="anchored"><a href="#val-edstructaccess" class="anchor"></a><code><span><span class="keyword">val</span> edstructaccess : 
-  <span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
-    <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
-    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
-  <span><a href="../../Catala_utils/String/index.html#type-t">Catala_utils.String.t</a> <span class="arrow">&#45;&gt;</span></span>
-  <span><span><span class="xref-unresolved">Shared_ast__Definitions.StructName.t</span> option</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>name_opt:<span><span class="xref-unresolved">Shared_ast__Definitions.StructName.t</span> option</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>field:<a href="../../Catala_utils/String/index.html#type-t">Catala_utils.String.t</a> <span class="arrow">&#45;&gt;</span></span>
+  <span>e:
+    <span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
+      <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
+      <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span>( <span><span><span>( <span>&lt; syntacticNames : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>.. &gt;</span> <span class="keyword">as</span> 'a,
       <span>&lt; syntacticNames : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>.. &gt;</span> <span class="keyword">as</span> 'a,
@@ -255,11 +259,12 @@
       <span class="xref-unresolved">Bindlib</span>.box</span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-estructaccess" class="anchored"><a href="#val-estructaccess" class="anchor"></a><code><span><span class="keyword">val</span> estructaccess : 
-  <span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
-    <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
-    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span class="xref-unresolved">Shared_ast__Definitions.StructField.t</span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span class="xref-unresolved">Shared_ast__Definitions.StructName.t</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>name:<span class="xref-unresolved">Shared_ast__Definitions.StructName.t</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>field:<span class="xref-unresolved">Shared_ast__Definitions.StructField.t</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>e:
+    <span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
+      <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
+      <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span>( <span><span><span>( <span>&lt; resolvedNames : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>.. &gt;</span> <span class="keyword">as</span> 'a,
       <span>&lt; resolvedNames : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>.. &gt;</span> <span class="keyword">as</span> 'a,
@@ -268,36 +273,40 @@
       <span class="xref-unresolved">Bindlib</span>.box</span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-einj" class="anchored"><a href="#val-einj" class="anchor"></a><code><span><span class="keyword">val</span> einj : 
-  <span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
-    <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
-    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span class="xref-unresolved">Shared_ast__Definitions.EnumConstructor.t</span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span class="xref-unresolved">Shared_ast__Definitions.EnumName.t</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>name:<span class="xref-unresolved">Shared_ast__Definitions.EnumName.t</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>cons:<span class="xref-unresolved">Shared_ast__Definitions.EnumConstructor.t</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>e:
+    <span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
+      <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
+      <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span>( <span><span><span>( <span><span class="type-var">'a</span> <span class="xref-unresolved">Shared_ast__Definitions.any</span></span>, <span><span class="type-var">'a</span> <span class="xref-unresolved">Shared_ast__Definitions.any</span></span>, <span class="type-var">'m</span> )</span>
       <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>
       <span class="xref-unresolved">Bindlib</span>.box</span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-ematch" class="anchored"><a href="#val-ematch" class="anchor"></a><code><span><span class="keyword">val</span> ematch : 
-  <span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
-    <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
-    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span class="xref-unresolved">Shared_ast__Definitions.EnumName.t</span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
-    <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
-    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span>
-    <span class="xref-unresolved">Shared_ast__Definitions.EnumConstructor.Map.t</span></span> <span class="arrow">&#45;&gt;</span></span>
+  <span>name:<span class="xref-unresolved">Shared_ast__Definitions.EnumName.t</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>e:
+    <span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
+      <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
+      <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
+  <span>cases:
+    <span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
+      <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
+      <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span>
+      <span class="xref-unresolved">Shared_ast__Definitions.EnumConstructor.Map.t</span></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span>( <span><span><span>( <span><span class="type-var">'a</span> <span class="xref-unresolved">Shared_ast__Definitions.any</span></span>, <span><span class="type-var">'a</span> <span class="xref-unresolved">Shared_ast__Definitions.any</span></span>, <span class="type-var">'m</span> )</span>
       <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>
       <span class="xref-unresolved">Bindlib</span>.box</span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div></div><div class="odoc-spec"><div class="spec value" id="val-escopecall" class="anchored"><a href="#val-escopecall" class="anchor"></a><code><span><span class="keyword">val</span> escopecall : 
-  <span><span class="xref-unresolved">Shared_ast__Definitions.ScopeName.t</span> <span class="arrow">&#45;&gt;</span></span>
-  <span><span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
-    <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
-    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span>
-    <span class="xref-unresolved">Shared_ast__Definitions.ScopeVar.Map.t</span></span> <span class="arrow">&#45;&gt;</span></span>
+  <span>scope:<span class="xref-unresolved">Shared_ast__Definitions.ScopeName.t</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>args:
+    <span><span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
+      <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
+      <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span>
+      <span class="xref-unresolved">Shared_ast__Definitions.ScopeVar.Map.t</span></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span>( <span><span><span>( <span>&lt; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>.. &gt;</span> <span class="keyword">as</span> 'a,
       <span>&lt; explicitScopes : <span class="xref-unresolved">Shared_ast__Definitions.yes</span>.. &gt;</span> <span class="keyword">as</span> 'a,
@@ -595,7 +604,17 @@
     <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
   <span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
-    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div><div class="spec-doc"><p>Removes all calls to <code>Log</code> unary operators in the AST, replacing them by their argument.</p></div></div><div class="odoc-spec"><div class="spec value" id="val-format" class="anchored"><a href="#val-format" class="anchor"></a><code><span><span class="keyword">val</span> format : 
+    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div><div class="spec-doc"><p>Removes all calls to <code>Log</code> unary operators in the AST, replacing them by their argument.</p></div></div><div class="odoc-spec"><div class="spec value" id="val-rename_vars" class="anchored"><a href="#val-rename_vars" class="anchor"></a><code><span><span class="keyword">val</span> rename_vars : 
+  <span>?exclude:<span>string list</span> <span class="arrow">&#45;&gt;</span></span>
+  <span>?reset_context_for_closed_terms:bool <span class="arrow">&#45;&gt;</span></span>
+  <span>?skip_constant_binders:bool <span class="arrow">&#45;&gt;</span></span>
+  <span>?constant_binder_name:<span>string option</span> <span class="arrow">&#45;&gt;</span></span>
+  <span><span><span>( <span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
+    <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
+    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span> <span class="arrow">&#45;&gt;</span></span>
+  <span><span>( <span><span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span> <span class="xref-unresolved">Bindlib</span>.box</span>,
+    <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
+    <a href="../../Catala_utils/Mark/index.html#type-ed">Catala_utils.Mark.ed</a></span></span></code></div><div class="spec-doc"><p>Disambiguates all variable names in <code>e</code>. <code>exclude</code> will blacklist the given names (useful for keywords or built-in names) ; the other flags behave as defined in the bindlib documentation for module type <code>Rename</code></p></div></div><div class="odoc-spec"><div class="spec value" id="val-format" class="anchored"><a href="#val-format" class="anchor"></a><code><span><span class="keyword">val</span> format : 
   <span><span class="xref-unresolved">Stdlib</span>.Format.formatter <span class="arrow">&#45;&gt;</span></span>
   <span><span><span>( <span><span>( <span class="type-var">'a</span>, <span class="type-var">'a</span>, <span class="type-var">'m</span> )</span> <span class="xref-unresolved">Shared_ast__Definitions.base_gexpr</span></span>,
     <span><span class="type-var">'m</span> <span class="xref-unresolved">Shared_ast__Definitions.mark</span></span> )</span>
