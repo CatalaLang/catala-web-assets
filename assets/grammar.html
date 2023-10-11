@@ -807,6 +807,26 @@
       </tr>
       
       <tr class="rule">
+        <th><span class="nonterminal">directive</span></th>
+        <td>LAW_INCLUDE
+        COLON
+        <span class="ne_list">DIRECTIVE_ARG</span>
+        <span class="option">AT_PAGE</span></td>
+      </tr>
+      <tr>
+        <th class="bar"></th>
+        <td>MODULE_DEF
+        <span class="nonterminal">addpos(DIRECTIVE_ARG)</span></td>
+      </tr>
+      <tr>
+        <th class="bar"></th>
+        <td>MODULE_USE
+        <span class="nonterminal">addpos(DIRECTIVE_ARG)</span>
+        <span class="option">MODULE_ALIAS
+        <span class="nonterminal">addpos(DIRECTIVE_ARG)</span></span></td>
+      </tr>
+      
+      <tr class="rule">
         <th><span class="nonterminal">source_file_item</span></th>
         <td><span class="nonterminal">law_text</span></td>
       </tr>
@@ -827,10 +847,7 @@
       <tr>
         <th class="bar"></th>
         <td>BEGIN_DIRECTIVE
-        LAW_INCLUDE
-        COLON
-        <span class="ne_list">DIRECTIVE_ARG</span>
-        <span class="option">AT_PAGE</span>
+        <span class="nonterminal">directive</span>
         END_DIRECTIVE</td>
       </tr>
       
