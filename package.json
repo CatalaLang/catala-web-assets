@@ -1,6 +1,6 @@
 {
 	"name": "@catala-lang/catala-web-assets",
-	"version": "0.8.5",
+	"version": "0.8.6",
 	"description": "Web assets generated from Catala programs about the French law",
 	"repository": {
 		"type": "git",
