@@ -1,24 +1,5 @@
 # catala-web-assets
 
-<details>
-    <summary>Table of contents</summary>
-    
-<!-- vim-markdown-toc GitLab -->
-
-* [To use](#to-use)
-    * [In local dev](#in-local-dev)
-* [Generating assets](#generating-assets)
-* [Websites using this assets](#websites-using-this-assets)
-* [Note on the redaction of schemas](#note-on-the-redaction-of-schemas)
-    * [Title](#title)
-    * [Dsfr dedicated UI options](#dsfr-dedicated-ui-options)
-        * [`ui:tabLabel` and `ui:hideTitle`](#uitablabel-and-uihidetitle)
-
-<!-- vim-markdown-toc -->
-</details>
-
----
-
 Web assets generated from Catala programs about the French law:
 * [The housing benefits](https://github.com/CatalaLang/catala/tree/master/examples/aides_logement)
 * [The family benefits](https://github.com/CatalaLang/catala/tree/master/examples/allocations_familiales)
@@ -59,7 +40,7 @@ assets, please refer to the [dedicated section of the Catala compiler
 ## Websites using this assets
 
 * https://catala-lang.org ([source](https://github.com/CatalaLang/catala-website))
-* catala-explorer ([source](https://github.com/CatalaLang/catala-explorer))
+* https://code.gouv.fr/demos/catala ([source](https://github.com/CatalaLang/catala-dsfr))
 
 ## Note on the redaction of schemas
 
