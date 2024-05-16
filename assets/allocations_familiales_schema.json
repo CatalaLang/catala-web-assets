@@ -1,7 +1,7 @@
 {
    "type": "object",
    "definitions": {
-      "collectivite": {
+      "France.collectivite": {
         "type": "object",
         "properties": {
           "kind": {
@@ -355,7 +355,7 @@
      "default": 0
    },
    "iResidenceIn": {
-     "$ref": "#/definitions/collectivite"
+     "$ref": "#/definitions/France.collectivite"
    },
    "iPersonneChargeEffectivePermanenteEstParentIn": {
      "type": "boolean",

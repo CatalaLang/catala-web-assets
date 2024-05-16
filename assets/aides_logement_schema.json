@@ -1,7 +1,7 @@
 {
    "type": "object",
    "definitions": {
-      "accord_financement_representant_etat_outre_mer": {
+      "France.collectivite": {
         "type": "object",
         "properties": {
           "kind": {
@@ -9,11 +9,39 @@
             "anyOf": [
               {
                 "type": "string",
-                "enum": ["Accord"]
+                "enum": ["Guadeloupe"]
               },
               {
                 "type": "string",
-                "enum": ["PasdAccord"]
+                "enum": ["Guyane"]
+              },
+              {
+                "type": "string",
+                "enum": ["Martinique"]
+              },
+              {
+                "type": "string",
+                "enum": ["LaReunion"]
+              },
+              {
+                "type": "string",
+                "enum": ["SaintBarthelemy"]
+              },
+              {
+                "type": "string",
+                "enum": ["SaintMartin"]
+              },
+              {
+                "type": "string",
+                "enum": ["Metropole"]
+              },
+              {
+                "type": "string",
+                "enum": ["SaintPierreEtMiquelon"]
+              },
+              {
+                "type": "string",
+                "enum": ["Mayotte"]
               }
             ]
           }
@@ -23,15 +51,14 @@
               "if": {
                 "properties": {
                   "kind": {
-                    "const": "Accord"
+                    "const": "Guadeloupe"
                   }
                 }
               },
               "then": {
                 "properties": {
                   "payload": {
-                    "type": "string",
-                    "format": "date"
+                    
                   }
                 }
               }
@@ -40,7 +67,119 @@
               "if": {
                 "properties": {
                   "kind": {
-                    "const": "PasdAccord"
+                    "const": "Guyane"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "payload": {
+                    
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "Martinique"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "payload": {
+                    
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "LaReunion"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "payload": {
+                    
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "SaintBarthelemy"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "payload": {
+                    
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "SaintMartin"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "payload": {
+                    
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "Metropole"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "payload": {
+                    
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "SaintPierreEtMiquelon"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "payload": {
+                    
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "Mayotte"
                   }
                 }
               },
@@ -55,7 +194,7 @@
           ]
         }
    ,
-   "ameliore_par_occupant": {
+   "Prestations_familiales.situation_obligation_scolaire": {
      "type": "object",
      "properties": {
        "kind": {
@@ -63,11 +202,15 @@
          "anyOf": [
            {
              "type": "string",
-             "enum": ["Oui"]
+             "enum": ["Avant"]
            },
            {
              "type": "string",
-             "enum": ["Non"]
+             "enum": ["Pendant"]
+           },
+           {
+             "type": "string",
+             "enum": ["Apres"]
            }
          ]
        }
@@ -77,7 +220,7 @@
            "if": {
              "properties": {
                "kind": {
-                 "const": "Oui"
+                 "const": "Avant"
                }
              }
            },
@@ -93,7 +236,23 @@
            "if": {
              "properties": {
                "kind": {
-                 "const": "Non"
+                 "const": "Pendant"
+               }
+             }
+           },
+           "then": {
+             "properties": {
+               "payload": {
+                 
+               }
+             }
+           }
+         },
+         {
+           "if": {
+             "properties": {
+               "kind": {
+                 "const": "Apres"
                }
              }
            },
@@ -107,6 +266,113 @@
          }
        ]
      }
+,
+"accord_financement_representant_etat_outre_mer": {
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": ["Accord"]
+        },
+        {
+          "type": "string",
+          "enum": ["PasdAccord"]
+        }
+      ]
+    }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Accord"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "PasdAccord"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      }
+    ]
+  }
+,
+"ameliore_par_occupant": {
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": ["Oui"]
+        },
+        {
+          "type": "string",
+          "enum": ["Non"]
+        }
+      ]
+    }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Oui"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Non"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      }
+    ]
+  }
 ,
 "autre_personne_a_charge": {
   "type": "object",
@@ -287,199 +553,6 @@
     ]
   }
 ,
-"collectivite": {
-  "type": "object",
-  "properties": {
-    "kind": {
-      "type": "string",
-      "anyOf": [
-        {
-          "type": "string",
-          "enum": ["Guadeloupe"]
-        },
-        {
-          "type": "string",
-          "enum": ["Guyane"]
-        },
-        {
-          "type": "string",
-          "enum": ["Martinique"]
-        },
-        {
-          "type": "string",
-          "enum": ["LaReunion"]
-        },
-        {
-          "type": "string",
-          "enum": ["SaintBarthelemy"]
-        },
-        {
-          "type": "string",
-          "enum": ["SaintMartin"]
-        },
-        {
-          "type": "string",
-          "enum": ["Metropole"]
-        },
-        {
-          "type": "string",
-          "enum": ["SaintPierreEtMiquelon"]
-        },
-        {
-          "type": "string",
-          "enum": ["Mayotte"]
-        }
-      ]
-    }
-    },
-    "allOf": [
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Guadeloupe"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Guyane"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Martinique"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "LaReunion"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "SaintBarthelemy"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "SaintMartin"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Metropole"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "SaintPierreEtMiquelon"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Mayotte"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      }
-    ]
-  }
-,
 "conditions_etrangers": {
   "type": "object",
   "properties": {
@@ -564,7 +637,7 @@
       "default": 0
     },
     "obligationScolaire": {
-      "$ref": "#/definitions/situation_obligation_scolaire"
+      "$ref": "#/definitions/Prestations_familiales.situation_obligation_scolaire"
     },
     "situationGardeAlternee": {
       "$ref": "#/definitions/situation_garde_alternee"
@@ -807,7 +880,7 @@
       "default": false
     },
     "residence": {
-      "$ref": "#/definitions/collectivite"
+      "$ref": "#/definitions/France.collectivite"
     }
   }
 },
@@ -1562,79 +1635,6 @@
             "payload": {
               "type": "number",
               "default": 0
-            }
-          }
-        }
-      }
-    ]
-  }
-,
-"situation_obligation_scolaire": {
-  "type": "object",
-  "properties": {
-    "kind": {
-      "type": "string",
-      "anyOf": [
-        {
-          "type": "string",
-          "enum": ["Avant"]
-        },
-        {
-          "type": "string",
-          "enum": ["Pendant"]
-        },
-        {
-          "type": "string",
-          "enum": ["Apres"]
-        }
-      ]
-    }
-    },
-    "allOf": [
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Avant"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Pendant"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Apres"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
             }
           }
         }
