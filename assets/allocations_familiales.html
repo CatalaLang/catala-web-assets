@@ -1,3 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.catala-code .hll { background-color: #ffffcc }
+.catala-code { background: #f8f8f8; }
+.catala-code .c { color: #3D7B7B; font-style: italic } /* Comment */
+.catala-code .err { border: 1px solid #FF0000 } /* Error */
+.catala-code .k { color: #008000; font-weight: bold } /* Keyword */
+.catala-code .o { color: #666666 } /* Operator */
+.catala-code .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.catala-code .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.catala-code .cp { color: #9C6500 } /* Comment.Preproc */
+.catala-code .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.catala-code .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.catala-code .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.catala-code .gd { color: #A00000 } /* Generic.Deleted */
+.catala-code .ge { font-style: italic } /* Generic.Emph */
+.catala-code .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.catala-code .gr { color: #E40000 } /* Generic.Error */
+.catala-code .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.catala-code .gi { color: #008400 } /* Generic.Inserted */
+.catala-code .go { color: #717171 } /* Generic.Output */
+.catala-code .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.catala-code .gs { font-weight: bold } /* Generic.Strong */
+.catala-code .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.catala-code .gt { color: #0044DD } /* Generic.Traceback */
+.catala-code .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.catala-code .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.catala-code .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.catala-code .kp { color: #008000 } /* Keyword.Pseudo */
+.catala-code .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.catala-code .kt { color: #B00040 } /* Keyword.Type */
+.catala-code .m { color: #666666 } /* Literal.Number */
+.catala-code .s { color: #BA2121 } /* Literal.String */
+.catala-code .na { color: #687822 } /* Name.Attribute */
+.catala-code .nb { color: #008000 } /* Name.Builtin */
+.catala-code .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.catala-code .no { color: #880000 } /* Name.Constant */
+.catala-code .nd { color: #AA22FF } /* Name.Decorator */
+.catala-code .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.catala-code .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.catala-code .nf { color: #0000FF } /* Name.Function */
+.catala-code .nl { color: #767600 } /* Name.Label */
+.catala-code .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.catala-code .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.catala-code .nv { color: #19177C } /* Name.Variable */
+.catala-code .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.catala-code .w { color: #bbbbbb } /* Text.Whitespace */
+.catala-code .mb { color: #666666 } /* Literal.Number.Bin */
+.catala-code .mf { color: #666666 } /* Literal.Number.Float */
+.catala-code .mh { color: #666666 } /* Literal.Number.Hex */
+.catala-code .mi { color: #666666 } /* Literal.Number.Integer */
+.catala-code .mo { color: #666666 } /* Literal.Number.Oct */
+.catala-code .sa { color: #BA2121 } /* Literal.String.Affix */
+.catala-code .sb { color: #BA2121 } /* Literal.String.Backtick */
+.catala-code .sc { color: #BA2121 } /* Literal.String.Char */
+.catala-code .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.catala-code .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.catala-code .s2 { color: #BA2121 } /* Literal.String.Double */
+.catala-code .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.catala-code .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.catala-code .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.catala-code .sx { color: #008000 } /* Literal.String.Other */
+.catala-code .sr { color: #A45A77 } /* Literal.String.Regex */
+.catala-code .s1 { color: #BA2121 } /* Literal.String.Single */
+.catala-code .ss { color: #19177C } /* Literal.String.Symbol */
+.catala-code .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.catala-code .fm { color: #0000FF } /* Name.Function.Magic */
+.catala-code .vc { color: #19177C } /* Name.Variable.Class */
+.catala-code .vg { color: #19177C } /* Name.Variable.Global */
+.catala-code .vi { color: #19177C } /* Name.Variable.Instance */
+.catala-code .vm { color: #19177C } /* Name.Variable.Magic */
+.catala-code .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+</style>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+</head>
+<body>
+<h1>Implémentation de texte législatif<br />
+<small>Document généré par Catala version 0.10.0-16-gcaf9135b</small>
+</h1>
+<p>Ce document a été produit à partir d’un ensemble de fichiers sources écrits dans le langage de programmation Catala, mêlant le texte législatif et le code informatique qui le traduit. Pour plus d’informations sur la méthodologie et sur la façon de lire le code, veuillez consulter le site <a href="https://catala-lang.org">https://catala-lang.org</a>.</p>
+<p>
+Fichiers sources tissés dans ce document:
+</p>
+<ul>
+<li><tt>Allocations_familiales.catala_fr</tt>, dernière modification le 2024-05-16, 18:28</li>
+<li><tt>prologue.catala_fr</tt>, dernière modification le 2024-05-16, 18:28</li>
+<li><tt>autres_codes.catala_fr</tt>, dernière modification le 2024-05-16, 18:28</li>
+<li><tt>securite_sociale_L.catala_fr</tt>, dernière modification le 2024-05-16, 18:28</li>
+<li><tt>securite_sociale_R.catala_fr</tt>, dernière modification le 2024-05-16, 18:28</li>
+<li><tt>securite_sociale_D.catala_fr</tt>, dernière modification le 2024-05-16, 18:28</li>
+<li><tt>decrets_divers.catala_fr</tt>, dernière modification le 2024-05-16, 18:28</li>
+<li><tt>epilogue.catala_fr</tt>, dernière modification le 2024-05-16, 18:28</li>
+</ul>
+
 <details class="toc">
   <summary>Sommaire</summary>
   <ol class="toc-0">
@@ -598,10 +700,7 @@
 
 <h1 class='law-heading' id="Prologue"><a href="#Prologue">Prologue</a></h1>
 
-<div class='law-text'><p>Avant de présenter les textes réglementaires qui régissent le calcul
-des allocations familiales, il est nécessaire de définir les structures
-de données informatiques qui modélisent la situation dont parlent ces
-textes législatifs.</p></div>
+<div class='law-text'><p>Avant de présenter les textes réglementaires qui régissent le calcul des allocations familiales, il est nécessaire de définir les structures de données informatiques qui modélisent la situation dont parlent ces textes législatifs.</p></div>
 <h2 class='law-heading' id="Prologue-Types%20de%20donnees%20manipulees%20par%20le%20programme"><a href="#Prologue-Types%20de%20donnees%20manipulees%20par%20le%20programme">Types de données manipulées par le programme</a></h2>
 <details><summary>Types de données manipulées par le programme</summary>
 
@@ -936,9 +1035,7 @@ textes législatifs.</p></div>
 
 <h8 class='law-heading' id="Code%20de%20la%20construction%20et%20de%20l%20habitation-Partie%20legislative-Livre%20VIII%20:%20Aides%20personnelles%20au%20logement-Titre%20II%20:%20Dispositions%20communes%20aux%20aides%20personnelles%20au%20logement-Chapitre%20Ier%20:%20Principes%20generaux-Section%202%20:%20Regles%20de%20non-cumul-Sous-section%201%20:%20Aides%20personnelles%20au%20logement-Article%20L821-3"><a href="#Code%20de%20la%20construction%20et%20de%20l%20habitation-Partie%20legislative-Livre%20VIII%20:%20Aides%20personnelles%20au%20logement-Titre%20II%20:%20Dispositions%20communes%20aux%20aides%20personnelles%20au%20logement-Chapitre%20Ier%20:%20Principes%20generaux-Section%202%20:%20Regles%20de%20non-cumul-Sous-section%201%20:%20Aides%20personnelles%20au%20logement-Article%20L821-3">Article L821-3</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000038814972" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h8>
 
-<div class='law-text'><p>Lorsqu’un enfant est bénéficiaire, à titre personnel, de l’aide
-personnelle au logement, il n’est pas pris en compte, comme enfant à
-charge, pour le bénéfice des prestations familiales.</p></div>
+<div class='law-text'><p>Lorsqu’un enfant est bénéficiaire, à titre personnel, de l’aide personnelle au logement, il n’est pas pris en compte, comme enfant à charge, pour le bénéfice des prestations familiales.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/autres_codes.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -986,20 +1083,14 @@ charge, pour le bénéfice des prestations familiales.</p></div>
 <p>1°) la prestation d’accueil du jeune enfant ;</p>
 <p>2°) les allocations familiales ;</p>
 <p>3°) le complément familial ;</p>
-<p>4°) L’allocation de logement régie par les dispositions du livre VIII
-du code de la construction et de l’habitation ;</p>
+<p>4°) L’allocation de logement régie par les dispositions du livre VIII du code de la construction et de l’habitation ;</p>
 <p>5°) l’allocation d’éducation de l’enfant handicapé ;</p>
 <p>6°) l’allocation de soutien familial ;</p>
 <p>7°) l’allocation de rentrée scolaire ;</p>
 <p>8°) L’allocation forfaitaire versée en cas de décès d’un enfant ;</p>
 <p>9°) l’allocation journalière de présence parentale.</p>
 <p>NOTA :</p>
-<p>Conformément au IV de l’article 5 de la loi n° 2020-692 du 8 juin
-2020, ces dispositions entrent en vigueur à une date fixée par décret,
-et au plus tard à compter du 1er janvier 2022, au titre des enfants dont
-le décès intervient à compter de cette date. Se reporter aux
-dispositions du V du même article en ce qui concerne le versement d’une
-l’allocation forfaitaire transitoire.</p></div>
+<p>Conformément au IV de l’article 5 de la loi n° 2020-692 du 8 juin 2020, ces dispositions entrent en vigueur à une date fixée par décret, et au plus tard à compter du 1er janvier 2022, au titre des enfants dont le décès intervient à compter de cette date. Se reporter aux dispositions du V du même article en ce qui concerne le versement d’une l’allocation forfaitaire transitoire.</p></div>
 
 
 <h5 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%201%20:%20Champ%20d%20application%20-%20Generalites-Chapitre%202%20:%20Champ%20d%20application"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%201%20:%20Champ%20d%20application%20-%20Generalites-Chapitre%202%20:%20Champ%20d%20application">Chapitre 2 : Champ d'application</a></h5>
@@ -1007,8 +1098,7 @@ l’allocation forfaitaire transitoire.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%201%20:%20Champ%20d%20application%20-%20Generalites-Chapitre%202%20:%20Champ%20d%20application-Article%20L512-3"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%201%20:%20Champ%20d%20application%20-%20Generalites-Chapitre%202%20:%20Champ%20d%20application-Article%20L512-3">Article L512-3</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000041979743" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Sous réserve des règles particulières à chaque prestation, ouvre
-droit aux prestations familiales :</p>
+<div class='law-text'><p>Sous réserve des règles particulières à chaque prestation, ouvre droit aux prestations familiales :</p>
 <p>1°) tout enfant jusqu’à la fin de l’obligation scolaire ;</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
@@ -1027,8 +1117,7 @@ droit aux prestations familiales :</p>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>2°) après la fin de l’obligation scolaire, et jusqu’à un âge limite,
-tout enfant dont la rémunération éventuelle n’excède pas un plafond.</p></div>
+<div class='law-text'><p>2°) après la fin de l’obligation scolaire, et jusqu’à un âge limite, tout enfant dont la rémunération éventuelle n’excède pas un plafond.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1078,10 +1167,7 @@ tout enfant dont la rémunération éventuelle n’excède pas un plafond.</p></
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Toutefois, pour l’attribution du complément familial et de
-l’allocation de logement mentionnés aux 3° et 4° de l’article L. 511-1 ,
-l’âge limite peut être différent de celui mentionné au 2° du présent
-article.</p></div>
+<div class='law-text'><p>Toutefois, pour l’attribution du complément familial et de l’allocation de logement mentionnés aux 3° et 4° de l’article L. 511-1 , l’âge limite peut être différent de celui mentionné au 2° du présent article.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1095,17 +1181,9 @@ article.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Pour l’attribution de l’allocation forfaitaire versée en cas de décès
-d’un enfant prévue à l’article L. 545-1, l’âge limite retenu peut être
-différent de celui fixé en application du 2° du présent article et la
-condition relative à la rémunération de l’enfant n’est pas exigée.</p>
+<div class='law-text'><p>Pour l’attribution de l’allocation forfaitaire versée en cas de décès d’un enfant prévue à l’article L. 545-1, l’âge limite retenu peut être différent de celui fixé en application du 2° du présent article et la condition relative à la rémunération de l’enfant n’est pas exigée.</p>
 <p>NOTA :</p>
-<p>Conformément au IV de l’article 5 de la loi n° 2020-692 du 8 juin
-2020, ces dispositions entrent en vigueur à une date fixée par décret,
-et au plus tard à compter du 1er janvier 2022, au titre des enfants dont
-le décès intervient à compter de cette date. Se reporter aux
-dispositions du V du même article en ce qui concerne le versement d’une
-l’allocation forfaitaire transitoire.</p></div>
+<p>Conformément au IV de l’article 5 de la loi n° 2020-692 du 8 juin 2020, ces dispositions entrent en vigueur à une date fixée par décret, et au plus tard à compter du 1er janvier 2022, au titre des enfants dont le décès intervient à compter de cette date. Se reporter aux dispositions du V du même article en ce qui concerne le versement d’une l’allocation forfaitaire transitoire.</p></div>
 
 
 
@@ -1117,8 +1195,7 @@ l’allocation forfaitaire transitoire.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20L521-1"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20L521-1">Article L521-1</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000029963006" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Les allocations familiales sont dues à partir du deuxième enfant à
-charge.</p></div>
+<div class='law-text'><p>Les allocations familiales sont dues à partir du deuxième enfant à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1134,14 +1211,7 @@ charge.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Une allocation forfaitaire par enfant d’un montant fixé par décret
-est versée pendant un an à la personne ou au ménage qui assume la charge
-d’un nombre minimum d’enfants également fixé par décret lorsque l’un ou
-plusieurs des enfants qui ouvraient droit aux allocations familiales
-atteignent l’âge limite mentionné au 2° de l’article L. 512-3 . Cette
-allocation est versée à la condition que le ou les enfants répondent aux
-conditions autres que celles de l’âge pour l’ouverture du droit aux
-allocations familiales.</p></div>
+<div class='law-text'><p>Une allocation forfaitaire par enfant d’un montant fixé par décret est versée pendant un an à la personne ou au ménage qui assume la charge d’un nombre minimum d’enfants également fixé par décret lorsque l’un ou plusieurs des enfants qui ouvraient droit aux allocations familiales atteignent l’âge limite mentionné au 2° de l’article L. 512-3 . Cette allocation est versée à la condition que le ou les enfants répondent aux conditions autres que celles de l’âge pour l’ouverture du droit aux allocations familiales.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1177,10 +1247,7 @@ allocations familiales.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Le montant des allocations mentionnées aux deux premiers alinéas du
-présent article, ainsi que celui des majorations mentionnées à l’article
-L. 521-3 varient en fonction des ressources du ménage ou de la personne
-qui a la charge des enfants, selon un barème défini par décret.</p></div>
+<div class='law-text'><p>Le montant des allocations mentionnées aux deux premiers alinéas du présent article, ainsi que celui des majorations mentionnées à l’article L. 521-3 varient en fonction des ressources du ménage ou de la personne qui a la charge des enfants, selon un barème défini par décret.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1198,8 +1265,7 @@ qui a la charge des enfants, selon un barème défini par décret.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Le montant des allocations familiales varie en fonction du nombre
-d’enfants à charge.</p></div>
+<div class='law-text'><p>Le montant des allocations familiales varie en fonction du nombre d’enfants à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1213,9 +1279,7 @@ d’enfants à charge.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Les niveaux des plafonds de ressources, qui varient en fonction du
-nombre d’enfants à charge, sont révisés conformément à l’évolution
-annuelle de l’indice des prix à la consommation, hors tabac.</p></div>
+<div class='law-text'><p>Les niveaux des plafonds de ressources, qui varient en fonction du nombre d’enfants à charge, sont révisés conformément à l’évolution annuelle de l’indice des prix à la consommation, hors tabac.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1231,10 +1295,7 @@ annuelle de l’indice des prix à la consommation, hors tabac.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Un complément dégressif est versé lorsque les ressources du
-bénéficiaire dépassent l’un des plafonds, dans la limite de montants
-définis par décret. Les modalités de calcul de ces montants et celles du
-complément dégressif sont définies par décret.</p></div>
+<div class='law-text'><p>Un complément dégressif est versé lorsque les ressources du bénéficiaire dépassent l’un des plafonds, dans la limite de montants définis par décret. Les modalités de calcul de ces montants et celles du complément dégressif sont définies par décret.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1258,9 +1319,7 @@ complément dégressif sont définies par décret.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20L521-2"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20L521-2">Article L521-2</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000039099826" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Les allocations sont versées à la personne qui assume, dans quelques
-conditions que ce soit, la charge effective et permanente de
-l’enfant.</p></div>
+<div class='law-text'><p>Les allocations sont versées à la personne qui assume, dans quelques conditions que ce soit, la charge effective et permanente de l’enfant.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1284,14 +1343,7 @@ l’enfant.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>En cas de résidence alternée de l’enfant au domicile de chacun des
-parents telle que prévue à l’article 373-2-9 du code civil, mise en
-oeuvre de manière effective, les parents désignent l’allocataire.
-Cependant, la charge de l’enfant pour le calcul des allocations
-familiales est partagée par moitié entre les deux parents soit sur
-demande conjointe des parents, soit si les parents sont en désaccord sur
-la désignation de l’allocataire. Un décret en Conseil d’Etat fixe les
-conditions d’application du présent alinéa.</p></div>
+<div class='law-text'><p>En cas de résidence alternée de l’enfant au domicile de chacun des parents telle que prévue à l’article 373-2-9 du code civil, mise en oeuvre de manière effective, les parents désignent l’allocataire. Cependant, la charge de l’enfant pour le calcul des allocations familiales est partagée par moitié entre les deux parents soit sur demande conjointe des parents, soit si les parents sont en désaccord sur la désignation de l’allocataire. Un décret en Conseil d’Etat fixe les conditions d’application du présent alinéa.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1337,10 +1389,7 @@ conditions d’application du présent alinéa.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Lorsque la personne qui assume la charge effective et permanente de
-l’enfant ne remplit pas les conditions prévues au titre I du présent
-livre pour l’ouverture du droit aux allocations familiales, ce droit
-s’ouvre du chef du père ou, à défaut, du chef de la mère.</p></div>
+<div class='law-text'><p>Lorsque la personne qui assume la charge effective et permanente de l’enfant ne remplit pas les conditions prévues au titre I du présent livre pour l’ouverture du droit aux allocations familiales, ce droit s’ouvre du chef du père ou, à défaut, du chef de la mère.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1362,18 +1411,7 @@ s’ouvre du chef du père ou, à défaut, du chef de la mère.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Lorsqu’un enfant est confié au service d’aide sociale à l’enfance,
-les allocations familiales continuent d’être évaluées en tenant compte à
-la fois des enfants présents au foyer et du ou des enfants confiés au
-service de l’aide sociale à l’enfance. La part des allocations
-familiales dues à la famille pour cet enfant est versée à ce service.
-Toutefois, le juge peut décider, d’office ou sur saisine du président du
-conseil général, à la suite d’une mesure prise en application des
-articles 375-3 et 375-5 du code civil ou à l’article L. 323-1 du code de
-la justice pénale des mineurs, de maintenir le versement des allocations
-à la famille, lorsque celle-ci participe à la prise en charge morale ou
-matérielle de l’enfant ou en vue de faciliter le retour de l’enfant dans
-son foyer.</p></div>
+<div class='law-text'><p>Lorsqu’un enfant est confié au service d’aide sociale à l’enfance, les allocations familiales continuent d’être évaluées en tenant compte à la fois des enfants présents au foyer et du ou des enfants confiés au service de l’aide sociale à l’enfance. La part des allocations familiales dues à la famille pour cet enfant est versée à ce service. Toutefois, le juge peut décider, d’office ou sur saisine du président du conseil général, à la suite d’une mesure prise en application des articles 375-3 et 375-5 du code civil ou à l’article L. 323-1 du code de la justice pénale des mineurs, de maintenir le versement des allocations à la famille, lorsque celle-ci participe à la prise en charge morale ou matérielle de l’enfant ou en vue de faciliter le retour de l’enfant dans son foyer.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1423,15 +1461,12 @@ son foyer.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Un décret en Conseil d’Etat fixe les conditions d’application du
-présent article, notamment dans les cas énumérés ci-dessous :</p>
+<div class='law-text'><p>Un décret en Conseil d’Etat fixe les conditions d’application du présent article, notamment dans les cas énumérés ci-dessous :</p>
 <ol type="a">
-<li><p>retrait total de l’autorité parentale des parents ou de l’un
-d’eux ;</p></li>
+<li><p>retrait total de l’autorité parentale des parents ou de l’un d’eux ;</p></li>
 <li><p>indignité des parents ou de l’un d’eux ;</p></li>
 <li><p>divorce, séparation de corps ou de fait des parents ;</p></li>
-<li><p>enfants confiés à un service public, à une institution privée, à
-un particulier.</p></li>
+<li><p>enfants confiés à un service public, à une institution privée, à un particulier.</p></li>
 </ol></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
@@ -1445,16 +1480,11 @@ un particulier.</p></li>
 
 </div>
 <div class='law-text'><p>NOTA :</p>
-<p>Se reporter aux conditions d’application prévues à l’article 10 de
-l’ordonnance n° 2019-950 du 11 septembre 2019. Conformément à l’article
-25 de la loi n°2020-734, l’ordonnance n°2019-950 entre en vigueur le 31
-mars 2021. Cette date a été reportée au 30 septembre 2021 par l’article
-2 de la loi n° 2021-218 du 26 février 2021.</p></div>
+<p>Se reporter aux conditions d’application prévues à l’article 10 de l’ordonnance n° 2019-950 du 11 septembre 2019. Conformément à l’article 25 de la loi n°2020-734, l’ordonnance n°2019-950 entre en vigueur le 31 mars 2021. Cette date a été reportée au 30 septembre 2021 par l’article 2 de la loi n° 2021-218 du 26 février 2021.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20L521-3"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20L521-3">Article L521-3</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000006743289" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Chacun des enfants à charge, à l’exception du plus âgé, ouvre droit à
-partir d’un âge minimum à une majoration des allocations familiales.</p></div>
+<div class='law-text'><p>Chacun des enfants à charge, à l’exception du plus âgé, ouvre droit à partir d’un âge minimum à une majoration des allocations familiales.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1476,9 +1506,7 @@ partir d’un âge minimum à une majoration des allocations familiales.</p></di
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Toutefois, les personnes ayant un nombre déterminé d’enfants à charge
-bénéficient de ladite majoration pour chaque enfant à charge à partir de
-l’âge mentionné au premier alinéa.</p></div>
+<div class='law-text'><p>Toutefois, les personnes ayant un nombre déterminé d’enfants à charge bénéficient de ladite majoration pour chaque enfant à charge à partir de l’âge mentionné au premier alinéa.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1516,9 +1544,7 @@ l’âge mentionné au premier alinéa.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%205%20:%20Dispositions%20communes-Chapitre%201er%20:%20Etablissement%20du%20salaire%20de%20base-Article%20L551-1"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%205%20:%20Dispositions%20communes-Chapitre%201er%20:%20Etablissement%20du%20salaire%20de%20base-Article%20L551-1">Article L551-1</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000031688371" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Le montant des prestations familiales est déterminé d’après des bases
-mensuelles de calcul revalorisées au 1er avril de chaque année par
-application du coefficient mentionné à l’article L. 161-25 .</p></div>
+<div class='law-text'><p>Le montant des prestations familiales est déterminé d’après des bases mensuelles de calcul revalorisées au 1er avril de chaque année par application du coefficient mentionné à l’article L. 161-25 .</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1548,11 +1574,7 @@ application du coefficient mentionné à l’article L. 161-25 .</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Dispositions%20particulieres%20a%20la%20Guadeloupe,%20a%20la%20Guyane,%20a%20la%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy%20et%20a%20Saint-Martin-Chapitre%201er%20:%20Generalites-Article%20L751-1"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Dispositions%20particulieres%20a%20la%20Guadeloupe,%20a%20la%20Guyane,%20a%20la%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy%20et%20a%20Saint-Martin-Chapitre%201er%20:%20Generalites-Article%20L751-1">Article L751-1</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000031323778" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Les dispositions du présent titre s’appliquent en Guadeloupe, en
-Guyane, en Martinique, à La Réunion, à Saint-Barthélemy et à
-Saint-Martin à l’ensemble des bénéficiaires de la législation générale
-de sécurité sociale, y compris les membres des professions
-agricoles.</p></div>
+<div class='law-text'><p>Les dispositions du présent titre s’appliquent en Guadeloupe, en Guyane, en Martinique, à La Réunion, à Saint-Barthélemy et à Saint-Martin à l’ensemble des bénéficiaires de la législation générale de sécurité sociale, y compris les membres des professions agricoles.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1592,12 +1614,8 @@ agricoles.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Dispositions%20particulieres%20a%20la%20Guadeloupe,%20a%20la%20Guyane,%20a%20la%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy%20et%20a%20Saint-Martin-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20L755-3"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Dispositions%20particulieres%20a%20la%20Guadeloupe,%20a%20la%20Guyane,%20a%20la%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy%20et%20a%20Saint-Martin-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20L755-3">Article L755-3</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000041979722" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Les dispositions des articles L. 512-1 à L. 512-4 , L. 513-1 , L.
-521-2 , L. 552-1 , L. 552-7 , L. 553-1 , L. 553-2 , L. 553-4 , L. 582-1
-, L. 582-2 , L. 583-3 et L. 583-5 sont applicables aux collectivités
-mentionnées à l’article L. 751-1 .</p>
-<p>La base de calcul des prestations familiales est la même que celle
-qui est fixée en application de l’article L. 551-1 .</p></div>
+<div class='law-text'><p>Les dispositions des articles L. 512-1 à L. 512-4 , L. 513-1 , L. 521-2 , L. 552-1 , L. 552-7 , L. 553-1 , L. 553-2 , L. 553-4 , L. 582-1 , L. 582-2 , L. 583-3 et L. 583-5 sont applicables aux collectivités mentionnées à l’article L. 751-1 .</p>
+<p>La base de calcul des prestations familiales est la même que celle qui est fixée en application de l’article L. 551-1 .</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1608,17 +1626,11 @@ qui est fixée en application de l’article L. 551-1 .</p></div>
 
 </div>
 <div class='law-text'><p>NOTA :</p>
-<p>Conformément au IV de l’article 4 de la loi n° 2020-692 du 8 juin
-2020, ces dispositions entrent en vigueur à une date fixée par décret,
-et au plus tard le 1er janvier 2022, pour les décès intervenant à
-compter de cette date.</p></div>
+<p>Conformément au IV de l’article 4 de la loi n° 2020-692 du 8 juin 2020, ces dispositions entrent en vigueur à une date fixée par décret, et au plus tard le 1er janvier 2022, pour les décès intervenant à compter de cette date.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Dispositions%20particulieres%20a%20la%20Guadeloupe,%20a%20la%20Guyane,%20a%20la%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy%20et%20a%20Saint-Martin-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20L755-11"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Dispositions%20particulieres%20a%20la%20Guadeloupe,%20a%20la%20Guyane,%20a%20la%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy%20et%20a%20Saint-Martin-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20L755-11">Article L755-11</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000031323803" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Les conditions d’attribution des allocations familiales et de leurs
-majorations fixées par les articles L. 521-1 et L. 521-3 sont
-applicables dans les collectivités mentionnées à l’article L. 751-1
-.</p></div>
+<div class='law-text'><p>Les conditions d’attribution des allocations familiales et de leurs majorations fixées par les articles L. 521-1 et L. 521-3 sont applicables dans les collectivités mentionnées à l’article L. 751-1 .</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1628,13 +1640,11 @@ applicables dans les collectivités mentionnées à l’article L. 751-1
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Toutefois, les dispositions de l’article L. 755-12 restent en vigueur
-aussi longtemps que le présent chapitre V est applicable.</p></div>
+<div class='law-text'><p>Toutefois, les dispositions de l’article L. 755-12 restent en vigueur aussi longtemps que le présent chapitre V est applicable.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Dispositions%20particulieres%20a%20la%20Guadeloupe,%20a%20la%20Guyane,%20a%20la%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy%20et%20a%20Saint-Martin-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20L755-12"><a href="#Code%20de%20la%20securite%20sociale-Partie%20legislative-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Dispositions%20particulieres%20a%20la%20Guadeloupe,%20a%20la%20Guyane,%20a%20la%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy%20et%20a%20Saint-Martin-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20L755-12">Article L755-12</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000029962999" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Les allocations familiales sont dues, pour tout enfant, à la personne
-qui a effectivement la charge de celui-ci.</p></div>
+<div class='law-text'><p>Les allocations familiales sont dues, pour tout enfant, à la personne qui a effectivement la charge de celui-ci.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1666,9 +1676,7 @@ qui a effectivement la charge de celui-ci.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Toutefois, les quatre derniers alinéas de l’article L. 521-1 ne sont
-pas applicables lorsque le ménage ou la personne a un seul enfant à
-charge.</p></div>
+<div class='law-text'><p>Toutefois, les quatre derniers alinéas de l’article L. 521-1 ne sont pas applicables lorsque le ménage ou la personne a un seul enfant à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_L.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1727,9 +1735,7 @@ charge.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%201%20:%20Champ%20d%20application%20-%20Generalites-Chapitre%202%20:%20Champ%20d%20application.-Article%20R512-2"><a href="#Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%201%20:%20Champ%20d%20application%20-%20Generalites-Chapitre%202%20:%20Champ%20d%20application.-Article%20R512-2">Article R512-2</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000006750602" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Les enfants ouvrent droit aux prestations familiales jusqu’à l’âge de
-vingt ans sous réserve que leur rémunération n’excède pas le plafond
-fixé au deuxième alinéa du présent article.</p></div>
+<div class='law-text'><p>Les enfants ouvrent droit aux prestations familiales jusqu’à l’âge de vingt ans sous réserve que leur rémunération n’excède pas le plafond fixé au deuxième alinéa du présent article.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1749,10 +1755,7 @@ fixé au deuxième alinéa du présent article.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Le plafond de rémunération mentionné au 2° de l’article L. 512-3 est
-égal, pour un mois, à 55 % du salaire minimum interprofessionnel de
-croissance défini aux articles L. 141-1 à L. 141-9 du code du travail,
-multiplié par 169.</p></div>
+<div class='law-text'><p>Le plafond de rémunération mentionné au 2° de l’article L. 512-3 est égal, pour un mois, à 55 % du salaire minimum interprofessionnel de croissance défini aux articles L. 141-1 à L. 141-9 du code du travail, multiplié par 169.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1766,9 +1769,7 @@ multiplié par 169.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Pour ceux des enfants qui bénéficient d’avantages en nature,
-l’évaluation de ces avantages devra être faite suivant les barèmes fixés
-pour l’application de la législation sur les assurances sociales.</p></div>
+<div class='law-text'><p>Pour ceux des enfants qui bénéficient d’avantages en nature, l’évaluation de ces avantages devra être faite suivant les barèmes fixés pour l’application de la législation sur les assurances sociales.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1792,9 +1793,7 @@ pour l’application de la législation sur les assurances sociales.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20R521-1"><a href="#Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20R521-1">Article R521-1</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000018735853" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>L’âge mentionné au premier alinéa de l’article L. 521-3 à partir
-duquel les enfants ouvrent droit à la majoration des allocations
-familiales est fixé à 14 ans.</p></div>
+<div class='law-text'><p>L’âge mentionné au premier alinéa de l’article L. 521-3 à partir duquel les enfants ouvrent droit à la majoration des allocations familiales est fixé à 14 ans.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1806,9 +1805,7 @@ familiales est fixé à 14 ans.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Le nombre minimum d’enfants à charge, mentionné au deuxième alinéa de
-l’article L. 521-3 ouvrant droit à ladite majoration pour chaque enfant
-est fixé à trois.</p></div>
+<div class='law-text'><p>Le nombre minimum d’enfants à charge, mentionné au deuxième alinéa de l’article L. 521-3 ouvrant droit à ladite majoration pour chaque enfant est fixé à trois.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1820,10 +1817,7 @@ est fixé à trois.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>NOTA : Décret n° 2008-409 du 28 avril 2008 JORF du 29 avril 2008 art.
-2 : Les modifications induites par le décret n° 2008-409 s’appliquent
-aux enfants dont le onzième anniversaire est postérieur au 30 avril
-2008.</p></div>
+<div class='law-text'><p>NOTA : Décret n° 2008-409 du 28 avril 2008 JORF du 29 avril 2008 art. 2 : Les modifications induites par le décret n° 2008-409 s’appliquent aux enfants dont le onzième anniversaire est postérieur au 30 avril 2008.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1863,14 +1857,9 @@ aux enfants dont le onzième anniversaire est postérieur au 30 avril
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20R521-2"><a href="#Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20R521-2">Article R521-2</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000006750608" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Dans les situations visées au deuxième alinéa de l’article L. 521-2 ,
-l’allocataire est celui des deux parents qu’ils désignent d’un commun
-accord. A défaut d’accord sur la désignation d’un allocataire unique,
-chacun des deux parents peut se voir reconnaître la qualité
-d’allocataire :</p>
+<div class='law-text'><p>Dans les situations visées au deuxième alinéa de l’article L. 521-2 , l’allocataire est celui des deux parents qu’ils désignent d’un commun accord. A défaut d’accord sur la désignation d’un allocataire unique, chacun des deux parents peut se voir reconnaître la qualité d’allocataire :</p>
 <p>1° Lorsque les deux parents en ont fait la demande conjointe ;</p>
-<p>2° Lorsque les deux parents n’ont ni désigné un allocataire unique,
-ni fait une demande conjointe de partage.</p></div>
+<p>2° Lorsque les deux parents n’ont ni désigné un allocataire unique, ni fait une demande conjointe de partage.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1882,10 +1871,7 @@ ni fait une demande conjointe de partage.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Lorsque les parents ont désigné un allocataire unique ou fait une
-demande conjointe de partage, ils ne peuvent remettre en cause les
-modalités ainsi choisies qu’au bout d’un an, sauf modification des
-modalités de résidence du ou des enfants.</p></div>
+<div class='law-text'><p>Lorsque les parents ont désigné un allocataire unique ou fait une demande conjointe de partage, ils ne peuvent remettre en cause les modalités ainsi choisies qu’au bout d’un an, sauf modification des modalités de résidence du ou des enfants.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1901,11 +1887,7 @@ modalités de résidence du ou des enfants.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20R521-3"><a href="#Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20R521-3">Article R521-3</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000006750610" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Sous réserve de l’article R. 521-4, dans les situations visées aux 1°
-et 2° de l’article R. 521-2 , la prestation due à chacun des parents est
-égale au montant des allocations familiales dues pour le total des
-enfants à charge, multiplié par un coefficient résultant du rapport
-entre le nombre moyen d’enfants et le nombre total d’enfants.</p></div>
+<div class='law-text'><p>Sous réserve de l’article R. 521-4, dans les situations visées aux 1° et 2° de l’article R. 521-2 , la prestation due à chacun des parents est égale au montant des allocations familiales dues pour le total des enfants à charge, multiplié par un coefficient résultant du rapport entre le nombre moyen d’enfants et le nombre total d’enfants.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1927,9 +1909,7 @@ entre le nombre moyen d’enfants et le nombre total d’enfants.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Le nombre moyen d’enfants, pour chaque foyer, est obtenu en faisant
-la somme du nombre d’enfants à charge dans les conditions suivantes
-:</p>
+<div class='law-text'><p>Le nombre moyen d’enfants, pour chaque foyer, est obtenu en faisant la somme du nombre d’enfants à charge dans les conditions suivantes :</p>
 <p>1° Chaque enfant en résidence alternée compte pour 0,5 ;</p>
 <p>2° Les autres enfants à charge comptent pour 1.</p></div>
 <div class='code-wrapper catala-code'>
@@ -1961,9 +1941,7 @@ la somme du nombre d’enfants à charge dans les conditions suivantes
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Le nombre total d’enfants, pour chaque foyer, est obtenu en faisant
-la somme du ou des enfants en résidence alternée et, le cas échéant, du
-ou des autres enfants à charge.</p></div>
+<div class='law-text'><p>Le nombre total d’enfants, pour chaque foyer, est obtenu en faisant la somme du ou des enfants en résidence alternée et, le cas échéant, du ou des autres enfants à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1983,9 +1961,7 @@ ou des autres enfants à charge.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20R521-4"><a href="#Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20R521-4">Article R521-4</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000006750613" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Pour l’ouverture du droit à la majoration prévue à l’article L. 521-3
-, le nombre d’enfants à charge est évalué dans les conditions prévues au
-premier alinéa de l’article R. 521-3.</p></div>
+<div class='law-text'><p>Pour l’ouverture du droit à la majoration prévue à l’article L. 521-3 , le nombre d’enfants à charge est évalué dans les conditions prévues au premier alinéa de l’article R. 521-3.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2005,9 +1981,7 @@ premier alinéa de l’article R. 521-3.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Lorsque le ou les enfants ouvrant droit à ladite majoration sont en
-résidence alternée, le montant servi au titre de cette majoration est
-réduit de moitié.</p></div>
+<div class='law-text'><p>Lorsque le ou les enfants ouvrant droit à ladite majoration sont en résidence alternée, le montant servi au titre de cette majoration est réduit de moitié.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2055,10 +2029,7 @@ réduit de moitié.</p></div>
 
 <h6 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Departements%20d%20outre-mer-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20R755-0-2"><a href="#Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20en%20Conseil%20d%20Etat-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Departements%20d%20outre-mer-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20R755-0-2">Article R755-0-2</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000006752633" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h6>
 
-<div class='law-text'><p>Le plafond de rémunération des enfants à charge mentionnés à
-l’article L. 512-3 est égal, pour un mois, à 55 % du salaire minimum de
-croissance en vigueur dans chacun des départements mentionnés à
-l’article L. 751-1 , multiplié par 169.</p></div>
+<div class='law-text'><p>Le plafond de rémunération des enfants à charge mentionnés à l’article L. 512-3 est égal, pour un mois, à 55 % du salaire minimum de croissance en vigueur dans chacun des départements mentionnés à l’article L. 751-1 , multiplié par 169.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_R.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2099,9 +2070,7 @@ l’article L. 751-1 , multiplié par 169.</p></div>
 
 <h7 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20simples-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20D521-1"><a href="#Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20simples-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20D521-1">Article D521-1</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000030680318" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h7>
 
-<div class='law-text'><p>I.-Pour l’application de l’article L. 521-1 , le montant des
-allocations familiales et de la majoration pour âge prévue à l’article
-L. 521-3 est défini selon le barème suivant :</p></div>
+<div class='law-text'><p>I.-Pour l’application de l’article L. 521-1 , le montant des allocations familiales et de la majoration pour âge prévue à l’article L. 521-3 est défini selon le barème suivant :</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2125,12 +2094,7 @@ L. 521-3 est défini selon le barème suivant :</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>1° Lorsque le ménage ou la personne a disposé d’un montant de
-ressources inférieur ou égal au plafond défini au I de l’article D.
-521-3, les taux servant au calcul des allocations familiales sont fixés,
-en pourcentage de la base mensuelle prévue à l’article L. 551-1, à : a)
-32 % pour le deuxième enfant à charge ; b) 41 % pour le troisième enfant
-à charge et chacun des suivants.</p></div>
+<div class='law-text'><p>1° Lorsque le ménage ou la personne a disposé d’un montant de ressources inférieur ou égal au plafond défini au I de l’article D. 521-3, les taux servant au calcul des allocations familiales sont fixés, en pourcentage de la base mensuelle prévue à l’article L. 551-1, à : a) 32 % pour le deuxième enfant à charge ; b) 41 % pour le troisième enfant à charge et chacun des suivants.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2168,8 +2132,7 @@ en pourcentage de la base mensuelle prévue à l’article L. 551-1, à : a)
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>La majoration pour âge est fixée à 16 % de la base mensuelle de
-calcul des prestations familiales ;</p></div>
+<div class='law-text'><p>La majoration pour âge est fixée à 16 % de la base mensuelle de calcul des prestations familiales ;</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2193,13 +2156,7 @@ calcul des prestations familiales ;</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>2° Lorsque le ménage ou la personne a disposé d’un montant de
-ressources supérieur au plafond défini au I de l’article D. 521-3 et
-inférieur ou égal à celui défini au II du même article, les taux servant
-au calcul des allocations familiales sont fixés, en pourcentage de la
-base mensuelle prévue à l’article L. 551-1, à : a) 16 % pour le deuxième
-enfant à charge ; b) 20,5 % pour le troisième enfant à charge et chacun
-des suivants.</p></div>
+<div class='law-text'><p>2° Lorsque le ménage ou la personne a disposé d’un montant de ressources supérieur au plafond défini au I de l’article D. 521-3 et inférieur ou égal à celui défini au II du même article, les taux servant au calcul des allocations familiales sont fixés, en pourcentage de la base mensuelle prévue à l’article L. 551-1, à : a) 16 % pour le deuxième enfant à charge ; b) 20,5 % pour le troisième enfant à charge et chacun des suivants.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2239,8 +2196,7 @@ des suivants.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>La majoration pour âge est fixée à 8 % de la base mensuelle de calcul
-des prestations familiales ;</p></div>
+<div class='law-text'><p>La majoration pour âge est fixée à 8 % de la base mensuelle de calcul des prestations familiales ;</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2264,12 +2220,7 @@ des prestations familiales ;</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>3° Lorsque le ménage ou la personne a disposé d’un montant de
-ressources supérieur au plafond défini au II de l’article D. 521-3, les
-taux servant au calcul des allocations familiales sont fixés, en
-pourcentage de la base mensuelle prévue à l’article L. 551-1, à : a) 8 %
-pour le deuxième enfant à charge ; b) 10,25 % pour le troisième enfant à
-charge et chacun des suivants.</p></div>
+<div class='law-text'><p>3° Lorsque le ménage ou la personne a disposé d’un montant de ressources supérieur au plafond défini au II de l’article D. 521-3, les taux servant au calcul des allocations familiales sont fixés, en pourcentage de la base mensuelle prévue à l’article L. 551-1, à : a) 8 % pour le deuxième enfant à charge ; b) 10,25 % pour le troisième enfant à charge et chacun des suivants.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2305,8 +2256,7 @@ charge et chacun des suivants.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>La majoration pour âge est fixée à 4 % de la base mensuelle de calcul
-des prestations familiales.</p></div>
+<div class='law-text'><p>La majoration pour âge est fixée à 4 % de la base mensuelle de calcul des prestations familiales.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2328,17 +2278,8 @@ des prestations familiales.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>II.-En application du sixième alinéa de l’article L. 521-1, le
-montant mensuel des allocations familiales et, le cas échéant, de la
-majoration pour âge est majoré d’un complément dégressif, lorsque les
-ressources annuelles du ménage ou de la personne dépassent l’un des
-plafonds défini au I ou au II de l’article D. 521-3 d’une somme
-inférieure à douze fois le montant mensuel des allocations familiales
-augmenté, le cas échéant, de la ou des majorations pour âge.</p>
-<p>Ce complément dégressif est égal, pour chaque mois, au douzième de la
-différence entre, d’une part, ce plafond de ressources majoré de la
-somme définie à l’alinéa précédent et, d’autre part, le montant des
-ressources.</p></div>
+<div class='law-text'><p>II.-En application du sixième alinéa de l’article L. 521-1, le montant mensuel des allocations familiales et, le cas échéant, de la majoration pour âge est majoré d’un complément dégressif, lorsque les ressources annuelles du ménage ou de la personne dépassent l’un des plafonds défini au I ou au II de l’article D. 521-3 d’une somme inférieure à douze fois le montant mensuel des allocations familiales augmenté, le cas échéant, de la ou des majorations pour âge.</p>
+<p>Ce complément dégressif est égal, pour chaque mois, au douzième de la différence entre, d’une part, ce plafond de ressources majoré de la somme définie à l’alinéa précédent et, d’autre part, le montant des ressources.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2444,13 +2385,8 @@ ressources.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>I.-Le montant mensuel de l’allocation forfaitaire prévue au deuxième
-alinéa de l’article L. 521-1 est défini selon le barème suivant :</p>
-<p>1° Lorsque le ménage ou la personne a disposé d’un montant de
-ressources inférieur ou égal au plafond défini au I de l’article D.
-521-3, le montant mensuel de l’allocation forfaitaire est fixé à 20,234
-% de la base mensuelle de calcul des allocations familiales par enfant
-;</p></div>
+<div class='law-text'><p>I.-Le montant mensuel de l’allocation forfaitaire prévue au deuxième alinéa de l’article L. 521-1 est défini selon le barème suivant :</p>
+<p>1° Lorsque le ménage ou la personne a disposé d’un montant de ressources inférieur ou égal au plafond défini au I de l’article D. 521-3, le montant mensuel de l’allocation forfaitaire est fixé à 20,234 % de la base mensuelle de calcul des allocations familiales par enfant ;</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2476,11 +2412,7 @@ ressources inférieur ou égal au plafond défini au I de l’article D.
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>2° Lorsque le ménage ou la personne a disposé d’un montant de
-ressources supérieur au plafond défini au I de l’article D. 521-3 et
-inférieur ou égal à celui défini au II du même article, le montant
-mensuel de l’allocation forfaitaire est fixé à 10,117 % de la base
-mensuelle de calcul des allocations familiales par enfant ;</p></div>
+<div class='law-text'><p>2° Lorsque le ménage ou la personne a disposé d’un montant de ressources supérieur au plafond défini au I de l’article D. 521-3 et inférieur ou égal à celui défini au II du même article, le montant mensuel de l’allocation forfaitaire est fixé à 10,117 % de la base mensuelle de calcul des allocations familiales par enfant ;</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2500,10 +2432,7 @@ mensuelle de calcul des allocations familiales par enfant ;</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>3° Lorsque le ménage ou la personne a disposé d’un montant de
-ressources supérieur au plafond défini au II de l’article D. 521-3, le
-montant mensuel de l’allocation forfaitaire est fixé à 5,059 % de la
-base mensuelle de calcul des allocations familiales par enfant.</p></div>
+<div class='law-text'><p>3° Lorsque le ménage ou la personne a disposé d’un montant de ressources supérieur au plafond défini au II de l’article D. 521-3, le montant mensuel de l’allocation forfaitaire est fixé à 5,059 % de la base mensuelle de calcul des allocations familiales par enfant.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2521,15 +2450,7 @@ base mensuelle de calcul des allocations familiales par enfant.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>II.-En application du sixième alinéa de l’article L. 521-1, le
-montant mensuel de l’allocation forfaitaire est majoré d’un complément
-dégressif lorsque les ressources annuelles du ménage ou de la personne
-dépassent l’un des plafonds défini au I ou au II de l’article D. 521-3
-d’une somme inférieure à douze fois le montant mensuel de l’allocation
-forfaitaire auquel l’enfant ouvre droit. Ce complément dégressif est
-égal, pour chaque mois, au douzième de la différence entre, d’une part,
-ce plafond de ressources majoré de la somme définie à l’alinéa précédent
-et, d’autre part, le montant des ressources.</p></div>
+<div class='law-text'><p>II.-En application du sixième alinéa de l’article L. 521-1, le montant mensuel de l’allocation forfaitaire est majoré d’un complément dégressif lorsque les ressources annuelles du ménage ou de la personne dépassent l’un des plafonds défini au I ou au II de l’article D. 521-3 d’une somme inférieure à douze fois le montant mensuel de l’allocation forfaitaire auquel l’enfant ouvre droit. Ce complément dégressif est égal, pour chaque mois, au douzième de la différence entre, d’une part, ce plafond de ressources majoré de la somme définie à l’alinéa précédent et, d’autre part, le montant des ressources.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2583,8 +2504,7 @@ et, d’autre part, le montant des ressources.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>III.-Le nombre minimum d’enfants à charge mentionné au deuxième
-alinéa de l’article L. 521-1 est fixé à trois.</p></div>
+<div class='law-text'><p>III.-Le nombre minimum d’enfants à charge mentionné au deuxième alinéa de l’article L. 521-1 est fixé à trois.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2600,9 +2520,7 @@ alinéa de l’article L. 521-1 est fixé à trois.</p></div>
 
 <h7 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20simples-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20D521-3"><a href="#Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20simples-Livre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Titre%202%20:%20Prestations%20generales%20d%20entretien-Chapitre%201er%20:%20Allocations%20familiales-Article%20D521-3">Article D521-3</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000044809227" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h7>
 
-<div class='law-text'><p>I.-Le plafond prévu au 1° du I des articles D. 521-1 et D. 521-2 est
-fixé à 55 950 euros. Il est majoré de 5 595 euros par enfant à
-charge.</p></div>
+<div class='law-text'><p>I.-Le plafond prévu au 1° du I des articles D. 521-1 et D. 521-2 est fixé à 55 950 euros. Il est majoré de 5 595 euros par enfant à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2618,9 +2536,7 @@ charge.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>II.-Le plafond prévu au 2° du I des articles D. 521-1 et D. 521-2 est
-fixé à 78 300 euros. Il est majoré de 5 595 euros par enfant à
-charge.</p></div>
+<div class='law-text'><p>II.-Le plafond prévu au 2° du I des articles D. 521-1 et D. 521-2 est fixé à 78 300 euros. Il est majoré de 5 595 euros par enfant à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2636,10 +2552,7 @@ charge.</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>III.-Les montants des plafonds et de leur majoration respective fixés
-au présent article sont revalorisés au 1er janvier de chaque année,
-conformément à l’évolution en moyenne annuelle des prix à la
-consommation hors tabac de l’année civile de référence.</p></div>
+<div class='law-text'><p>III.-Les montants des plafonds et de leur majoration respective fixés au présent article sont revalorisés au 1er janvier de chaque année, conformément à l’évolution en moyenne annuelle des prix à la consommation hors tabac de l’année civile de référence.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2667,9 +2580,7 @@ consommation hors tabac de l’année civile de référence.</p></div>
 
 <h7 class='law-heading' id="Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20simples-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Departements%20d%20outre-mer-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20D755-5"><a href="#Code%20de%20la%20securite%20sociale-Partie%20reglementaire%20-%20Decrets%20simples-Livre%207%20:%20Regimes%20divers%20-%20Dispositions%20diverses-Titre%205%20:%20Departements%20d%20outre-mer-Chapitre%205%20:%20Prestations%20familiales%20et%20prestations%20assimilees-Article%20D755-5">Article D755-5</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000006738575" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h7>
 
-<div class='law-text'><p>I.-Les taux servant au calcul des allocations familiales et de la
-majoration prévue à l’article L. 755-11 sont identiques à ceux
-mentionnés à l’article D. 521-1 .</p></div>
+<div class='law-text'><p>I.-Les taux servant au calcul des allocations familiales et de la majoration prévue à l’article L. 755-11 sont identiques à ceux mentionnés à l’article D. 521-1 .</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2679,10 +2590,7 @@ mentionnés à l’article D. 521-1 .</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>II.-En application de l’article L. 755-11, 2e alinéa, le taux servant
-au calcul des allocations familiales servies pour un seul enfant à
-charge est fixé à 5,88 p. 100 de la base mensuelle prévue à l’article L.
-755-3 .</p></div>
+<div class='law-text'><p>II.-En application de l’article L. 755-11, 2e alinéa, le taux servant au calcul des allocations familiales servies pour un seul enfant à charge est fixé à 5,88 p. 100 de la base mensuelle prévue à l’article L. 755-3 .</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2726,9 +2634,7 @@ charge est fixé à 5,88 p. 100 de la base mensuelle prévue à l’article L.
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>La majoration des allocations familiales pour un seul enfant à charge
-est fixée à 3,69 p. 100 de la base mensuelle prévue à l’article L. 755-3
-à partir de onze ans et à 5,67 p. 100 à partir de seize ans.</p></div>
+<div class='law-text'><p>La majoration des allocations familiales pour un seul enfant à charge est fixée à 3,69 p. 100 de la base mensuelle prévue à l’article L. 755-3 à partir de onze ans et à 5,67 p. 100 à partir de seize ans.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/securite_sociale_D.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2788,18 +2694,8 @@ est fixée à 3,69 p. 100 de la base mensuelle prévue à l’article L. 755-3
 
 <h2 class='law-heading' id="Montant%20des%20plafonds%20de%20ressources-Circulaire%20interministerielle%20N%20%20%20DSS/SD2B/2017/352%20du%2022%20decembre%202017%20relative%20a%20la%20revalorisation%20au%201er%20janvier%202018%20des%20plafonds%20de%20ressources%20d%20attribution%20de%20certaines%20prestations%20familiales%20servies%20en%20metropole,%20en%20Guadeloupe,%20en%20Guyane,%20en%20Martinique,%20a%20la%20Reunion,%20a%20Saint-Barthelemy,%20a%20Saint-Martin%20et%20a%20Mayotte"><a href="#Montant%20des%20plafonds%20de%20ressources-Circulaire%20interministerielle%20N%20%20%20DSS/SD2B/2017/352%20du%2022%20decembre%202017%20relative%20a%20la%20revalorisation%20au%201er%20janvier%202018%20des%20plafonds%20de%20ressources%20d%20attribution%20de%20certaines%20prestations%20familiales%20servies%20en%20metropole,%20en%20Guadeloupe,%20en%20Guyane,%20en%20Martinique,%20a%20la%20Reunion,%20a%20Saint-Barthelemy,%20a%20Saint-Martin%20et%20a%20Mayotte">Circulaire interministérielle N° DSS/SD2B/2017/352 du 22 décembre 2017 relative à la revalorisation au 1er janvier 2018 des plafonds de ressources d’attribution de certaines prestations familiales servies en métropole, en Guadeloupe, en Guyane, en Martinique, à la Réunion, à Saint-Barthélemy, à Saint-Martin et à Mayotte</a></h2>
 <details><summary>Circulaire interministérielle N° DSS/SD2B/2017/352 du 22 décembre 2017 relative à la revalorisation au 1er janvier 2018 des plafonds de ressources d’attribution de certaines prestations familiales servies en métropole, en Guadeloupe, en Guyane, en Martinique, à la Réunion, à Saint-Barthélemy, à Saint-Martin et à Mayotte</summary>
-<div class='law-text'><p>Plafonds de ressources applicables pour l’attribution du montant
-modulé des allocations familiales, de la majoration pour âge et de
-l’allocation forfaitaire, du 1er janvier 2018 au 31 décembre 2018 (à
-comparer au revenu net catégoriel de l’année 2016).</p>
-<p>La première tranche est celle dont les revenus sont inférieurs ou
-égaux à un plafond de base de 56 286 € majoré de 5 628 euros par enfant
-à charge. La deuxième tranche est celle dont les revenus sont supérieurs
-à un plafond de base de 56 286 euros majoré de 5 628 euros par enfant à
-charge mais inférieurs ou égaux au plafond de base de 78 770 euros
-majoré de 5 628 euros par enfant à charge. La troisième tranche est
-celle dont les revenus sont supérieurs au plafond de base de 78 770
-euros majoré de 5 628 euros par enfant à charge.</p></div>
+<div class='law-text'><p>Plafonds de ressources applicables pour l’attribution du montant modulé des allocations familiales, de la majoration pour âge et de l’allocation forfaitaire, du 1er janvier 2018 au 31 décembre 2018 (à comparer au revenu net catégoriel de l’année 2016).</p>
+<p>La première tranche est celle dont les revenus sont inférieurs ou égaux à un plafond de base de 56 286 € majoré de 5 628 euros par enfant à charge. La deuxième tranche est celle dont les revenus sont supérieurs à un plafond de base de 56 286 euros majoré de 5 628 euros par enfant à charge mais inférieurs ou égaux au plafond de base de 78 770 euros majoré de 5 628 euros par enfant à charge. La troisième tranche est celle dont les revenus sont supérieurs au plafond de base de 78 770 euros majoré de 5 628 euros par enfant à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/decrets_divers.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2839,18 +2735,8 @@ euros majoré de 5 628 euros par enfant à charge.</p></div>
 </details>
 <h2 class='law-heading' id="Montant%20des%20plafonds%20de%20ressources-Instruction%20interministerielle%20n%20%20%20DSS/SD2B/2018/279%20du%2017%20decembre%202018%20relative%20a%20la%20revalorisation%20au%201er%20janvier%202019%20des%20plafonds%20de%20ressources%20d%20attribution%20de%20certaines%20prestations%20familiales%20servies%20en%20metropole,%20en%20Guadeloupe,%20en%20Guyane,%20en%20Martinique,%20a%20la%20Reunion,%20a%20Saint-Barthelemy,%20a%20Saint-Martin%20et%20a%20Mayotte"><a href="#Montant%20des%20plafonds%20de%20ressources-Instruction%20interministerielle%20n%20%20%20DSS/SD2B/2018/279%20du%2017%20decembre%202018%20relative%20a%20la%20revalorisation%20au%201er%20janvier%202019%20des%20plafonds%20de%20ressources%20d%20attribution%20de%20certaines%20prestations%20familiales%20servies%20en%20metropole,%20en%20Guadeloupe,%20en%20Guyane,%20en%20Martinique,%20a%20la%20Reunion,%20a%20Saint-Barthelemy,%20a%20Saint-Martin%20et%20a%20Mayotte">Instruction interministérielle n° DSS/SD2B/2018/279 du 17 décembre 2018 relative à la revalorisation au 1er janvier 2019 des plafonds de ressources d’attribution de certaines prestations familiales servies en métropole, en Guadeloupe, en Guyane, en Martinique, à la Réunion, à Saint-Barthélemy, à Saint-Martin et à Mayotte</a></h2>
 <details><summary>Instruction interministérielle n° DSS/SD2B/2018/279 du 17 décembre 2018 relative à la revalorisation au 1er janvier 2019 des plafonds de ressources d’attribution de certaines prestations familiales servies en métropole, en Guadeloupe, en Guyane, en Martinique, à la Réunion, à Saint-Barthélemy, à Saint-Martin et à Mayotte</summary>
-<div class='law-text'><p>Plafonds de ressources applicables pour l’attribution du montant
-modulé des allocations familiales, de la majoration pour âge et de
-l’allocation forfaitaire, du 1er janvier 2019 au 31 décembre 2019 (à
-comparer au revenu net catégoriel de l’année 2017).</p>
-<p>La première tranche est celle dont les revenus sont inférieurs ou
-égaux à un plafond de base de 56 849 € majoré de 5 684 euros par enfant
-à charge. La deuxième tranche est celle dont les revenus sont supérieurs
-à un plafond de base de 56 849 euros majoré de 5 684 euros par enfant à
-charge mais inférieurs ou égaux au plafond de base de 79 558 euros
-majoré de 5 684 euros par enfant à charge. La troisième tranche est
-celle dont les revenus sont supérieurs au plafond de base de 79 558
-euros majoré de 5 684 euros par enfant à charge.</p></div>
+<div class='law-text'><p>Plafonds de ressources applicables pour l’attribution du montant modulé des allocations familiales, de la majoration pour âge et de l’allocation forfaitaire, du 1er janvier 2019 au 31 décembre 2019 (à comparer au revenu net catégoriel de l’année 2017).</p>
+<p>La première tranche est celle dont les revenus sont inférieurs ou égaux à un plafond de base de 56 849 € majoré de 5 684 euros par enfant à charge. La deuxième tranche est celle dont les revenus sont supérieurs à un plafond de base de 56 849 euros majoré de 5 684 euros par enfant à charge mais inférieurs ou égaux au plafond de base de 79 558 euros majoré de 5 684 euros par enfant à charge. La troisième tranche est celle dont les revenus sont supérieurs au plafond de base de 79 558 euros majoré de 5 684 euros par enfant à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/decrets_divers.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2890,18 +2776,8 @@ euros majoré de 5 684 euros par enfant à charge.</p></div>
 </details>
 <h2 class='law-heading' id="Montant%20des%20plafonds%20de%20ressources-Instruction%20interministerielle%20no%20DSS/SD2B/2019/261%20du%2018%20decembre%202019%20relative%20a%20la%20revalorisation%20au%201er%20janvier%202020%20des%20plafonds%20de%20ressources%20d%20attribution%20de%20certaines%20prestations%20familiales%20servies%20en%20metropole,%20en%20Guadeloupe,%20en%20Guyane,%20en%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy,%20a%20Saint-Martin%20et%20a%20Mayotte"><a href="#Montant%20des%20plafonds%20de%20ressources-Instruction%20interministerielle%20no%20DSS/SD2B/2019/261%20du%2018%20decembre%202019%20relative%20a%20la%20revalorisation%20au%201er%20janvier%202020%20des%20plafonds%20de%20ressources%20d%20attribution%20de%20certaines%20prestations%20familiales%20servies%20en%20metropole,%20en%20Guadeloupe,%20en%20Guyane,%20en%20Martinique,%20a%20La%20Reunion,%20a%20Saint-Barthelemy,%20a%20Saint-Martin%20et%20a%20Mayotte">Instruction interministerielle no DSS/SD2B/2019/261 du 18 décembre 2019 relative à la revalorisation au 1er janvier 2020 des plafonds de ressources d’attribution de certaines prestations familiales servies en métropole, en Guadeloupe, en Guyane, en Martinique, à La Réunion, à Saint-Barthélemy, à Saint-Martin et à Mayotte</a></h2>
 <details><summary>Instruction interministerielle no DSS/SD2B/2019/261 du 18 décembre 2019 relative à la revalorisation au 1er janvier 2020 des plafonds de ressources d’attribution de certaines prestations familiales servies en métropole, en Guadeloupe, en Guyane, en Martinique, à La Réunion, à Saint-Barthélemy, à Saint-Martin et à Mayotte</summary>
-<div class='law-text'><p>Plafonds de ressources applicables pour l’attribution du montant
-modulé des allocations familiales, de la majoration pour âge et de
-l’allocation forfaitaire, du 1er janvier 2020 au 31 décembre 2020 (à
-comparer au revenu net catégoriel de l’année 2018)</p>
-<p>La première tranche est celle dont les revenus sont inférieurs ou
-égaux à un plafond de base de 57 759 € majoré de 5 775 € par enfant à
-charge. La deuxième tranche est celle dont les revenus sont supérieurs à
-un plafond de base de 57 759 € majoré de 5 775 € par enfant à charge
-mais inférieurs ou égaux au plafond de base de 80 831 € majoré de 5 775
-€ par enfant à charge. La troisième tranche est celle dont les revenus
-sont supérieurs au plafond de base de 80 831 € majoré de 5 775 € par
-enfant à charge.</p></div>
+<div class='law-text'><p>Plafonds de ressources applicables pour l’attribution du montant modulé des allocations familiales, de la majoration pour âge et de l’allocation forfaitaire, du 1er janvier 2020 au 31 décembre 2020 (à comparer au revenu net catégoriel de l’année 2018)</p>
+<p>La première tranche est celle dont les revenus sont inférieurs ou égaux à un plafond de base de 57 759 € majoré de 5 775 € par enfant à charge. La deuxième tranche est celle dont les revenus sont supérieurs à un plafond de base de 57 759 € majoré de 5 775 € par enfant à charge mais inférieurs ou égaux au plafond de base de 80 831 € majoré de 5 775 € par enfant à charge. La troisième tranche est celle dont les revenus sont supérieurs au plafond de base de 80 831 € majoré de 5 775 € par enfant à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/decrets_divers.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2944,12 +2820,7 @@ enfant à charge.</p></div>
 
 <h3 class='law-heading' id="Montant%20des%20plafonds%20de%20ressources-Arrete%20du%2014%20decembre%202020%20relatif%20au%20montant%20des%20plafonds%20de%20ressources%20de%20certaines%20prestations%20familiales%20et%20aux%20tranches%20du%20bareme%20applicable%20au%20recouvrement%20des%20indus%20et%20a%20la%20saisie%20des%20prestations-Article%201"><a href="#Montant%20des%20plafonds%20de%20ressources-Arrete%20du%2014%20decembre%202020%20relatif%20au%20montant%20des%20plafonds%20de%20ressources%20de%20certaines%20prestations%20familiales%20et%20aux%20tranches%20du%20bareme%20applicable%20au%20recouvrement%20des%20indus%20et%20a%20la%20saisie%20des%20prestations-Article%201">Article 1</a><a class="link-article" href="https://legifrance.gouv.fr/jorf/id/JORFARTI000042694985" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h3>
 
-<div class='law-text'><p>I. - Le plafond de ressources prévu au 1° du I des articles D. 521-1
-et D. 521-2 du code de la sécurité sociale relatif aux allocations
-familiales, à la majoration pour âge et à l’allocation forfaitaire
-prévue au deuxième alinéa de l’article L. 521-1 est fixé à 58 279 euros
-pour la période du 1er janvier 2021 au 31 décembre 2021. Il est majoré
-de 5 827 euros par enfant à charge.</p></div>
+<div class='law-text'><p>I. - Le plafond de ressources prévu au 1° du I des articles D. 521-1 et D. 521-2 du code de la sécurité sociale relatif aux allocations familiales, à la majoration pour âge et à l’allocation forfaitaire prévue au deuxième alinéa de l’article L. 521-1 est fixé à 58 279 euros pour la période du 1er janvier 2021 au 31 décembre 2021. Il est majoré de 5 827 euros par enfant à charge.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/decrets_divers.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -2973,12 +2844,7 @@ de 5 827 euros par enfant à charge.</p></div>
 </div>
 <div class='law-text'><ol start="2" type="I">
 <li><ul>
-<li>Le plafond de ressources prévu au 2° du I des articles D. 521-1 et
-D. 521-2 du même code relatif aux allocations familiales, à la
-majoration pour âge et à l’allocation forfaitaire prévue au deuxième
-alinéa de l’article L. 521-1 est fixé à 81 558 euros pour la période du
-1er janvier 2021 au 31 décembre 2021. Il est majoré de 5 827 euros par
-enfant à charge.</li>
+<li>Le plafond de ressources prévu au 2° du I des articles D. 521-1 et D. 521-2 du même code relatif aux allocations familiales, à la majoration pour âge et à l’allocation forfaitaire prévue au deuxième alinéa de l’article L. 521-1 est fixé à 81 558 euros pour la période du 1er janvier 2021 au 31 décembre 2021. Il est majoré de 5 827 euros par enfant à charge.</li>
 </ul></li>
 </ol></div>
 <div class='code-wrapper catala-code'>
@@ -3015,10 +2881,7 @@ enfant à charge.</li>
 
 <h3 class='law-heading' id="Dispositions%20speciales%20relatives%20a%20Mayotte-Decret%20n%20%202002-423%20du%2029%20mars%202002%20relatif%20aux%20prestations%20familiales%20a%20Mayotte-Article%207"><a href="#Dispositions%20speciales%20relatives%20a%20Mayotte-Decret%20n%20%202002-423%20du%2029%20mars%202002%20relatif%20aux%20prestations%20familiales%20a%20Mayotte-Article%207">Article 7</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000036330048" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h3>
 
-<div class='law-text'><p>Les taux servant au calcul des allocations familiales sont fixés, en
-pourcentage de la base mensuelle de calcul des allocations familiales
-prévue à l’article L. 551-1 du code de la sécurité sociale, ainsi qu’il
-suit :</p></div>
+<div class='law-text'><p>Les taux servant au calcul des allocations familiales sont fixés, en pourcentage de la base mensuelle de calcul des allocations familiales prévue à l’article L. 551-1 du code de la sécurité sociale, ainsi qu’il suit :</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/decrets_divers.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -3108,8 +2971,7 @@ suit :</p></div>
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>4° 4,63 % pour le quatrième enfant à charge et chacun des
-suivants.</p></div>
+<div class='law-text'><p>4° 4,63 % pour le quatrième enfant à charge et chacun des suivants.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/decrets_divers.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -3136,14 +2998,8 @@ suivants.</p></div>
 <h3 class='law-heading' id="Dispositions%20speciales%20relatives%20a%20Mayotte-Decret%20n%20%202002-423%20du%2029%20mars%202002%20relatif%20aux%20prestations%20familiales%20a%20Mayotte-Annexe"><a href="#Dispositions%20speciales%20relatives%20a%20Mayotte-Decret%20n%20%202002-423%20du%2029%20mars%202002%20relatif%20aux%20prestations%20familiales%20a%20Mayotte-Annexe">Annexe</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000036326574" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h3>
 
 <div class='law-text'><p>ANNEXE</p>
-<p>TABLEAU D’ÉVOLUTION DES TAUX SERVANT AU CALCUL DES ALLOCATIONS
-FAMILIALES APPLICABLES DANS LE DÉPARTEMENT DE MAYOTTE POUR LA PÉRIODE DU
-1ER JANVIER 2012 AU 1ER JANVIER 2021, FIXÉS EN APPLICATION DE L’ARTICLE
-7 DE L’ORDONNANCE N° 2002-149 DU 7 FÉVRIER 2002 MODIFIÉE SUSVISÉE</p>
-<p>Les taux servant au calcul des allocations familiales (AF) sont
-fixés, dans le tableau ci-après, au 1er janvier de chaque année, en
-pourcentage de la base mensuelle de calcul des allocations familiales
-(BMAF) prévue à l’article L. 551-1 du code de la sécurité sociale.</p>
+<p>TABLEAU D’ÉVOLUTION DES TAUX SERVANT AU CALCUL DES ALLOCATIONS FAMILIALES APPLICABLES DANS LE DÉPARTEMENT DE MAYOTTE POUR LA PÉRIODE DU 1ER JANVIER 2012 AU 1ER JANVIER 2021, FIXÉS EN APPLICATION DE L’ARTICLE 7 DE L’ORDONNANCE N° 2002-149 DU 7 FÉVRIER 2002 MODIFIÉE SUSVISÉE</p>
+<p>Les taux servant au calcul des allocations familiales (AF) sont fixés, dans le tableau ci-après, au 1er janvier de chaque année, en pourcentage de la base mensuelle de calcul des allocations familiales (BMAF) prévue à l’article L. 551-1 du code de la sécurité sociale.</p>
 <table>
 <colgroup>
 <col style="width: 10%" />
@@ -3157,16 +3013,12 @@ pourcentage de la base mensuelle de calcul des allocations familiales
 <thead>
 <tr class="header">
 <th style="text-align: center;">Année</th>
-<th style="text-align: left;">Montant AF pour les familles ayant un
-enfant à charge avant le 1er janvier 2012</th>
-<th style="text-align: left;">Taux BMAF pour les familles ayant un
-enfant à charge à compter du 1er janvier 2012</th>
+<th style="text-align: left;">Montant AF pour les familles ayant un enfant à charge avant le 1er janvier 2012</th>
+<th style="text-align: left;">Taux BMAF pour les familles ayant un enfant à charge à compter du 1er janvier 2012</th>
 <th>Taux BMAF pour les familles ayant deux enfants à charge</th>
-<th style="text-align: left;">Taux BMAF pour les familles ayant trois
-enfants à charge</th>
+<th style="text-align: left;">Taux BMAF pour les familles ayant trois enfants à charge</th>
 <th style="text-align: left;">Taux BMAF pour le 3e enfant à charge</th>
-<th style="text-align: left;">Taux BMAF par enfant supplémentaire à
-partir du 4e enfant à charge</th>
+<th style="text-align: left;">Taux BMAF par enfant supplémentaire à partir du 4e enfant à charge</th>
 </tr>
 </thead>
 <tbody>
@@ -3813,11 +3665,7 @@ partir du 4e enfant à charge</th>
 
 <h2 class='law-heading' id="Epilogue-Regles%20diverses"><a href="#Epilogue-Regles%20diverses">Règles diverses</a></h2>
 <details><summary>Règles diverses</summary>
-<div class='law-text'><p>Les textes législatifs et règlementaires contiennent toutes les
-informations kécessaires au calcul. Cependant, certaines règles de
-calcul sont implicites dans ces textes et doivent être explicitées pour
-le calcul informatique. C’est la fonction du bloc de code
-ci-dessous.</p></div>
+<div class='law-text'><p>Les textes législatifs et règlementaires contiennent toutes les informations kécessaires au calcul. Cependant, certaines règles de calcul sont implicites dans ces textes et doivent être explicitées pour le calcul informatique. C’est la fonction du bloc de code ci-dessous.</p></div>
 <div class='code-wrapper code-metadata catala-code'>
 <div class='filename'>allocations_familiales/epilogue.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -3913,12 +3761,7 @@ ci-dessous.</p></div>
 </details>
 <h2 class='law-heading' id="Epilogue-Interface%20du%20programme"><a href="#Epilogue-Interface%20du%20programme">Interface du programme</a></h2>
 <details><summary>Interface du programme</summary>
-<div class='law-text'><p>Le calcul des allocations familiales nécessite un certain nombre
-d’informations sur les enfants à charge. Certaines de ces informations
-sont dépendantes les unes des autres : par exemple, l’âge de l’enfant se
-déduit de sa date de naissance. Le but du block ci-dessous est d’encoder
-ces dépendances, de telle sorte que l’utilisateur puisse ne doive saisir
-que le nombre minimal d’informations sur les enfants à charge.</p></div>
+<div class='law-text'><p>Le calcul des allocations familiales nécessite un certain nombre d’informations sur les enfants à charge. Certaines de ces informations sont dépendantes les unes des autres : par exemple, l’âge de l’enfant se déduit de sa date de naissance. Le but du block ci-dessous est d’encoder ces dépendances, de telle sorte que l’utilisateur puisse ne doive saisir que le nombre minimal d’informations sur les enfants à charge.</p></div>
 <div class='code-wrapper code-metadata catala-code'>
 <div class='filename'>allocations_familiales/epilogue.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -4009,10 +3852,8 @@ que le nombre minimal d’informations sur les enfants à charge.</p></div>
 
 <h3 class='law-heading' id="Epilogue-Interface%20du%20programme-Article%20L131-1"><a href="#Epilogue-Interface%20du%20programme-Article%20L131-1">Article L131-1</a><a class="link-article" href="https://legifrance.gouv.fr/codes/id/LEGIARTI000038901859" target="_blank">Voir le texte sur Légifrance.gouv.fr</a></h3>
 
-<div class='law-text'><p>L’instruction est obligatoire pour chaque enfant dès l’âge de trois
-ans et jusqu’à l’âge de seize ans.</p>
-<p>La présente disposition ne fait pas obstacle à l’application des
-prescriptions particulières imposant une scolarité plus longue.</p></div>
+<div class='law-text'><p>L’instruction est obligatoire pour chaque enfant dès l’âge de trois ans et jusqu’à l’âge de seize ans.</p>
+<p>La présente disposition ne fait pas obstacle à l’application des prescriptions particulières imposant une scolarité plus longue.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>allocations_familiales/epilogue.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -4059,8 +3900,7 @@ prescriptions particulières imposant une scolarité plus longue.</p></div>
 
 </div>
 <div class='law-text'><p>NOTA :</p>
-<p>Conformément à l’article 63 de la loi n° 2019-791 du 26 juillet 2019,
-ces dispositions entrent en vigueur à la rentrée scolaire 2019.</p></div>
+<p>Conformément à l’article 63 de la loi n° 2019-791 du 26 juillet 2019, ces dispositions entrent en vigueur à la rentrée scolaire 2019.</p></div>
 <div class='law-text'><pre class="catala-test-inline"><code>$ catala Typecheck --check-invariants
 ┌─[RESULT]─
 │ All invariant checks passed
@@ -4071,3 +3911,5 @@ ces dispositions entrent en vigueur à la rentrée scolaire 2019.</p></div>
 
 </details>
 
+</body>
+</html>
