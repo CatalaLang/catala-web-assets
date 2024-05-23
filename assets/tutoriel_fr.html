@@ -83,14 +83,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </head>
 <body>
 <h1>Implémentation de texte législatif<br />
-<small>Document généré par Catala version 0.10.0-16-gcaf9135b</small>
+<small>Document généré par Catala version 0.10.0-28-g372058bc</small>
 </h1>
-<p>Ce document a été produit à partir d’un ensemble de fichiers sources écrits dans le langage de programmation Catala, mêlant le texte législatif et le code informatique qui le traduit. Pour plus d’informations sur la méthodologie et sur la façon de lire le code, veuillez consulter le site <a href="https://catala-lang.org">https://catala-lang.org</a>.</p>
+<p>Ce document a été produit à partir d’un ensemble de fichiers sources
+écrits dans le langage de programmation Catala, mêlant le texte
+législatif et le code informatique qui le traduit. Pour plus
+d’informations sur la méthodologie et sur la façon de lire le code,
+veuillez consulter le site <a
+href="https://catala-lang.org">https://catala-lang.org</a>.</p>
 <p>
 Fichiers sources tissés dans ce document:
 </p>
 <ul>
-<li><tt>tutoriel_fr.catala_fr</tt>, dernière modification le 2024-05-16, 18:28</li>
+<li><tt>tutoriel_fr.catala_fr</tt>, dernière modification le 2024-05-22, 14:27</li>
 </ul>
 
 <details class="toc">
@@ -443,7 +448,12 @@ Fichiers sources tissés dans ce document:
   </details>
 <h1 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala">Tutoriel d’utilisation du langage Catala</a></h1>
 
-<div class='law-text'><p>Bienvenue dans ce tutoriel, son objectif est de vous accompagner dans les fonctionnalités du langage Catala et de vous apprendre d’annoter des textes législatifs avec ce langage. Ce document s’adresse principalement à des développeurs ou des personnes ayant déjà programmé, même si des juristes avec des compétences en informatique devraient pouvoir s’en sortir.</p></div>
+<div class='law-text'><p>Bienvenue dans ce tutoriel, son objectif est de vous accompagner dans
+les fonctionnalités du langage Catala et de vous apprendre d’annoter des
+textes législatifs avec ce langage. Ce document s’adresse principalement
+à des développeurs ou des personnes ayant déjà programmé, même si des
+juristes avec des compétences en informatique devraient pouvoir s’en
+sortir.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -496,13 +506,37 @@ Fichiers sources tissés dans ce document:
 
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Programmation%20litteraire"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Programmation%20litteraire">Programmation littéraire</a></h2>
 <details><summary>Programmation littéraire</summary>
-<div class='law-text'><p>Pour commencer à écrire un programme Catala, vous devez partir du texte d’une source législative qui va justifier le code que vous écrirez. Concrètement, cela signifie de faire un copier-coller du texte de la loi dans un fichier source Catala, et de le formater afin que Catala puisse le comprendre. Les fichiers sources Catala ont l’extension « .catala_en » en version anglaise. Si vous écriviez un programme Catala pour une loi française, vous devrez utiliser l’extension « .catala_fr »; pour une loi polonaise, « catala_pl », etc.</p>
-<p>Vous pouvez écrire n’importe quel texte simple en Catala, cela sera affiché sans modification dans une sortie PDF ou HTML. Vous pouvez découper votre texte en de courtes lignes de moins de 80 caractères, donnant un style « terminal », et cela apparaîtra comme un seul paragraphe en sortie. Si vous voulez créer un nouveau paragraphe, laisser une ligne vierge dans le fichier source. Dans un programme Catala, la syntaxe du texte, autre que du code, reprend un sous-ensemble du langage Markdown qui supporte des titres et des blocs de code Catala.</p>
-<p>Catala vous permet de déclarer des en-têtes de section ou de sous-section, comme c’est le cas ici, avec le symbole «#». Vous pouvez diminuer l’importance du titre en augmentant le nombre de «#» après le titre de l’en-tête. Généralement, la syntaxe de la programmation littéraire de Catala suit la syntaxe de Markdown (bien qu’il n’ait pas toutes ses fonctionnalités).</p>
-<p>Dans le reste de ce tutoriel, nous allons étudier un exemple fictif qui définit un impôt sur le revenu. Cet impôt sur le revenu est définit à travers différents articles de loi, chacun d’eux étant introduit par un en-tête. Le premier commence ici :</p></div>
+<div class='law-text'><p>Pour commencer à écrire un programme Catala, vous devez partir du
+texte d’une source législative qui va justifier le code que vous
+écrirez. Concrètement, cela signifie de faire un copier-coller du texte
+de la loi dans un fichier source Catala, et de le formater afin que
+Catala puisse le comprendre. Les fichiers sources Catala ont l’extension
+« .catala_en » en version anglaise. Si vous écriviez un programme Catala
+pour une loi française, vous devrez utiliser l’extension « .catala_fr »;
+pour une loi polonaise, « catala_pl », etc.</p>
+<p>Vous pouvez écrire n’importe quel texte simple en Catala, cela sera
+affiché sans modification dans une sortie PDF ou HTML. Vous pouvez
+découper votre texte en de courtes lignes de moins de 80 caractères,
+donnant un style « terminal », et cela apparaîtra comme un seul
+paragraphe en sortie. Si vous voulez créer un nouveau paragraphe,
+laisser une ligne vierge dans le fichier source. Dans un programme
+Catala, la syntaxe du texte, autre que du code, reprend un sous-ensemble
+du langage Markdown qui supporte des titres et des blocs de code
+Catala.</p>
+<p>Catala vous permet de déclarer des en-têtes de section ou de
+sous-section, comme c’est le cas ici, avec le symbole «#». Vous pouvez
+diminuer l’importance du titre en augmentant le nombre de «#» après le
+titre de l’en-tête. Généralement, la syntaxe de la programmation
+littéraire de Catala suit la syntaxe de Markdown (bien qu’il n’ait pas
+toutes ses fonctionnalités).</p>
+<p>Dans le reste de ce tutoriel, nous allons étudier un exemple fictif
+qui définit un impôt sur le revenu. Cet impôt sur le revenu est définit
+à travers différents articles de loi, chacun d’eux étant introduit par
+un en-tête. Le premier commence ici :</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Programmation%20litteraire-Article%201"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Programmation%20litteraire-Article%201">Article 1</a></h3>
 
-<div class='law-text'><p>L’impôt sur le revenu d’un individu est calculé en tant qu’un pourcentage fixe sur les revenus d’une personne pour une année.</p></div>
+<div class='law-text'><p>L’impôt sur le revenu d’un individu est calculé en tant qu’un
+pourcentage fixe sur les revenus d’une personne pour une année.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -520,13 +554,29 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Afin de traduire cette définition fictive de l’impôt sur le revenu en un programme Catala, nous allons entremêler des bouts de code entre les phrases du texte législatif. Chaque bout de code devra être aussi court que possible et aussi proche que possible de la phrase qui justifie le code. Ce style s’appelle la programmation littéraire, un paradigme de programmation inventé par le célèbre informaticien Donald Knuth dans les années 70.</p></div>
+<div class='law-text'><p>Afin de traduire cette définition fictive de l’impôt sur le revenu en
+un programme Catala, nous allons entremêler des bouts de code entre les
+phrases du texte législatif. Chaque bout de code devra être aussi court
+que possible et aussi proche que possible de la phrase qui justifie le
+code. Ce style s’appelle la programmation littéraire, un paradigme de
+programmation inventé par le célèbre informaticien Donald Knuth dans les
+années 70.</p></div>
 
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20un%20impot%20fictif%20sur%20le%20revenu"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20un%20impot%20fictif%20sur%20le%20revenu">Définir un impôt fictif sur le revenu</a></h2>
 <details><summary>Définir un impôt fictif sur le revenu</summary>
-<div class='law-text'><p>Le contenu de l’article 1 utilise beaucoup d’éléments contextuels implicites : il existe une personne avec un revenu et en même temps un impôt sur le revenu, qu’une personne doit acquitter chaque année. Même si ce contexte implicite n’est pas inscrit en tant que tel dans la loi, nous devons l’expliciter pour le traduire en code. Concrètement, nous avons besoin d’une section « métadonnées » qui définit la forme et les types de données contenues dans la loi.</p>
-<p>Commençons notre section métadonnée en déclarant l’information sur le type « personne », c’est à dire le contribuable qui sera le sujet du calcul de l’impôt. Cette personne a un revenu et un nombre d’enfants, qui sont des pièces d’information qui seront nécessaires pour les objectifs fiscaux :</p></div>
+<div class='law-text'><p>Le contenu de l’article 1 utilise beaucoup d’éléments contextuels
+implicites : il existe une personne avec un revenu et en même temps un
+impôt sur le revenu, qu’une personne doit acquitter chaque année. Même
+si ce contexte implicite n’est pas inscrit en tant que tel dans la loi,
+nous devons l’expliciter pour le traduire en code. Concrètement, nous
+avons besoin d’une section « métadonnées » qui définit la forme et les
+types de données contenues dans la loi.</p>
+<p>Commençons notre section métadonnée en déclarant l’information sur le
+type « personne », c’est à dire le contribuable qui sera le sujet du
+calcul de l’impôt. Cette personne a un revenu et un nombre d’enfants,
+qui sont des pièces d’information qui seront nécessaires pour les
+objectifs fiscaux :</p></div>
 <div class='code-wrapper code-metadata catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -558,8 +608,15 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Cette structure contient deux champs de données, « revenu » et « nombre_enfants ». Les structures sont utiles pour regrouper des données qui vont ensemble. Typiquement, vous aurez une structure pour une entité concrète sur laquelle s’applique la loi (comme une personne). C’est à vous de décider comment regrouper les données, mais vous devrez viser à optimiser la lisibilité du code.</p>
-<p>Parfois, la loi donne une énumération de différentes situations. Ces énumérations sont modélisées en Catala par le type énumération, comme suit :</p></div>
+<div class='law-text'><p>Cette structure contient deux champs de données, « revenu » et
+« nombre_enfants ». Les structures sont utiles pour regrouper des
+données qui vont ensemble. Typiquement, vous aurez une structure pour
+une entité concrète sur laquelle s’applique la loi (comme une personne).
+C’est à vous de décider comment regrouper les données, mais vous devrez
+viser à optimiser la lisibilité du code.</p>
+<p>Parfois, la loi donne une énumération de différentes situations. Ces
+énumérations sont modélisées en Catala par le type énumération, comme
+suit :</p></div>
 <div class='code-wrapper code-metadata catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -589,8 +646,18 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>En informatique, une telle énumération est appelée « type somme » ou simplement énumération. La combinaison de structures et d’énumération permet au programmeur Catala de déclarer toutes les formes possibles de données, car cette combinaison est équivalente à la puissante notion de « types de données algébriques ».</p>
-<p>Nous avons défini et typé les données que le programme va manipuler. Maintenant, nous devons définir un contexte logique dans lequel ces données vont évoluer. On effectue cela par la notion de « champ d’application » en Catala. Les champs d’application sont proches des fonctions en termes de programmation traditionnelle. Les champs d’application doivent avoir été déclarés préalablement dans les métadonnées, de la manière suivante:</p></div>
+<div class='law-text'><p>En informatique, une telle énumération est appelée « type somme » ou
+simplement énumération. La combinaison de structures et d’énumération
+permet au programmeur Catala de déclarer toutes les formes possibles de
+données, car cette combinaison est équivalente à la puissante notion de
+« types de données algébriques ».</p>
+<p>Nous avons défini et typé les données que le programme va manipuler.
+Maintenant, nous devons définir un contexte logique dans lequel ces
+données vont évoluer. On effectue cela par la notion de « champ
+d’application » en Catala. Les champs d’application sont proches des
+fonctions en termes de programmation traditionnelle. Les champs
+d’application doivent avoir été déclarés préalablement dans les
+métadonnées, de la manière suivante:</p></div>
 <div class='code-wrapper code-metadata catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -614,11 +681,29 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Le champ d’application est l’unité d’abstraction de base dans des programmes Catala, et la déclaration du champ d’application est semblable à une signature de fonction : elle contient une liste de tous les paramètres ainsi que leurs types. Mais dans Catala, les variables d’un champ d’application représentent trois choses: paramètres d’entrées, paramètres locaux et paramètres de résultats. La différence entre les trois catégories peuvent être spécifiées par les différents attributs d’entrée/résultat qui précèdent les noms de variables. « entrée » signifie que la variable doit être définie seulement quand le champ d’application « CalculImpôtRevenu » est appelé. « interne » signifie que la variable ne peut pas être vue en dehors du champ d’application : elle n’est ni une entrée, ni un résultat du champ d’application. « résultat » signifie qu’un appel au champ d’application peut récupérer la valeur calculée de la variable. Notez qu’une variable peut aussi être simultanément une entrée et un résultat du champ d’application, dans ce cas elle devrait être annotée avec “entrée résultat”.</p>
-<p>Nous avons maintenant tout ce dont nous avons besoin pour annoter le contenu de l’article 1 qui a été copié ci-dessous.</p></div>
+<div class='law-text'><p>Le champ d’application est l’unité d’abstraction de base dans des
+programmes Catala, et la déclaration du champ d’application est
+semblable à une signature de fonction : elle contient une liste de tous
+les paramètres ainsi que leurs types. Mais dans Catala, les variables
+d’un champ d’application représentent trois choses: paramètres
+d’entrées, paramètres locaux et paramètres de résultats. La différence
+entre les trois catégories peuvent être spécifiées par les différents
+attributs d’entrée/résultat qui précèdent les noms de variables.
+« entrée » signifie que la variable doit être définie seulement quand le
+champ d’application « CalculImpôtRevenu » est appelé. « interne »
+signifie que la variable ne peut pas être vue en dehors du champ
+d’application : elle n’est ni une entrée, ni un résultat du champ
+d’application. « résultat » signifie qu’un appel au champ d’application
+peut récupérer la valeur calculée de la variable. Notez qu’une variable
+peut aussi être simultanément une entrée et un résultat du champ
+d’application, dans ce cas elle devrait être annotée avec “entrée
+résultat”.</p>
+<p>Nous avons maintenant tout ce dont nous avons besoin pour annoter le
+contenu de l’article 1 qui a été copié ci-dessous.</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20un%20impot%20fictif%20sur%20le%20revenu-Article%201"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20un%20impot%20fictif%20sur%20le%20revenu-Article%201">Article 1</a></h3>
 
-<div class='law-text'><p>L’impôt sur le revenu pour une personne est défini comme un pourcentage fixe des revenus de la personne pour une année.</p></div>
+<div class='law-text'><p>L’impôt sur le revenu pour une personne est défini comme un
+pourcentage fixe des revenus de la personne pour une année.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -632,9 +717,23 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Dans le code, nous définissons à l’intérieur de notre champ d’application le montant d’impôt sur le revenu selon la formule décrit dans l’article. Quand nous définissons des formules, vous avez accès à tous les opérateurs arithmétiques habituels : addition “+”, soustraction “-”, multiplication "*" et division (barre oblique).</p>
-<p>Toutefois, dans le code Catala, ces opérateurs peuvent avoir un sens légèrement différent suivant les unités concernées. En effet, l’argent par exemple est arrondi au centime. Le compilateur Catala sélectionne automatiquement l’opération appropriée: ici, de l’argent est multiplié par un pourcentage (soit un nombre décimal), ce qui est une opération connue dont le résultat est une quantité d’argent, arrondie au centime. D’autres opérations sont rejetées, comme la multiplication de deux quantités d’argent entre elles, ou l’addition de deux dates.</p>
-<p>Revenons à l’article 1, dont une question reste sans réponse: quelle est la valeur du pourcentage fixe ? Souvent, des valeurs précises sont définies ailleurs dans les sources législatives. Ici, supposons que nous avons:</p></div>
+<div class='law-text'><p>Dans le code, nous définissons à l’intérieur de notre champ
+d’application le montant d’impôt sur le revenu selon la formule décrit
+dans l’article. Quand nous définissons des formules, vous avez accès à
+tous les opérateurs arithmétiques habituels : addition “+”, soustraction
+“-”, multiplication “*” et division (barre oblique).</p>
+<p>Toutefois, dans le code Catala, ces opérateurs peuvent avoir un sens
+légèrement différent suivant les unités concernées. En effet, l’argent
+par exemple est arrondi au centime. Le compilateur Catala sélectionne
+automatiquement l’opération appropriée: ici, de l’argent est multiplié
+par un pourcentage (soit un nombre décimal), ce qui est une opération
+connue dont le résultat est une quantité d’argent, arrondie au centime.
+D’autres opérations sont rejetées, comme la multiplication de deux
+quantités d’argent entre elles, ou l’addition de deux dates.</p>
+<p>Revenons à l’article 1, dont une question reste sans réponse: quelle
+est la valeur du pourcentage fixe ? Souvent, des valeurs précises sont
+définies ailleurs dans les sources législatives. Ici, supposons que nous
+avons:</p></div>
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20un%20impot%20fictif%20sur%20le%20revenu-Article%202"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20un%20impot%20fictif%20sur%20le%20revenu-Article%202">Article 2</a></h3>
 
@@ -652,15 +751,19 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Vous pouvez voir ici que Catala permet des définitions réparties dans toute l’annotation du texte législatif, afin que chaque définition soit le plus proche possible de sa localisation dans le texte.</p></div>
+<div class='law-text'><p>Vous pouvez voir ici que Catala permet des définitions réparties dans
+toute l’annotation du texte législatif, afin que chaque définition soit
+le plus proche possible de sa localisation dans le texte.</p></div>
 
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definitions%20conditionnelles"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definitions%20conditionnelles">Définitions conditionnelles</a></h2>
 <details><summary>Définitions conditionnelles</summary>
-<div class='law-text'><p>Jusqu’à là tout va bien mais maintenant le texte législatif présente quelques difficultés. Supposons que le troisième article s’écrit :</p></div>
+<div class='law-text'><p>Jusqu’à là tout va bien mais maintenant le texte législatif présente
+quelques difficultés. Supposons que le troisième article s’écrit :</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definitions%20conditionnelles-Article%203"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definitions%20conditionnelles-Article%203">Article 3</a></h3>
 
-<div class='law-text'><p>Si l’individu a à sa charge deux ou plus enfants, alors le pourcentage fixe mentionné à l’article 1 vaut 15 %.</p></div>
+<div class='law-text'><p>Si l’individu a à sa charge deux ou plus enfants, alors le
+pourcentage fixe mentionné à l’article 1 vaut 15 %.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -670,7 +773,11 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Cet article donne en réalité une autre définition pour le pourcentage fixe, préalablement défini à l’article 2. De plus, l’article 3 définit le pourcentage de manière conditionnelle pour la personne ayant plus de deux enfants. Catala permet de redéfinir précisément une variable sous une condition :</p></div>
+<div class='law-text'><p>Cet article donne en réalité une autre définition pour le pourcentage
+fixe, préalablement défini à l’article 2. De plus, l’article 3 définit
+le pourcentage de manière conditionnelle pour la personne ayant plus de
+deux enfants. Catala permet de redéfinir précisément une variable sous
+une condition :</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -688,14 +795,37 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Même si les définitions conditionelles sont un outil puissant et expressif, une document juridique correctement rédigé doit toujours garantir qu’une seule condition au maximum soit vraie à tout moment. De cette façon, quand le programme Catala va s’exécuter, la juste définition sera choisie dynamiquement en déterminant quelle condition est vraie, selon le contexte.</p>
-<p>Ici, nous pouvons détecter un conflit sur <code>pourcentage_fixe</code> entre la définition générale et celle ci-dessus avec plus de ceux enfants. Catala donnera une erreur à l’exécution si nous essayons d’utiliser ces définitions de <code>pourcentage_fixe</code> avec plus de deux enfants ; les deux définitions contradictoires sont valables en même temps.</p>
-<p>Dans des situations comme celle-ci, Catala vous permettra de définir un ordre des priorité sur les conditions, qui devra être justifié par un raisonnement juridique. Mais nous verrons comment faire cela plus tard.</p></div>
+<div class='law-text'><p>Même si les définitions conditionelles sont un outil puissant et
+expressif, une document juridique correctement rédigé doit toujours
+garantir qu’une seule condition au maximum soit vraie à tout moment. De
+cette façon, quand le programme Catala va s’exécuter, la juste
+définition sera choisie dynamiquement en déterminant quelle condition
+est vraie, selon le contexte.</p>
+<p>Ici, nous pouvons détecter un conflit sur
+<code>pourcentage_fixe</code> entre la définition générale et celle
+ci-dessus avec plus de ceux enfants. Catala donnera une erreur à
+l’exécution si nous essayons d’utiliser ces définitions de
+<code>pourcentage_fixe</code> avec plus de deux enfants ; les deux
+définitions contradictoires sont valables en même temps.</p>
+<p>Dans des situations comme celle-ci, Catala vous permettra de définir
+un ordre des priorité sur les conditions, qui devra être justifié par un
+raisonnement juridique. Mais nous verrons comment faire cela plus
+tard.</p></div>
 
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Regles"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Regles">Règles</a></h2>
 <details><summary>Règles</summary>
-<div class='law-text'><p>Jusqu’à présent, vous avez appris comment déclarer un champ d’application avec quelques variables, et donner des définitions à ces variables dispersées à travers le texte de la loi, à des endroits pertinents. Mais il y a un modèle très fréquent dans des textes législatifs : qu’en est-il des conditions ? Une condition est une valeur qui peut être soit vraie ou fausse, comme un booléen en programmation. Cependant, la loi suppose implicitement qu’une condition est fausse, sauf indication contraire. Ce modèle est si commun en droit que Catala lui donne une syntaxe spéciale. Plus précisément, il nomme la définition de conditions des « règles », ce qui coïncide avec le sens habituel que les gens lui donneraient.</p>
+<div class='law-text'><p>Jusqu’à présent, vous avez appris comment déclarer un champ
+d’application avec quelques variables, et donner des définitions à ces
+variables dispersées à travers le texte de la loi, à des endroits
+pertinents. Mais il y a un modèle très fréquent dans des textes
+législatifs : qu’en est-il des conditions ? Une condition est une valeur
+qui peut être soit vraie ou fausse, comme un booléen en programmation.
+Cependant, la loi suppose implicitement qu’une condition est fausse,
+sauf indication contraire. Ce modèle est si commun en droit que Catala
+lui donne une syntaxe spéciale. Plus précisément, il nomme la définition
+de conditions des « règles », ce qui coïncide avec le sens habituel que
+les gens lui donneraient.</p>
 <p>Voici un exemple de condition qui pourrait survenir dans la loi:</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Regles-Article%203%20bis"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Regles-Article%203%20bis">Article 3 bis</a></h3>
 
@@ -735,12 +865,18 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Lors de l’interaction avec d’autres éléments du code, les valeurs des conditions se comportent comme des valeurs booléennes.</p></div>
+<div class='law-text'><p>Lors de l’interaction avec d’autres éléments du code, les valeurs des
+conditions se comportent comme des valeurs booléennes.</p></div>
 
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Fonctions"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Fonctions">Fonctions</a></h2>
 <details><summary>Fonctions</summary>
-<div class='law-text'><p>Catala vous permet de définir des fonctions partout dans vos données. En effet, Catala est un langage de programmation fonctionnel et encourage, en utilisant des fonctions, à décrire les relations entre les données. Voici à quoi cela ressemble, dans la définition des métadonnées, lorsque nous voulons définir un calcul de l’impôt sur le revenu à deux tranches :</p></div>
+<div class='law-text'><p>Catala vous permet de définir des fonctions partout dans vos données.
+En effet, Catala est un langage de programmation fonctionnel et
+encourage, en utilisant des fonctions, à décrire les relations entre les
+données. Voici à quoi cela ressemble, dans la définition des
+métadonnées, lorsque nous voulons définir un calcul de l’impôt sur le
+revenu à deux tranches :</p></div>
 <div class='code-wrapper code-metadata catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -785,7 +921,9 @@ Fichiers sources tissés dans ce document:
 <div class='law-text'><p>Et dans le code :</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Fonctions-Article%204"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Fonctions-Article%204">Article 4</a></h3>
 
-<div class='law-text'><p>Le montant de l’impôt pour le calcul à deux tranches est égal au montant de l’impôt de chaque tranche, multiplié par le taux de chaque tranche.</p></div>
+<div class='law-text'><p>Le montant de l’impôt pour le calcul à deux tranches est égal au
+montant de l’impôt de chaque tranche, multiplié par le taux de chaque
+tranche.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -826,10 +964,18 @@ Fichiers sources tissés dans ce document:
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Inclusion%20d%20un%20champ%20d%20application"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Inclusion%20d%20un%20champ%20d%20application">Inclusion d’un champ d'application</a></h2>
 <details><summary>Inclusion d’un champ d'application</summary>
-<div class='law-text'><p>Maintenant que nous avons défini notre champ d’application utilitaire pour calculer un impôt à deux tranches, nous voulons l’utiliser dans notre champ d’application principal du calcul de l’impôt. Comme mentionné précédement, le champ d’application de Catala peut être aussi pensé comme de grandes fonctions. Et ces grandes fonctions peuvent s’appeler entre elles, c’est ce que nous allons voir dans l’article ci-dessous.</p></div>
+<div class='law-text'><p>Maintenant que nous avons défini notre champ d’application utilitaire
+pour calculer un impôt à deux tranches, nous voulons l’utiliser dans
+notre champ d’application principal du calcul de l’impôt. Comme
+mentionné précédement, le champ d’application de Catala peut être aussi
+pensé comme de grandes fonctions. Et ces grandes fonctions peuvent
+s’appeler entre elles, c’est ce que nous allons voir dans l’article
+ci-dessous.</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Inclusion%20d%20un%20champ%20d%20application-Article%205"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Inclusion%20d%20un%20champ%20d%20application-Article%205">Article 5</a></h3>
 
-<div class='law-text'><p>Pour les individus dont le revenu est supérieur à 100 000€, l’impôt sur le revenu de l’article 1 est de 40% du revenu au-delà de 100 000€. En dessous de 100 000€, l’impôt sur le revenu est de 20% du revenu.</p></div>
+<div class='law-text'><p>Pour les individus dont le revenu est supérieur à 100 000€, l’impôt
+sur le revenu de l’article 1 est de 40% du revenu au-delà de 100 000€.
+En dessous de 100 000€, l’impôt sur le revenu est de 20% du revenu.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -901,11 +1047,16 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Maintenant que vous avez réussi de définir le calcul d’impôt sur le revenu, le législateur vient inévitablement pérturber nos belles et irréprochables formules pour rajouter un cas particulier ! L’article ci-dessous est un modèle très fréquent dans les lois, et allez voir comment Catala le gère.</p></div>
+<div class='law-text'><p>Maintenant que vous avez réussi de définir le calcul d’impôt sur le
+revenu, le législateur vient inévitablement pérturber nos belles et
+irréprochables formules pour rajouter un cas particulier ! L’article
+ci-dessous est un modèle très fréquent dans les lois, et allez voir
+comment Catala le gère.</p></div>
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Inclusion%20d%20un%20champ%20d%20application-Article%206"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Inclusion%20d%20un%20champ%20d%20application-Article%206">Article 6</a></h3>
 
-<div class='law-text'><p>Les personnes ayant moins de 10 000€ de revenus sont exemptés de l’impôt sur le revenu prévu à l’article 1.</p></div>
+<div class='law-text'><p>Les personnes ayant moins de 10 000€ de revenus sont exemptés de
+l’impôt sur le revenu prévu à l’article 1.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -929,13 +1080,25 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Et voilà ! Nous avons défini un calcul d’impôt à deux tranches en annotant tout simplement un texte législatif par des bouts de code Catala. Cependant, les lecteurs attentifs ont vu quelque chose de curieux dans les articles 5 et 6. Que se passe-t-il si le revenu d’une personne est inférieur à 10 000€ ? Tout de suite, les deux définitions de l’article 5 et 6 pour l’impôt sur le revenu s’appliquent, et ils sont en conflit.</p>
-<p>La loi ne le précise pas; nos articles sont clairement mal rédigés. Mais Catala vous aide à trouver ce genre d’erreur par de simples tests ou même la vérification formelle. Commençons par les tests.</p></div>
+<div class='law-text'><p>Et voilà ! Nous avons défini un calcul d’impôt à deux tranches en
+annotant tout simplement un texte législatif par des bouts de code
+Catala. Cependant, les lecteurs attentifs ont vu quelque chose de
+curieux dans les articles 5 et 6. Que se passe-t-il si le revenu d’une
+personne est inférieur à 10 000€ ? Tout de suite, les deux définitions
+de l’article 5 et 6 pour l’impôt sur le revenu s’appliquent, et ils sont
+en conflit.</p>
+<p>La loi ne le précise pas; nos articles sont clairement mal rédigés.
+Mais Catala vous aide à trouver ce genre d’erreur par de simples tests
+ou même la vérification formelle. Commençons par les tests.</p></div>
 
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Tester%20les%20programmes%20Catala"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Tester%20les%20programmes%20Catala">Tester les programmes Catala</a></h2>
 <details><summary>Tester les programmes Catala</summary>
-<div class='law-text'><p>Tester les programmes Catala peut se faire directement en Catala. En effet, écrire des cas de tests pour chaque champ d’application Catala que vous définissez est une bonne pratique, qui est appelée « tests unitaires » dans la communauté du génie logicielle. Les cas de test sont définis dans des champs d’application :</p></div>
+<div class='law-text'><p>Tester les programmes Catala peut se faire directement en Catala. En
+effet, écrire des cas de tests pour chaque champ d’application Catala
+que vous définissez est une bonne pratique, qui est appelée « tests
+unitaires » dans la communauté du génie logicielle. Les cas de test sont
+définis dans des champs d’application :</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Tester%20les%20programmes%20Catala-Tester%20NouveauCalculImpotRevenu"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Tester%20les%20programmes%20Catala-Tester%20NouveauCalculImpotRevenu">Tester NouveauCalculImpotRevenu</a></h3>
 
 
@@ -1024,15 +1187,23 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Ce cas de test devrait calculer un impôt sur le revenu de 0€, en raison de l’article 6. Mais au lieu de cela, l’exécution produira une erreur car il y a un conflit entre les règles.</p></div>
+<div class='law-text'><p>Ce cas de test devrait calculer un impôt sur le revenu de 0€, en
+raison de l’article 6. Mais au lieu de cela, l’exécution produira une
+erreur car il y a un conflit entre les règles.</p></div>
 
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles">Définir des exceptions à des règles</a></h2>
 <details><summary>Définir des exceptions à des règles</summary>
-<div class='law-text'><p>En effet, la définition d’un impôt sur le revenu à l’article 6 entre en conflit avec la définition de l’article 5. Mais en réalité, l’article 6 est une simple exception à l’article 5. Dans la loi, il est implicite que si l’article 6 est applicable, alors son application est prioritaire sur l’article 5.</p></div>
+<div class='law-text'><p>En effet, la définition d’un impôt sur le revenu à l’article 6 entre
+en conflit avec la définition de l’article 5. Mais en réalité, l’article
+6 est une simple exception à l’article 5. Dans la loi, il est implicite
+que si l’article 6 est applicable, alors son application est prioritaire
+sur l’article 5.</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Regler%20correctement%20le%20calcul"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Regler%20correctement%20le%20calcul">Régler correctement le calcul</a></h3>
 
-<div class='law-text'><p>Cette priorité implicite doit être explicitement déclarée en Catala. Voici une version correcte du champ d’application NouveauCalculImpotRevenu :</p></div>
+<div class='law-text'><p>Cette priorité implicite doit être explicitement déclarée en Catala.
+Voici une version correcte du champ d’application
+NouveauCalculImpotRevenu :</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1074,7 +1245,9 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Pour définir une exception à une règle, vous devez d’abord étiquetter la règle à laquelle vous voulez attacher l’exception. Vous pouvez mettre n’importe quel identifiant en « snake_case » pour l’étiquette :</p></div>
+<div class='law-text'><p>Pour définir une exception à une règle, vous devez d’abord étiquetter
+la règle à laquelle vous voulez attacher l’exception. Vous pouvez mettre
+n’importe quel identifiant en « snake_case » pour l’étiquette :</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1136,14 +1309,22 @@ Fichiers sources tissés dans ce document:
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Definir%20des%20exceptions%20aux%20groupes%20de%20regles"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Definir%20des%20exceptions%20aux%20groupes%20de%20regles">Définir des exceptions aux groupes de règles</a></h3>
 
-<div class='law-text'><p>Notez que le système d’étiquettes vous permet de définir des modèles d’exception plus compliqués. Parfois, vous voulez déclarer une exception à un groupe de définitions par morceau. Pour cela, utilisez simplement la même étiquette à tout un morceau de définitions.</p></div>
+<div class='law-text'><p>Notez que le système d’étiquettes vous permet de définir des modèles
+d’exception plus compliqués. Parfois, vous voulez déclarer une exception
+à un groupe de définitions par morceau. Pour cela, utilisez simplement
+la même étiquette à tout un morceau de définitions.</p></div>
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Les%20exceptions%20cumulatives"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Les%20exceptions%20cumulatives">Les exceptions cumulatives</a></h3>
 
-<div class='law-text'><p>Comme nous l’avons vu… Deux exceptions s’appliquant pour une même règle, au même moment, sont en conflits et déclenchent une erreur. Cela arrive, cependant, que ces exceptions produisent le même résultat à la fin : par convenance, Catala tolère ce cas et retourne le résultat commun, aussi longtemps qu’il y a une stricte égalité syntaxique.</p></div>
+<div class='law-text'><p>Comme nous l’avons vu… Deux exceptions s’appliquant pour une même
+règle, au même moment, sont en conflits et déclenchent une erreur. Cela
+arrive, cependant, que ces exceptions produisent le même résultat à la
+fin : par convenance, Catala tolère ce cas et retourne le résultat
+commun, aussi longtemps qu’il y a une stricte égalité syntaxique.</p></div>
 <h4 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Les%20exceptions%20cumulatives-Article%206%20bis"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Les%20exceptions%20cumulatives-Article%206%20bis">Article 6 bis</a></h4>
 
-<div class='law-text'><p>Des personnes avec 7 enfants ou plus sont exonérées de l’impôt sur le revenu mentionné à l’article 1.</p></div>
+<div class='law-text'><p>Des personnes avec 7 enfants ou plus sont exonérées de l’impôt sur le
+revenu mentionné à l’article 1.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1161,13 +1342,27 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Le même problème devrait être déclenché ci-dessus, pour des familles avec un revenu en dessous de 10 000€ et avec 7 enfants ou plus. Mais Catala peut détecter qu’il n’y aura pas de problèmes puisque le résultat est une éxonération dans les 2 cas.</p></div>
+<div class='law-text'><p>Le même problème devrait être déclenché ci-dessus, pour des familles
+avec un revenu en dessous de 10 000€ et avec 7 enfants ou plus. Mais
+Catala peut détecter qu’il n’y aura pas de problèmes puisque le résultat
+est une éxonération dans les 2 cas.</p></div>
 
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Les%20appels%20directs%20au%20champ%20d%20application"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Definir%20des%20exceptions%20a%20des%20regles-Les%20appels%20directs%20au%20champ%20d%20application">Les appels directs au champ d'application</a></h3>
 
-<div class='law-text'><p>Dans certains cas, il est utile d’appliquer le calcul d’un champ d’application seulement sous des circonstances spécifiques. Par exemple, certaines allocations sociales peuvent avoir différents modes de calcul, qui dépendent de la situation des allocataires. Dans ce cas définir chacun de ces modes de calcul, comme un sous-champ d’application, est ennuyeux pour deux raisons : premièrement, certaines valeurs en entrée peuvent ne pas être pertinantes dans des cas où un allocataire n’est pas concerné, et le langage continuera d’éxiger à ce que vous ne laissez rien d’indéfini ; deuxièmement, un calcul inutile aura lieu.</p>
-<p>Pour ces cas, il est possible d’appeler un champ d’application directement, en spécifiant en même temps toutes ses variables d’entrées, et de récupérer ses variables de résultat de la même manière qu’avec des sous-champs d’application.</p></div>
+<div class='law-text'><p>Dans certains cas, il est utile d’appliquer le calcul d’un champ
+d’application seulement sous des circonstances spécifiques. Par exemple,
+certaines allocations sociales peuvent avoir différents modes de calcul,
+qui dépendent de la situation des allocataires. Dans ce cas définir
+chacun de ces modes de calcul, comme un sous-champ d’application, est
+ennuyeux pour deux raisons : premièrement, certaines valeurs en entrée
+peuvent ne pas être pertinantes dans des cas où un allocataire n’est pas
+concerné, et le langage continuera d’éxiger à ce que vous ne laissez
+rien d’indéfini ; deuxièmement, un calcul inutile aura lieu.</p>
+<p>Pour ces cas, il est possible d’appeler un champ d’application
+directement, en spécifiant en même temps toutes ses variables d’entrées,
+et de récupérer ses variables de résultat de la même manière qu’avec des
+sous-champs d’application.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1205,16 +1400,34 @@ Fichiers sources tissés dans ce document:
 </pre></div></td></tr></table></div>
 
 </div>
-<div class='law-text'><p>Ici le syntaxe « NouveauCalculImpôtRevenuCorrect avec » déclenche un appel au champ d’application, qui valorise sa variable d’entrée « personne ». Ensuite, la syntaxe du point « . » est utilisée pour récupérer le résultat « impôt_revenu » du champ d’application.</p></div>
+<div class='law-text'><p>Ici le syntaxe « NouveauCalculImpôtRevenuCorrect avec » déclenche un
+appel au champ d’application, qui valorise sa variable d’entrée
+« personne ». Ensuite, la syntaxe du point « . » est utilisée pour
+récupérer le résultat « impôt_revenu » du champ d’application.</p></div>
 
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20variables%20contextuelles%20d%20un%20champ%20d%20application"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20variables%20contextuelles%20d%20un%20champ%20d%20application">Les variables contextuelles d’un champ d'application</a></h2>
 <details><summary>Les variables contextuelles d’un champ d'application</summary>
-<div class='law-text'><p>Avec ses variables « entrée », « interne » et « résultat », les champs d’application de Catala sont proches des fonctions avec des paramètres, des variables locales et des variables retournant un résultat. Cependant, la loi peut parfois être contradictoire aux bonnes pratiques de programmation, et ainsi définir des dispositions qui cassent la barrière d’abstraction normalement associée à une fonction.</p>
-<p>Ceci peut être le cas quand un corps extérieur du texte législatif « réutilise » un concept légal, mais en y ajoutant un changement. Considérez l’exemple fictif suivant (mais pas tout à fait pathologique d’un point de vue informatique).</p></div>
+<div class='law-text'><p>Avec ses variables « entrée », « interne » et « résultat », les
+champs d’application de Catala sont proches des fonctions avec des
+paramètres, des variables locales et des variables retournant un
+résultat. Cependant, la loi peut parfois être contradictoire aux bonnes
+pratiques de programmation, et ainsi définir des dispositions qui
+cassent la barrière d’abstraction normalement associée à une
+fonction.</p>
+<p>Ceci peut être le cas quand un corps extérieur du texte législatif
+« réutilise » un concept légal, mais en y ajoutant un changement.
+Considérez l’exemple fictif suivant (mais pas tout à fait pathologique
+d’un point de vue informatique).</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20variables%20contextuelles%20d%20un%20champ%20d%20application-Article%207"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20variables%20contextuelles%20d%20un%20champ%20d%20application-Article%207">Article 7</a></h3>
 
-<div class='law-text'><p>Le système de justice inflige des amendes aux individus quand ils commettent une infraction. Les amendes sont déterminées en fonction du montant des impôts payés par le particulier. Plus l’individu paie d’impôts, plus l’amende est élevée. Toutefois la détermination du montant de l’impôt à payer par un particulier, dans ce contexte, comprend des frais d’imposition fixes de 500€ pour les particuliers gagnant moins de 10 000€.</p></div>
+<div class='law-text'><p>Le système de justice inflige des amendes aux individus quand ils
+commettent une infraction. Les amendes sont déterminées en fonction du
+montant des impôts payés par le particulier. Plus l’individu paie
+d’impôts, plus l’amende est élevée. Toutefois la détermination du
+montant de l’impôt à payer par un particulier, dans ce contexte,
+comprend des frais d’imposition fixes de 500€ pour les particuliers
+gagnant moins de 10 000€.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1319,11 +1532,20 @@ Fichiers sources tissés dans ce document:
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Une%20variable,%20plusieurs%20etats"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Une%20variable,%20plusieurs%20etats">Une variable, plusieurs états</a></h2>
 <details><summary>Une variable, plusieurs états</summary>
-<div class='law-text'><p>Lorsqu’une quantité est mentionnée dans la loi, elle ne correspond pas toujours exactement à une variable unique de Catala. Plus précisément, il arrive souvent que la loi définisse une quantité unique avec plusieurs étapes de calcul, chacune s’appuyant sur la précédente. Voici un exemple d’une telle configuration et la manière de la traiter grâce à une fonction dédiée de Catala.</p>
-<p>Sous le capot, les différents états d’une variable de Catala sont mis en œuvre par des variables distinctes, à l’intérieur des représentations intermédiaires-inférieures du langage.</p></div>
+<div class='law-text'><p>Lorsqu’une quantité est mentionnée dans la loi, elle ne correspond
+pas toujours exactement à une variable unique de Catala. Plus
+précisément, il arrive souvent que la loi définisse une quantité unique
+avec plusieurs étapes de calcul, chacune s’appuyant sur la précédente.
+Voici un exemple d’une telle configuration et la manière de la traiter
+grâce à une fonction dédiée de Catala.</p>
+<p>Sous le capot, les différents états d’une variable de Catala sont mis
+en œuvre par des variables distinctes, à l’intérieur des représentations
+intermédiaires-inférieures du langage.</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Une%20variable,%20plusieurs%20etats-Article%208"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Une%20variable,%20plusieurs%20etats-Article%208">Article 8</a></h3>
 
-<div class='law-text'><p>Fiscalement parlant, la valeur du bâtiment exploité à des fins caritatives peut être déduite du patrimoine d’une personne, qui est alors plafonné à 2 500 000€.</p></div>
+<div class='law-text'><p>Fiscalement parlant, la valeur du bâtiment exploité à des fins
+caritatives peut être déduite du patrimoine d’une personne, qui est
+alors plafonné à 2 500 000€.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1380,10 +1602,17 @@ Fichiers sources tissés dans ce document:
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala">Les types de données de Catala</a></h2>
 <details><summary>Les types de données de Catala</summary>
-<div class='law-text'><p>Jusqu’à présent, ce tutoriel vous a présenté la structure de base des programmes Catala avec le champ d’application, les définitions et les exceptions. Mais pour être en mesure de gérer la plupart des lois, Catala vient en soutien avec les types de données habituels sur lesquels les calculs legislatifs opèrent.</p></div>
+<div class='law-text'><p>Jusqu’à présent, ce tutoriel vous a présenté la structure de base des
+programmes Catala avec le champ d’application, les définitions et les
+exceptions. Mais pour être en mesure de gérer la plupart des lois,
+Catala vient en soutien avec les types de données habituels sur lesquels
+les calculs legislatifs opèrent.</p></div>
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Booleens"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Booleens">Booléens</a></h3>
 
-<div class='law-text'><p>Le booléen est le type de donnée le plus élémentaire dans Catala : sa valeur peut être soit à « vrai », soit à « faux ». La condition est un simple booléen avec une valeur par défaut à « faux ». Rendez-vous à la section qui concerne les conditions, décrite plus haut.</p></div>
+<div class='law-text'><p>Le booléen est le type de donnée le plus élémentaire dans Catala : sa
+valeur peut être soit à « vrai », soit à « faux ». La condition est un
+simple booléen avec une valeur par défaut à « faux ». Rendez-vous à la
+section qui concerne les conditions, décrite plus haut.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1415,7 +1644,10 @@ Fichiers sources tissés dans ce document:
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Entiers"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Entiers">Entiers</a></h3>
 
-<div class='law-text'><p>Les entiers dans Catala sont en précision infinie : ils se comportent comme des vrais entiers en mathématique, et non comme des entiers d’ordinateur qui sont limités par une valeur maximale, en raison de leur stockage sur 32 ou 64 bits. Les entiers peuvent être négatifs.</p></div>
+<div class='law-text'><p>Les entiers dans Catala sont en précision infinie : ils se comportent
+comme des vrais entiers en mathématique, et non comme des entiers
+d’ordinateur qui sont limités par une valeur maximale, en raison de leur
+stockage sur 32 ou 64 bits. Les entiers peuvent être négatifs.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1443,7 +1675,10 @@ Fichiers sources tissés dans ce document:
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Decimales"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Decimales">Décimales</a></h3>
 
-<div class='law-text'><p>Les décimales dans Catala sont aussi en précision infinie, qui se comportent comme de vrais nombres rationnels en mathématique, et non comme des nombres à virgule flottante dans un ordinateur qui effectuent des calculs approxmatifs. Les opérateurs sont suffixés avec « , ».</p></div>
+<div class='law-text'><p>Les décimales dans Catala sont aussi en précision infinie, qui se
+comportent comme de vrais nombres rationnels en mathématique, et non
+comme des nombres à virgule flottante dans un ordinateur qui effectuent
+des calculs approxmatifs. Les opérateurs sont suffixés avec « , ».</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1479,8 +1714,16 @@ Fichiers sources tissés dans ce document:
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Argent"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Argent">Argent</a></h3>
 
-<div class='law-text'><p>En Catala, l’argent est simplement représenté par un nombre entier de centimes. Il n’est pas possible en Catala d’avoir une quantité d’argent plus précise qu’un centime. Cependant, vous pouvez multiplier une quantité d’argent avec une décimale, et le résultat est arrondi au centime le plus proche.</p>
-<p>Ce comportement vous permet de repérer l’endroit où vous avez besoin de précision dans vos calculs et de sélectionner les décimales en guise de précision, au lieu de vous fier sur des chiffres monétaires, où la précision est de l’ordre du centime d’euro. Deux sommes d’argent peuvent être divisées, produisant une décimale.</p></div>
+<div class='law-text'><p>En Catala, l’argent est simplement représenté par un nombre entier de
+centimes. Il n’est pas possible en Catala d’avoir une quantité d’argent
+plus précise qu’un centime. Cependant, vous pouvez multiplier une
+quantité d’argent avec une décimale, et le résultat est arrondi au
+centime le plus proche.</p>
+<p>Ce comportement vous permet de repérer l’endroit où vous avez besoin
+de précision dans vos calculs et de sélectionner les décimales en guise
+de précision, au lieu de vous fier sur des chiffres monétaires, où la
+précision est de l’ordre du centime d’euro. Deux sommes d’argent peuvent
+être divisées, produisant une décimale.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1512,7 +1755,18 @@ Fichiers sources tissés dans ce document:
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Dates%20et%20durees"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Dates%20et%20durees">Dates et durées</a></h3>
 
-<div class='law-text'><p>Catala prend en charge les dates du calendrier grégorien, ainsi que les calculs de durée en termes de jours, de mois et d’années. La soustraction entre une date et une durée est mesurée en jours, et l’addition entre une date et une durée donne une nouvelle date. Les durées sont mesurées en jours, en mois ou en années et ne peuvent pas être mélangées, car les mois et les années n’ont pas toujours le même nombre de jours. Cette non-mixité n’est pas prise en compte par le système de typage de Catala, mais des erreurs seront générées à l’exécution. Les dates sont spécifiées selon la norme ISO 8601 afin d’éviter toute confusion entre les notations américaines et européennes. Les opérateurs de date sont préfixés par « @ », tandis que les opérateurs de durée sont préfixés par « ^ ».</p></div>
+<div class='law-text'><p>Catala prend en charge les dates du calendrier grégorien, ainsi que
+les calculs de durée en termes de jours, de mois et d’années. La
+soustraction entre une date et une durée est mesurée en jours, et
+l’addition entre une date et une durée donne une nouvelle date. Les
+durées sont mesurées en jours, en mois ou en années et ne peuvent pas
+être mélangées, car les mois et les années n’ont pas toujours le même
+nombre de jours. Cette non-mixité n’est pas prise en compte par le
+système de typage de Catala, mais des erreurs seront générées à
+l’exécution. Les dates sont spécifiées selon la norme ISO 8601 afin
+d’éviter toute confusion entre les notations américaines et européennes.
+Les opérateurs de date sont préfixés par « @ », tandis que les
+opérateurs de durée sont préfixés par « ^ ».</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1540,7 +1794,11 @@ Fichiers sources tissés dans ce document:
 
 <h3 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Collections"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Les%20types%20de%20donnees%20de%20Catala-Collections">Collections</a></h3>
 
-<div class='law-text'><p>Souvent, les programmes Catala ont besoin de parler de collection de données parce que la loi parle du nombre d’enfants, du maximum d’une liste, etc. Catala propose un support de première classe pour les listes. Vous pouvez créer une liste, filtrer ses éléments, mais aussi agréger son contenu pour calculer toutes sortes de valeurs.</p></div>
+<div class='law-text'><p>Souvent, les programmes Catala ont besoin de parler de collection de
+données parce que la loi parle du nombre d’enfants, du maximum d’une
+liste, etc. Catala propose un support de première classe pour les
+listes. Vous pouvez créer une liste, filtrer ses éléments, mais aussi
+agréger son contenu pour calculer toutes sortes de valeurs.</p></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
@@ -1569,22 +1827,37 @@ Fichiers sources tissés dans ce document:
 </details>
 <h2 class='law-heading' id="Tutoriel%20d%20utilisation%20du%20langage%20Catala-Conclusion"><a href="#Tutoriel%20d%20utilisation%20du%20langage%20Catala-Conclusion">Conclusion</a></h2>
 <details><summary>Conclusion</summary>
-<div class='law-text'><p>Ce tutoriel présente les concepts de base et la syntaxe des fonctionnalités du langage Catala. C’est à vous de les utiliser pour annoter du texte législatif avec leur traduction algorithmique.</p>
-<p>Il n’y a pas une seule bonne façon d’écrire des programmes Catala, car le style de programmation doit être adapté au texte de loi qui sera annoté. Cependant, le coeur de Catala est un langage de programmation fonctionnelle. Par conséquent, suivre les modèles de conception habituels de la programmation fonctionnelle devrait aider à obtenir du code concis et lisible.</p></div>
+<div class='law-text'><p>Ce tutoriel présente les concepts de base et la syntaxe des
+fonctionnalités du langage Catala. C’est à vous de les utiliser pour
+annoter du texte législatif avec leur traduction algorithmique.</p>
+<p>Il n’y a pas une seule bonne façon d’écrire des programmes Catala,
+car le style de programmation doit être adapté au texte de loi qui sera
+annoté. Cependant, le coeur de Catala est un langage de programmation
+fonctionnelle. Par conséquent, suivre les modèles de conception
+habituels de la programmation fonctionnelle devrait aider à obtenir du
+code concis et lisible.</p></div>
 </details>
 
 
 <h1 class='law-heading' id="Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau"><a href="#Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau">Annexe A : Les définitions de valeurs de premier niveau</a></h1>
 
-<div class='law-text'><p>Les définitions de premier niveau permettent de définir des valeurs ou des fonctions directement dans le programme, sans les placer dans un champ d’application. Cela est utile pour les constantes ou les fonctions d’aide, comme le montrent les exemples ci-dessous.</p>
-<p>Les définitions de premier niveau sont disponibles, en les appelant par leur nom, dans tout le programme ; elles peuvent dépendre les unes des autres (tant qu’il n’y a pas de cycles), mais elles ne sont pas autorisées à être dépendantes des évaluations faites dans des champs d’application.</p></div>
+<div class='law-text'><p>Les définitions de premier niveau permettent de définir des valeurs
+ou des fonctions directement dans le programme, sans les placer dans un
+champ d’application. Cela est utile pour les constantes ou les fonctions
+d’aide, comme le montrent les exemples ci-dessous.</p>
+<p>Les définitions de premier niveau sont disponibles, en les appelant
+par leur nom, dans tout le programme ; elles peuvent dépendre les unes
+des autres (tant qu’il n’y a pas de cycles), mais elles ne sont pas
+autorisées à être dépendantes des évaluations faites dans des champs
+d’application.</p></div>
 <h2 class='law-heading' id="Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau-Example%201:%20Les%20constantes%20de%20premier%20niveau"><a href="#Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau-Example%201:%20Les%20constantes%20de%20premier%20niveau">Example 1: Les constantes de premier niveau</a></h2>
 <details><summary>Example 1: Les constantes de premier niveau</summary>
 
 <h3 class='law-heading' id="Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau-Example%201:%20Les%20constantes%20de%20premier%20niveau-A.%20En%20utilisant%20les%20definitions%20du%20champ%20d%20application"><a href="#Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau-Example%201:%20Les%20constantes%20de%20premier%20niveau-A.%20En%20utilisant%20les%20definitions%20du%20champ%20d%20application">A. En utilisant les définitions du champ d'application</a></h3>
 
 <div class='law-text'><ol type="a">
-<li>Dans ce corpus, le nombre de jours de travail par semaine est supposé être de 5.</li>
+<li>Dans ce corpus, le nombre de jours de travail par semaine est
+supposé être de 5.</li>
 </ol></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
@@ -1608,7 +1881,8 @@ Fichiers sources tissés dans ce document:
 
 </div>
 <div class='law-text'><ol start="2" type="a">
-<li>Les frais de repas sont de 2€ par jour de travail, sur le nombre de semaines travaillées.</li>
+<li>Les frais de repas sont de 2€ par jour de travail, sur le nombre de
+semaines travaillées.</li>
 </ol></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
@@ -1650,7 +1924,8 @@ Fichiers sources tissés dans ce document:
 <h3 class='law-heading' id="Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau-Example%201:%20Les%20constantes%20de%20premier%20niveau-B.%20En%20utilisant%20les%20definitions%20de%20premier%20niveau"><a href="#Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau-Example%201:%20Les%20constantes%20de%20premier%20niveau-B.%20En%20utilisant%20les%20definitions%20de%20premier%20niveau">B. En utilisant les définitions de premier niveau</a></h3>
 
 <div class='law-text'><ol type="a">
-<li>À travers ce corpus, le nombre de jours de travail par semaine est supposé être 5.</li>
+<li>À travers ce corpus, le nombre de jours de travail par semaine est
+supposé être 5.</li>
 </ol></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
@@ -1666,7 +1941,8 @@ Fichiers sources tissés dans ce document:
 
 </div>
 <div class='law-text'><ol start="2" type="a">
-<li>Les frais de repas sont de 2€ par jour de travail, sur le nombre de semaines travaillées.</li>
+<li>Les frais de repas sont de 2€ par jour de travail, sur le nombre de
+semaines travaillées.</li>
 </ol></div>
 <div class='code-wrapper catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
@@ -1796,7 +2072,8 @@ Fichiers sources tissés dans ce document:
 </details>
 <h2 class='law-heading' id="Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau-Exemple%203:%20Des%20fonctions%20avec%20plusieurs%20parametres"><a href="#Annexe%20A%20:%20Les%20definitions%20de%20valeurs%20de%20premier%20niveau-Exemple%203:%20Des%20fonctions%20avec%20plusieurs%20parametres">Exemple 3: Des fonctions avec plusieurs paramètres</a></h2>
 <details><summary>Exemple 3: Des fonctions avec plusieurs paramètres</summary>
-<div class='law-text'><p>Le montant à inclure dans le revenu brut est l’excédent de la juste valeur marchande du bien sur le montant payé.</p></div>
+<div class='law-text'><p>Le montant à inclure dans le revenu brut est l’excédent de la juste
+valeur marchande du bien sur le montant payé.</p></div>
 <div class='code-wrapper code-metadata catala-code'>
 <div class='filename'>tutoriel_fr/tutoriel_fr.catala_fr</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>
