@@ -1,8 +1,9 @@
 # catala-web-assets
 
 Web assets generated from Catala programs about the French law:
-* [The housing benefits](https://github.com/CatalaLang/catala/tree/master/examples/aides_logement)
-* [The family benefits](https://github.com/CatalaLang/catala/tree/master/examples/allocations_familiales)
+
+- [The housing benefits](https://github.com/CatalaLang/catala/tree/master/examples/aides_logement)
+- [The family benefits](https://github.com/CatalaLang/catala/tree/master/examples/allocations_familiales)
 
 ## To use
 
@@ -15,7 +16,7 @@ yarn add catala-web-assets
 Import the wanted file from the `assets` folder:
 
 ```js
-require("catala-web-assets/assets/<file_name>")
+require("catala-web-assets/assets/<file_name>");
 ```
 
 ### In local dev
@@ -39,41 +40,12 @@ assets, please refer to the [dedicated section of the Catala compiler
 
 ## Websites using this assets
 
-* https://catala-lang.org ([source](https://github.com/CatalaLang/catala-website))
-* https://code.gouv.fr/demos/catala ([source](https://github.com/CatalaLang/catala-dsfr))
+- https://catala-lang.org ([source](https://github.com/CatalaLang/catala-website))
+- https://code.gouv.fr/demos/catala ([source](https://github.com/CatalaLang/catala-dsfr))
 
-## Note on the redaction of schemas
-
-### Title
-
-The titles must not be defined inside `"kind"` properties of the object
-definition but just before the `"$ref"` of the calling parent:
-
-```json
-"categorieEquivalenceLoyerD84216": {
-  "title": "Catégorie de personnes résidant en logement-foyer",
-  "$ref": "#/definitions/categorie_equivalence_loyer_allocation_logement_foyer"
-}
-```
-
-### Dsfr dedicated UI options
-
-To be used with the Dsfr, there dedicated options for the UI schemas:
-
-#### `ui:tabLabel` and `ui:hideTitle`
-
-`ui:hideTitle` is needed to be specified for item of type `object` inside a
-item of type `array` to hide the unique title of the array's items.
-
-`ui:hideTitle` allows to defines tab's label. It needs to be specified at the
-root of the item of type `array`.
-
-Example:
-
-```json
-"personnesACharge": {
-    "ui:tabLabel": "Personne",
-    "items": {
-        "ui:hideTitle": true,
-...
-```
+> [!IMPORTANT]
+> If the generated schemas is intended to be used with
+> [`@codegouvfr/rjsf-dsfr`](https://github.com/codegouvfr/rjsf-dsfr), please
+> refer to the [Notes on writing
+> schemas](https://github.com/codegouvfr/rjsf-dsfr?tab=readme-ov-file#notes-on-writing-schemas)
+> section.
