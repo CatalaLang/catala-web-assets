@@ -2,8 +2,8 @@
 
 Web assets generated from Catala programs about the French law:
 
-- [The housing benefits](https://github.com/CatalaLang/catala/tree/master/examples/aides_logement)
-- [The family benefits](https://github.com/CatalaLang/catala/tree/master/examples/allocations_familiales)
+- [The housing benefits](https://github.com/CatalaLang/catala-examples/tree/master/aides_logement)
+- [The family benefits](https://github.com/CatalaLang/catala-examples/tree/master/allocations_familiales)
 
 ## To use
 
