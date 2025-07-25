@@ -1,7 +1,36 @@
 {
    "type": "object",
    "definitions": {
-      "France.collectivite": {
+      "EnfantEntree": {
+        "type": "object",
+        "properties": {
+          "dIdentifiant": {
+            "type": "number",
+            "default": 0
+          },
+          "dRemunerationMensuelle": {
+            "type": "number",
+            "minimum": 0,
+            "default": 0
+          },
+          "dDateDeNaissance": {
+            "type": "string",
+            "format": "date"
+          },
+          "dPriseEnCharge": {
+            "$ref": "#/definitions/PriseEnCharge"
+          },
+          "dADejaOuvertDroitAuxAllocationsFamiliales": {
+            "type": "boolean",
+            "default": false
+          },
+          "dBeneficieTitrePersonnelAidePersonnelleLogement": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "France.Collectivite": {
         "type": "object",
         "properties": {
           "kind": {
@@ -194,36 +223,7 @@
           ]
         }
    ,
-   "enfant_entree": {
-     "type": "object",
-     "properties": {
-       "dIdentifiant": {
-         "type": "number",
-         "default": 0
-       },
-       "dRemunerationMensuelle": {
-         "type": "number",
-         "minimum": 0,
-         "default": 0
-       },
-       "dDateDeNaissance": {
-         "type": "string",
-         "format": "date"
-       },
-       "dPriseEnCharge": {
-         "$ref": "#/definitions/prise_en_charge"
-       },
-       "dADejaOuvertDroitAuxAllocationsFamiliales": {
-         "type": "boolean",
-         "default": false
-       },
-       "dBeneficieTitrePersonnelAidePersonnelleLogement": {
-         "type": "boolean",
-         "default": false
-       }
-     }
-   },
-   "prise_en_charge": {
+   "PriseEnCharge": {
      "type": "object",
      "properties": {
        "kind": {
@@ -346,7 +346,7 @@
      "type": "array",
      "default": [],
      "items": {
-       "$ref": "#/definitions/enfant_entree"
+       "$ref": "#/definitions/EnfantEntree"
      }
    },
    "iRessourcesMenageIn": {
@@ -355,7 +355,7 @@
      "default": 0
    },
    "iResidenceIn": {
-     "$ref": "#/definitions/France.collectivite"
+     "$ref": "#/definitions/France.Collectivite"
    },
    "iPersonneChargeEffectivePermanenteEstParentIn": {
      "type": "boolean",

@@ -1,67 +1,7 @@
 {
   "type": "object",
   "definitions": {
-    "collectivite": {
-      "type": "object",
-      "properties": {
-        "kind": {
-          "title": " ",
-          "type": "string",
-          "default": "Metropole",
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": ["Guadeloupe"],
-              "title": "Guadeloupe"
-            },
-            {
-              "type": "string",
-              "enum": ["Guyane"],
-              "title": "Guyane"
-            },
-            {
-              "type": "string",
-              "enum": ["Martinique"],
-              "title": "Martinique"
-            },
-            {
-              "type": "string",
-              "enum": ["LaReunion"],
-              "title": "La Réunion"
-            },
-            {
-              "type": "string",
-              "enum": ["SaintBarthelemy"],
-              "title": "Saint Barthélemy"
-            },
-            {
-              "type": "string",
-              "enum": ["SaintMartin"],
-              "title": "Saint Martin"
-            },
-            {
-              "type": "string",
-              "enum": ["Metropole"],
-              "title": "Métropole"
-            },
-            {
-              "type": "string",
-              "enum": ["SaintPierreEtMiquelon"],
-              "title": "Saint Pierre et Miquelon"
-            },
-            {
-              "type": "string",
-              "enum": ["Mayotte"],
-              "title": "Mayotte"
-            }
-          ]
-        },
-        "payload": {
-
-        }
-      }
-    },
-    "enfant_entree": {
+    "EnfantEntree": {
       "type": "object",
       "properties": {
         "dRemunerationMensuelle": {
@@ -77,7 +17,7 @@
         },
         "dPriseEnCharge": {
           "title": "Prise en charge de l'enfant",
-          "$ref": "#/definitions/prise_en_charge"
+          "$ref": "#/definitions/PriseEnCharge"
         },
         "dADejaOuvertDroitAuxAllocationsFamiliales": {
           "title": "L'enfant a déjà ouvert des droits aux allocations familiales",
@@ -90,9 +30,88 @@
           "default": false
         }
       },
-      "required": ["dRemunerationMensuelle", "dDateDeNaissance"]
+      "required": [
+        "dRemunerationMensuelle",
+        "dDateDeNaissance"
+      ]
     },
-    "prise_en_charge": {
+    "France.Collectivite": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "title": " ",
+          "type": "string",
+          "default": "Metropole",
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "Guadeloupe"
+              ],
+              "title": "Guadeloupe"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "Guyane"
+              ],
+              "title": "Guyane"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "Martinique"
+              ],
+              "title": "Martinique"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "LaReunion"
+              ],
+              "title": "La Réunion"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "SaintBarthelemy"
+              ],
+              "title": "Saint Barthélemy"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "SaintMartin"
+              ],
+              "title": "Saint Martin"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "Metropole"
+              ],
+              "title": "Métropole"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "SaintPierreEtMiquelon"
+              ],
+              "title": "Saint Pierre et Miquelon"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "Mayotte"
+              ],
+              "title": "Mayotte"
+            }
+          ]
+        },
+        "payload": {}
+      }
+    },
+    "PriseEnCharge": {
       "type": "object",
       "properties": {
         "kind": {
@@ -102,35 +121,43 @@
           "anyOf": [
             {
               "type": "string",
-              "enum": ["GardeAlterneePartageAllocations"],
+              "enum": [
+                "GardeAlterneePartageAllocations"
+              ],
               "title": "Garde alternée, partage des allocations"
             },
             {
               "type": "string",
-              "enum": ["GardeAlterneeAllocataireUnique"],
+              "enum": [
+                "GardeAlterneeAllocataireUnique"
+              ],
               "title": "Garde alternée, allocataire unique"
             },
             {
               "type": "string",
-              "enum": ["EffectiveEtPermanente"],
+              "enum": [
+                "EffectiveEtPermanente"
+              ],
               "title": "Effective et permanente"
             },
             {
               "type": "string",
-              "enum": ["ServicesSociauxAllocationVerseeALaFamille"],
+              "enum": [
+                "ServicesSociauxAllocationVerseeALaFamille"
+              ],
               "title": "Confié aux services sociaux, allocation versée à la famille"
             },
             {
               "type": "string",
-              "enum": ["ServicesSociauxAllocationVerseeAuxServicesSociaux"],
+              "enum": [
+                "ServicesSociauxAllocationVerseeAuxServicesSociaux"
+              ],
               "title": "Confié aux services sociaux, allocation versée aux services sociaux"
             }
           ]
         }
       },
-      "payload": {
-
-      }
+      "payload": {}
     }
   },
   "properties": {
@@ -144,7 +171,7 @@
       "type": "array",
       "default": [],
       "items": {
-        "$ref": "#/definitions/enfant_entree"
+        "$ref": "#/definitions/EnfantEntree"
       }
     },
     "iRessourcesMenageIn": {
@@ -155,7 +182,7 @@
     },
     "iResidenceIn": {
       "title": "Résidence du ménage",
-      "$ref": "#/definitions/collectivite"
+      "$ref": "#/definitions/France.Collectivit"
     },
     "iPersonneChargeEffectivePermanenteEstParentIn": {
       "title": "La personne qui a la charge effective et permanente est un des parents",

@@ -1,5 +1,5 @@
-<!-- Creator     : groff version 1.22.4 -->
-<!-- CreationDate: Wed Dec 13 10:05:39 2023 -->
+<!-- Creator     : groff version 1.23.0 -->
+<!-- CreationDate: Thu Jul 24 16:06:40 2025 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,7 +27,7 @@
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em">clerk - Build
+<p style="margin-left:9%; margin-top: 1em">clerk - Build
 system for Catala, a specification language for tax and
 social benefits computation rules.</p>
 
@@ -36,7 +36,7 @@ social benefits computation rules.</p>
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em"><b>clerk</b>
+<p style="margin-left:9%; margin-top: 1em"><b>clerk</b>
 <i>COMMAND</i> &acirc;&brvbar;</p>
 
 <h2>DESCRIPTION
@@ -44,7 +44,7 @@ social benefits computation rules.</p>
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em"><b>clerk</b> is
+<p style="margin-left:9%; margin-top: 1em"><b>clerk</b> is
 a build system for Catala, a specification language for tax
 and social benefits computation rules</p>
 
@@ -53,40 +53,78 @@ and social benefits computation rules</p>
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em"><b>build</b>
+<p style="margin-left:9%; margin-top: 1em"><b>build</b>
 [<i>OPTION</i>]&acirc;&brvbar;
 [<i>TARGETS</i>]&acirc;&brvbar;</p>
 
-<p style="margin-left:17%;">Low-level build command: can be
-used to forward build targets or options directly to
-Ninja</p>
+<p style="margin-left:14%;">Base build command for
+individual file targets. Given the corresponding Catala
+module is declared, this can be used to build .ml, .cmxs,
+.c, .py files, etc. Targets, along with their dependencies,
+are always written into <i>build-dir</i> (by default
+<b>_build</b>). If a catala extension is used as target,
+this compiles all its dependencies. The format of the
+targets is <b>src-dir/BACKEND/file.ext</b>. For example, to
+build a C object file from <b>foo/bar.catala_en</b>, one
+would run: <b>clerk build foo/c/bar.o</b> and the resulting
+file would be in <b>_build/foo/c/bar.o</b>.</p>
 
-<p style="margin-left:11%;"><b>run</b>
+<p style="margin-left:9%;"><b>list-vars</b>
+[<i>OPTION</i>]&acirc;&brvbar;</p>
+
+<p style="margin-left:14%;">List pre-defined build
+variables that can be overriden using the <i>--var</i> flag,
+or in the [variables] section of <b>clerk.toml</b>.</p>
+
+<p style="margin-left:9%;"><b>raw-target</b>
+[<i>OPTION</i>]&acirc;&brvbar;
+[<i>TARGETS</i>]&acirc;&brvbar;</p>
+
+<p style="margin-left:14%;">Low-level build command: can be
+used to forward build targets or options directly to Ninja.
+Without a target argument, lists all available raw targets
+to stdout.</p>
+
+<p style="margin-left:9%;"><b>report</b>
 [<i>OPTION</i>]&acirc;&brvbar;
 [<i>FILE(S)</i>]&acirc;&brvbar;</p>
 
-<p style="margin-left:17%;">Runs the Catala interpreter on
+<p style="margin-left:14%;">Mainly for internal purposes.
+Reads a test report file and displays a summary of the
+results, returning 0 on success and 1 if any test
+failed.</p>
+
+<p style="margin-left:9%;"><b>run</b>
+[<i>OPTION</i>]&acirc;&brvbar;
+[<i>FILE(S)</i>]&acirc;&brvbar;</p>
+
+<p style="margin-left:14%;">Runs the Catala interpreter on
 the given files, after building their dependencies. The
-scope to be executed must be specified using the <i>-s</i>
+scope to be executed can be specified using the <i>-s</i>
 option.</p>
 
-<p style="margin-left:11%;"><b>runtest</b>
-[<i>OPTION</i>]&acirc;&brvbar; <i>FILE</i></p>
+<p style="margin-left:9%;"><b>runtest</b>
+[<i>OPTION</i>]&acirc;&brvbar; <i>FILE</i>
+[<i>OUTFILE</i>]</p>
 
-<p style="margin-left:17%;">Mainly for internal purposes.
-Runs inline tests from a Catala file, and outputs their
-results to stdout</p>
+<p style="margin-left:14%;">Mainly for internal purposes.
+Runs cli tests from a Catala file, and outputs their results
+to stdout</p>
 
-<p style="margin-left:11%;"><b>test</b>
+<p style="margin-left:9%;"><b>test</b>
 [<i>OPTION</i>]&acirc;&brvbar;
 [<i>FILE(S)</i>]&acirc;&brvbar;</p>
 
-<p style="margin-left:17%;">Scan the given files or
+<p style="margin-left:14%;">Scan the given files or
 directories for catala tests, build their requirement and
-run them all. With <b>--reset</b> the expected results are
-updated in-place ; otherwise, 0 is returned if the output
-matches the reference, or 1 is returned and a diff is
-printed to stdout</p>
+run them all. If <b>--backend</b> is unspecified or
+<b>interpret</b>, both scope tests and CLI tests are run ;
+<b>--reset</b> can be used to rewrite the expected results
+of CLI tests to their current result. For any other
+<b>--backend</b>, CLI tests are skipped and scope tests are
+compiled to the specified backend with the catala option
+<b>--autotest</b>, and then run, ensuring the consistency of
+results.</p>
 
 <h2>COMMON OPTIONS
 <a name="COMMON OPTIONS"></a>
@@ -94,94 +132,94 @@ printed to stdout</p>
 
 
 
-<p style="margin-left:11%; margin-top: 1em"><b>--help</b>[=<i>FMT</i>]
+<p style="margin-left:9%; margin-top: 1em"><b>--help</b>[=<i>FMT</i>]
 (default=<b>auto</b>)</p>
 
-<p style="margin-left:17%;">Show this help in format
+<p style="margin-left:14%;">Show this help in format
 <i>FMT</i>. The value <i>FMT</i> must be one of <b>auto</b>,
 <b>pager</b>, <b>groff</b> or <b>plain</b>. With
 <b>auto</b>, the format is <b>pager</b> or <b>plain</b>
 whenever the <b>TERM</b> env var is <b>dumb</b> or
 undefined.</p>
 
-<p style="margin-left:11%;"><b>--version</b></p>
+<p style="margin-left:9%;"><b>--version</b></p>
 
-<p style="margin-left:17%;">Show version information.</p>
+<p style="margin-left:14%;">Show version information.</p>
 
 <h2>EXIT STATUS
 <a name="EXIT STATUS"></a>
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em"><b>clerk</b>
-exits with the following status:</p>
+<p style="margin-left:9%; margin-top: 1em"><b>clerk</b>
+exits with:</p>
 
 <table width="100%" border="0" rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="11%"></td>
+<td width="9%"></td>
 <td width="4%">
 
 
 <p>0</p></td>
-<td width="2%"></td>
-<td width="80%">
+<td width="1%"></td>
+<td width="67%">
 
 
 <p>on success.</p></td>
-<td width="3%">
+<td width="19%">
 </td></tr>
 <tr valign="top" align="left">
-<td width="11%"></td>
+<td width="9%"></td>
 <td width="4%">
 
 
 <p>1</p></td>
-<td width="2%"></td>
-<td width="80%">
+<td width="1%"></td>
+<td width="67%">
 
 
 <p>on error.</p></td>
-<td width="3%">
+<td width="19%">
 </td></tr>
 <tr valign="top" align="left">
-<td width="11%"></td>
+<td width="9%"></td>
 <td width="4%">
 
 
 <p>123</p></td>
-<td width="2%"></td>
-<td width="80%">
+<td width="1%"></td>
+<td width="67%">
 
 
 <p>on indiscriminate errors reported on standard error.</p></td>
-<td width="3%">
+<td width="19%">
 </td></tr>
 <tr valign="top" align="left">
-<td width="11%"></td>
+<td width="9%"></td>
 <td width="4%">
 
 
 <p>124</p></td>
-<td width="2%"></td>
-<td width="80%">
+<td width="1%"></td>
+<td width="67%">
 
 
 <p>on command line parsing errors.</p></td>
-<td width="3%">
+<td width="19%">
 </td></tr>
 <tr valign="top" align="left">
-<td width="11%"></td>
+<td width="9%"></td>
 <td width="4%">
 
 
 <p>125</p></td>
-<td width="2%"></td>
-<td width="80%">
+<td width="1%"></td>
+<td width="67%">
 
 
 <p>on unexpected internal errors (bugs).</p></td>
-<td width="3%">
+<td width="19%">
 </td></tr>
 </table>
 
@@ -190,13 +228,13 @@ exits with the following status:</p>
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em">Denis Merigoux
+<p style="margin-left:9%; margin-top: 1em">Denis Merigoux
 &lt;denis.merigoux@inria.fr&gt;</p>
 
-<p style="margin-left:11%; margin-top: 1em">Emile Rolley
+<p style="margin-left:9%; margin-top: 1em">Emile Rolley
 &lt;emile.rolley@tuta.io&gt;</p>
 
-<p style="margin-left:11%; margin-top: 1em">Louis Gesbert
+<p style="margin-left:9%; margin-top: 1em">Louis Gesbert
 &lt;louis.gesbert@inria.fr&gt;</p>
 
 <h2>EXAMPLES
@@ -204,10 +242,10 @@ exits with the following status:</p>
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em">Typical
+<p style="margin-left:9%; margin-top: 1em">Typical
 usage:</p>
 
-<p style="margin-left:11%; margin-top: 1em">clerk test
+<p style="margin-left:9%; margin-top: 1em">clerk test
 file.catala_en</p>
 
 <h2>BUGS
@@ -215,7 +253,7 @@ file.catala_en</p>
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em">Please file bug
+<p style="margin-left:9%; margin-top: 1em">Please file bug
 reports at https://github.com/CatalaLang/catala/issues</p>
 </body>
 </html>

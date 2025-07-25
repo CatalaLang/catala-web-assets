@@ -1,7 +1,7 @@
 {
   "type": "object",
   "definitions": {
-    "accord_financement_representant_etat_outre_mer": {
+    "AccordFinancementRepresentantEtatOutreMer": {
       "type": "object",
       "properties": {
         "kind": {
@@ -60,7 +60,7 @@
         }
       ]
     },
-    "ameliore_par_occupant": {
+    "AmelioreParOccupant": {
       "type": "object",
       "properties": {
         "kind": {
@@ -83,7 +83,7 @@
 
       }
     },
-    "autre_personne_a_charge": {
+    "AutrePersonneACharge": {
       "type": "object",
       "required": ["dateNaissance", "ressources"],
       "properties": {
@@ -104,7 +104,7 @@
         },
         "parente": {
           "title": " ",
-          "$ref": "#/definitions/parente"
+          "$ref": "#/definitions/Parente"
         },
         "incapacite80PourcentOuRestrictionEmploi": {
           "title": "Incapacité à 80% ou plus ou restriction d'emploi",
@@ -123,7 +123,7 @@
         }
       }
     },
-    "categorie_equivalence_loyer_allocation_logement_foyer": {
+    "CategorieEquivalenceLoyerAllocationLogementFoyer": {
       "type": "object",
       "properties": {
         "kind": {
@@ -158,7 +158,7 @@
 
       }
     },
-    "changement_logement_d842_4": {
+    "ChangementLogementD842_4": {
       "type": "object",
       "properties": {
         "kind": {
@@ -192,7 +192,7 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/infos_changement_logement_d842_4"
+                "$ref": "#/definitions/InfosChangementLogementD842_4"
               }
             }
           }
@@ -215,7 +215,117 @@
         }
       ]
     },
-    "collectivite": {
+    "ConditionsEtrangers": {
+      "type": "object",
+      "properties": {
+        "satisfaitConditionsL5122CodeSecuriteSociale": {
+          "title": "La personne réside de manière régulière en France",
+          "type": "boolean",
+          "default": true
+        },
+        "satisfaitArt4Ordonnance2002Mayotte": {
+          "type": "boolean",
+          "title": "La personne réside de manière régulière à Mayotte",
+          "default": false
+        }
+      }
+    },
+    "ConventionANHA": {
+      "type": "object",
+      "properties": {
+        "conventionneLivreIIITitreIIChapISec3": {
+          "title": "Le bailleur est conventionné avec l'ANAH",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "ConventionBailleurSocial": {
+      "type": "object",
+      "required": ["reductionLoyerSolidaritePercue"],
+      "properties": {
+        "conventionneLivreIIITitreVChapIII": {
+          "title": "Le bailleur est conventionné pour le logement social",
+          "type": "boolean",
+          "default": true
+        },
+        "reductionLoyerSolidaritePercue": {
+          "title": "Réduction de loyer de solidarité perçue par le bailleur",
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "Demandeur": {
+      "type": "object",
+      "required": ["dateNaissance"],
+      "properties": {
+        "dateNaissance": {
+          "title": "Date de naissance du demandeur",
+          "type": "string",
+          "format": "date"
+        },
+        "nationalite": {
+          "title": "Nationalité du demandeur",
+          "$ref": "#/definitions/Nationalite"
+        },
+        "personneHebergeeCentreSoinLL162223SecuriteSociale": {
+          "title": "Le demandeur est hébergé dans une unité ou centre de soins de longue durée",
+          "type": "boolean",
+          "default": false
+        },
+        "estNonSalarieAgricoleL7818L78146CodeRural": {
+          "title": "Le demandeur exerce une activité agricole non salariée dans une collectivité d'outre-mer",
+          "type": "boolean",
+          "default": false
+        },
+        "magistratFonctionnaireCentreInteretsMaterielsFamiliauxHorsMayotte": {
+          "title": "Le demandeur est un magistrat ou fonctionnaire à Mayotte dont le centre des intérêts matériels et familiaux est situé hors de Mayotte",
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "EnfantACharge": {
+      "type": "object",
+      "required": ["dateDeNaissance"],
+      "properties": {
+        "nationalite": {
+          "title": "Nationalité de l'enfant",
+          "$ref": "#/definitions/Nationalite"
+        },
+        "aDejaOuvertDroitAuxAllocationsFamiliales": {
+          "title": "L'enfant à déjà ouvert droit aux allocations familiales",
+          "type": "boolean",
+          "default": false
+        },
+        "dateDeNaissance": {
+          "title": "Date de naissance",
+          "type": "string",
+          "format": "date"
+        },
+        "remunerationMensuelle": {
+          "title": "Rémunération mensuelle",
+          "type": "number",
+          "minimum": 0,
+          "default": 0
+        },
+        "obligationScolaire": {
+          "title": "Situation scolaire",
+          "$ref": "#/definitions/Prestations_familiales.SituationObligationScolaire"
+        },
+        "situationGardeAlternee": {
+          "title": "Caractéristiques de la garde alternée",
+          "$ref": "#/definitions/SituationGardeAlternee"
+        },
+        "etudesApprentissageStageFormationProImpossibiliteTravail": {
+          "title": "L'enfant, dans une collectivité d'outre-mer, poursuit des études ou est placé en apprentissage ou en stage de formation professionnelle ou est dans l'impossibilité de travailler.",
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "France.Collectivite": {
       "type": "object",
       "properties": {
         "kind": {
@@ -271,117 +381,7 @@
         }
       }
     },
-    "conditions_etrangers": {
-      "type": "object",
-      "properties": {
-        "satisfaitConditionsL5122CodeSecuriteSociale": {
-          "title": "La personne réside de manière régulière en France",
-          "type": "boolean",
-          "default": true
-        },
-        "satisfaitArt4Ordonnance2002Mayotte": {
-          "type": "boolean",
-          "title": "La personne réside de manière régulière à Mayotte",
-          "default": false
-        }
-      }
-    },
-    "convention_a_n_h_a": {
-      "type": "object",
-      "properties": {
-        "conventionneLivreIIITitreIIChapISec3": {
-          "title": "Le bailleur est conventionné avec l'ANAH",
-          "type": "boolean",
-          "default": true
-        }
-      }
-    },
-    "convention_bailleur_social": {
-      "type": "object",
-      "required": ["reductionLoyerSolidaritePercue"],
-      "properties": {
-        "conventionneLivreIIITitreVChapIII": {
-          "title": "Le bailleur est conventionné pour le logement social",
-          "type": "boolean",
-          "default": true
-        },
-        "reductionLoyerSolidaritePercue": {
-          "title": "Réduction de loyer de solidarité perçue par le bailleur",
-          "type": "number",
-          "minimum": 0
-        }
-      }
-    },
-    "demandeur": {
-      "type": "object",
-      "required": ["dateNaissance"],
-      "properties": {
-        "dateNaissance": {
-          "title": "Date de naissance du demandeur",
-          "type": "string",
-          "format": "date"
-        },
-        "nationalite": {
-          "title": "Nationalité du demandeur",
-          "$ref": "#/definitions/nationalite"
-        },
-        "personneHebergeeCentreSoinLL162223SecuriteSociale": {
-          "title": "Le demandeur est hébergé dans une unité ou centre de soins de longue durée",
-          "type": "boolean",
-          "default": false
-        },
-        "estNonSalarieAgricoleL7818L78146CodeRural": {
-          "title": "Le demandeur exerce une activité agricole non salariée dans une collectivité d'outre-mer",
-          "type": "boolean",
-          "default": false
-        },
-        "magistratFonctionnaireCentreInteretsMaterielsFamiliauxHorsMayotte": {
-          "title": "Le demandeur est un magistrat ou fonctionnaire à Mayotte dont le centre des intérêts matériels et familiaux est situé hors de Mayotte",
-          "type": "boolean",
-          "default": false
-        }
-      }
-    },
-    "enfant_a_charge": {
-      "type": "object",
-      "required": ["dateDeNaissance"],
-      "properties": {
-        "nationalite": {
-          "title": "Nationalité de l'enfant",
-          "$ref": "#/definitions/nationalite"
-        },
-        "aDejaOuvertDroitAuxAllocationsFamiliales": {
-          "title": "L'enfant à déjà ouvert droit aux allocations familiales",
-          "type": "boolean",
-          "default": false
-        },
-        "dateDeNaissance": {
-          "title": "Date de naissance",
-          "type": "string",
-          "format": "date"
-        },
-        "remunerationMensuelle": {
-          "title": "Rémunération mensuelle",
-          "type": "number",
-          "minimum": 0,
-          "default": 0
-        },
-        "obligationScolaire": {
-          "title": "Situation scolaire",
-          "$ref": "#/definitions/situation_obligation_scolaire"
-        },
-        "situationGardeAlternee": {
-          "title": "Caractéristiques de la garde alternée",
-          "$ref": "#/definitions/situation_garde_alternee"
-        },
-        "etudesApprentissageStageFormationProImpossibiliteTravail": {
-          "title": "L'enfant, dans une collectivité d'outre-mer, poursuit des études ou est placé en apprentissage ou en stage de formation professionnelle ou est dans l'impossibilité de travailler.",
-          "type": "boolean",
-          "default": false
-        }
-      }
-    },
-    "infos_changement_logement_d842_4": {
+    "InfosChangementLogementD842_4": {
       "type": "object",
       "properties": {
         "ancienLoyerPrincipal": {
@@ -398,13 +398,13 @@
         }
       }
     },
-    "location": {
+    "Location": {
       "type": "object",
       "required": ["loyerPrincipal"],
       "properties": {
         "bailleur": {
           "title": "Type de bailleur",
-          "$ref": "#/definitions/type_bailleur"
+          "$ref": "#/definitions/TypeBailleur"
         },
         "loyerPrincipal": {
           "title": "Loyer (€)",
@@ -438,11 +438,11 @@
         },
         "changementLogementD8424": {
           "title": "Le ménage a été relogé par les pouvoirs publics",
-          "$ref": "#/definitions/changement_logement_d842_4"
+          "$ref": "#/definitions/ChangementLogementD842_4"
         }
       }
     },
-    "logement": {
+    "Logement": {
       "title": " ",
       "type": "object",
       "required": ["surfaceMCarres"],
@@ -454,19 +454,19 @@
         },
         "modeOccupation": {
           "title": "Mode d'occupation du logement",
-          "$ref": "#/definitions/mode_occupation"
+          "$ref": "#/definitions/ModeOccupation"
         },
         "proprietaire": {
           "title": "Propriétaire du logement",
-          "$ref": "#/definitions/parent_ou_autre"
+          "$ref": "#/definitions/ParentOuAutre"
         },
         "loueOuSousLoueADesTiers": {
           "title": "Logement loué ou sous-loué à des tiers",
-          "$ref": "#/definitions/loue_ou_sous_loue_a_des_tiers"
+          "$ref": "#/definitions/LoueOuSousLoueADesTiers"
         },
         "usufruit": {
           "title": "Usufruitier du logement",
-          "$ref": "#/definitions/parent_ou_autre"
+          "$ref": "#/definitions/ParentOuAutre"
         },
         "logementDecentL89462": {
           "title": "Le logement est décent",
@@ -479,17 +479,17 @@
         },
         "zone": {
           "title": "Zone de la commune du logement",
-          "$ref": "#/definitions/zone_d_habitation"
+          "$ref": "#/definitions/ZoneDHabitation"
         }
       }
     },
-    "logement_foyer": {
+    "LogementFoyer": {
       "type": "object",
       "required": ["dateConventionnement", "redevance"],
       "properties": {
         "typeUser": {
           "title": "Type de logement foyer",
-          "$ref": "#/definitions/type_logement_foyer"
+          "$ref": "#/definitions/TypeLogementFoyer"
         },
         "logementFoyerJeunesTravailleurs": {
           "type": "boolean",
@@ -529,7 +529,7 @@
         },
         "categorieEquivalenceLoyerD84216": {
           "title": "Catégorie de personnes résidant en logement-foyer",
-          "$ref": "#/definitions/categorie_equivalence_loyer_allocation_logement_foyer"
+          "$ref": "#/definitions/CategorieEquivalenceLoyerAllocationLogementFoyer"
         },
         "beneficiaireAideAdulteOuEnfantHandicapes": {
           "title": "Le demandeur ou son conjoint sont bénéficiaires de l'allocation aux adultes handicapés ou de l'allocation d'éducation de l'enfant handicapé.",
@@ -553,7 +553,7 @@
         }
       }
     },
-    "loue_ou_sous_loue_a_des_tiers": {
+    "LoueOuSousLoueADesTiers": {
       "type": "object",
       "properties": {
         "kind": {
@@ -572,23 +572,54 @@
           ]
         }
       },
-      "payload": {
-
-      }
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "Non"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "payload": {
+                    
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "Oui"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "payload": {
+                    "$ref": "#/definitions/PersonneSousLocation"
+                  }
+                }
+              }
+            }
+          ]
     },
-    "menage": {
+    "Menage": {
       "type": "object",
       "properties": {
         "logement": {
 		  "title": "Logement",
-          "$ref": "#/definitions/logement"
+          "$ref": "#/definitions/Logement"
         },
         "personnesACharge": {
           "title": "Personnes à charge",
           "type": "array",
           "default": [],
           "items": {
-            "$ref": "#/definitions/personne_a_charge"
+            "$ref": "#/definitions/PersonneACharge"
           }
         },
         "nombreAutresOccupantsLogement": {
@@ -598,7 +629,7 @@
         },
         "situationFamiliale": {
           "title": "Situation familiale du demandeur",
-          "$ref": "#/definitions/situation_familiale"
+          "$ref": "#/definitions/SituationFamiliale"
         },
         "conditionRattacheFoyerFiscalParentIfi": {
           "title": "Une personne du ménage est rattachée au foyer fiscal de ses parents soumis à l'IFI",
@@ -617,19 +648,19 @@
         },
         "residence": {
           "title": "Résidence du ménage",
-          "$ref": "#/definitions/collectivite"
+          "$ref": "#/definitions/France.Collectivite"
         },
         "prestationsRecues": {
           "title": "Autres prestations sociales déjà reçues par le ménage",
           "type": "array",
           "default": [],
           "items": {
-            "$ref": "#/definitions/prestation_recue"
+            "$ref": "#/definitions/PrestationRecue"
           }
         }
       }
     },
-    "mode_occupation": {
+    "ModeOccupation": {
       "type": "object",
       "properties": {
         "kind": {
@@ -678,7 +709,7 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/location"
+                "$ref": "#/definitions/Location"
               }
             }
           }
@@ -695,7 +726,7 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/logement_foyer"
+                "$ref": "#/definitions/LogementFoyer"
               }
             }
           }
@@ -712,7 +743,7 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/proprietaire"
+                "$ref": "#/definitions/Proprietaire"
               }
             }
           }
@@ -729,7 +760,7 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/location"
+                "$ref": "#/definitions/Location"
               }
             }
           }
@@ -746,14 +777,14 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/proprietaire"
+                "$ref": "#/definitions/Proprietaire"
               }
             }
           }
         }
       ]
     },
-    "nationalite": {
+    "Nationalite": {
       "type": "object",
       "properties": {
         "kind": {
@@ -803,7 +834,7 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/conditions_etrangers"
+                "$ref": "#/definitions/ConditionsEtrangers"
               }
             }
           }
@@ -858,14 +889,14 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/ameliore_par_occupant"
+                "$ref": "#/definitions/AmelioreParOccupant"
               }
             }
           }
         }
       ]
     },
-    "parent_ou_autre": {
+    "ParentOuAutre": {
       "type": "object",
       "properties": {
         "kind": {
@@ -924,7 +955,7 @@
         }
       ]
     },
-    "parente": {
+    "Parente": {
       "type": "object",
       "properties": {
         "kind": {
@@ -954,7 +985,7 @@
 
       }
     },
-    "personne_a_charge": {
+    "PersonneACharge": {
       "type": "object",
       "properties": {
         "kind": {
@@ -988,7 +1019,7 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/enfant_a_charge"
+                "$ref": "#/definitions/EnfantACharge"
               }
             }
           }
@@ -1005,14 +1036,29 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/autre_personne_a_charge"
+                "$ref": "#/definitions/AutrePersonneACharge"
               }
             }
           }
         }
       ]
     },
-    "prestation_recue": {
+    "PersonneSousLocation": {
+      "type": "object",
+      "properties": {
+        "dateNaissancePersonneSousLocation": {
+          "title": "Date de naissance de la personne en sous-location",
+          "type": "string",
+          "format": "date"
+        },
+        "conformeArticleL4421": {
+          "title": "Le bail de sous-location est conforme à l'article L442-1 du code de l'action sociale et de la famille",
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "PrestationRecue": {
       "type": "object",
       "required": ["kind"],
       "properties": {
@@ -1047,13 +1093,43 @@
 
       }
     },
-    "pret": {
+    "Prestations_familiales.SituationObligationScolaire": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "title": " ",
+          "default": "Pendant",
+          "type": "string",
+          "anyOf": [
+            {
+              "title": "Avant l'obligation scolaire",
+              "type": "string",
+              "enum": ["Avant"]
+            },
+            {
+              "title": "Pendant l'obligation scolaire",
+              "type": "string",
+              "enum": ["Pendant"]
+            },
+            {
+              "title": "Après l'obligation scolaire",
+              "type": "string",
+              "enum": ["Apres"]
+            }
+          ]
+        }
+      },
+      "payload": {
+
+      }
+    },
+    "Pret": {
       "type": "object",
       "required": ["dateSignature"],
       "properties": {
         "typePret": {
           "title": "Articles du code de la construction de de l'habitation régissant le prêt souscrit",
-          "$ref": "#/definitions/type_pret"
+          "$ref": "#/definitions/TypePret"
         },
         "dateSignature": {
           "title": "Date de signature du prêt",
@@ -1062,15 +1138,15 @@
         },
         "titulairePret": {
           "title": "Titulaire du prêt",
-          "$ref": "#/definitions/titulaire_pret"
+          "$ref": "#/definitions/TitulairePret"
         },
         "accordFinancementRepresentantEtatOutreMer": {
           "title": "Décision favorable de financement du logement par le représentant de l'État en outre-mer",
-          "$ref": "#/definitions/accord_financement_representant_etat_outre_mer"
+          "$ref": "#/definitions/AccordFinancementRepresentantEtatOutreMer"
         }
       }
     },
-    "proprietaire": {
+    "Proprietaire": {
       "type": "object",
       "required": [
         "mensualitePrincipale",
@@ -1080,7 +1156,7 @@
       "properties": {
         "pret": {
           "title": " ",
-          "$ref": "#/definitions/pret"
+          "$ref": "#/definitions/Pret"
         },
         "mensualitePrincipale": {
           "title": "Mensualité déclarée du prêt (€)",
@@ -1099,11 +1175,11 @@
         },
         "typeTravauxLogementD83215": {
           "title": "Financement par prêt de travaux après ou pour l'acquisition du logement",
-          "$ref": "#/definitions/type_travaux_logement_d832_15"
+          "$ref": "#/definitions/TypeTravauxLogementD832_15"
         },
         "typeTravauxLogementR8425": {
           "title": "Objectif des travaux financés par le prêt",
-          "$ref": "#/definitions/type_travaux_logement_r842_5"
+          "$ref": "#/definitions/TypeTravauxLogementR842_5"
         },
         "localHabitePremiereFoisBeneficiaire": {
           "title": "Local habité pour la première fois par le demandeur",
@@ -1122,7 +1198,7 @@
         },
         "ancienneteLogement": {
           "title": "Ancienneté du logement",
-          "$ref": "#/definitions/neuf_ou_ancien"
+          "$ref": "#/definitions/NeufOuAncien"
         },
         "operationsLogementEvolutifsSociauxAccessionProprieteAideeEtat": {
           "title": "Logement évolutif social ou logement très social, en accession à la propriété aidée par l'État",
@@ -1131,7 +1207,7 @@
         }
       }
     },
-    "situation_familiale": {
+    "SituationFamiliale": {
       "type": "object",
       "properties": {
         "kind": {
@@ -1273,7 +1349,7 @@
         }
       ]
     },
-    "situation_garde_alternee": {
+    "SituationGardeAlternee": {
       "type": "object",
       "properties": {
         "kind": {
@@ -1331,37 +1407,7 @@
         }
       ]
     },
-    "situation_obligation_scolaire": {
-      "type": "object",
-      "properties": {
-        "kind": {
-          "title": " ",
-          "default": "Pendant",
-          "type": "string",
-          "anyOf": [
-            {
-              "title": "Avant l'obligation scolaire",
-              "type": "string",
-              "enum": ["Avant"]
-            },
-            {
-              "title": "Pendant l'obligation scolaire",
-              "type": "string",
-              "enum": ["Pendant"]
-            },
-            {
-              "title": "Après l'obligation scolaire",
-              "type": "string",
-              "enum": ["Apres"]
-            }
-          ]
-        }
-      },
-      "payload": {
-
-      }
-    },
-    "titulaire_pret": {
+    "TitulairePret": {
       "type": "object",
       "properties": {
         "kind": {
@@ -1386,7 +1432,7 @@
 
       }
     },
-    "type_bailleur": {
+    "TypeBailleur": {
       "type": "object",
       "properties": {
         "kind": {
@@ -1425,7 +1471,7 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/convention_bailleur_social"
+                "$ref": "#/definitions/ConventionBailleurSocial"
               }
             }
           }
@@ -1442,7 +1488,7 @@
             "properties": {
               "payload": {
                 "title": " ",
-                "$ref": "#/definitions/convention_a_n_h_a"
+                "$ref": "#/definitions/ConventionANHA"
               }
             }
           }
@@ -1465,7 +1511,7 @@
         }
       ]
     },
-    "type_logement_foyer": {
+    "TypeLogementFoyer": {
       "type": "object",
       "properties": {
         "kind": {
@@ -1502,7 +1548,7 @@
 
       }
     },
-    "type_pret": {
+    "TypePret": {
       "type": "object",
       "properties": {
         "kind": {
@@ -1542,7 +1588,7 @@
 
       }
     },
-    "type_travaux_logement_d832_15": {
+    "TypeTravauxLogementD832_15": {
       "type": "object",
       "properties": {
         "kind": {
@@ -1572,7 +1618,7 @@
 
       }
     },
-    "type_travaux_logement_r842_5": {
+    "TypeTravauxLogementR842_5": {
       "type": "object",
       "properties": {
         "kind": {
@@ -1607,7 +1653,7 @@
 
       }
     },
-    "zone_d_habitation": {
+    "ZoneDHabitation": {
       "type": "object",
       "properties": {
         "kind": {
@@ -1641,11 +1687,11 @@
   "properties": {
     "menageIn": {
       "title": "Information sur le ménage",
-      "$ref": "#/definitions/menage"
+      "$ref": "#/definitions/Menage"
     },
     "demandeurIn": {
       "title": "Identité du demandeur",
-      "$ref": "#/definitions/demandeur"
+      "$ref": "#/definitions/Demandeur"
     },
     "dateCouranteIn": {
       "title": "Date du calcul des droits",

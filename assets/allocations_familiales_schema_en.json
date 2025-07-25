@@ -1,7 +1,38 @@
 {
   "type": "object",
   "definitions": {
-    "collectivite": {
+    "EnfantEntree": {
+      "type": "object",
+      "properties": {
+        "dRemunerationMensuelle": {
+          "title": "Child's monthly income (€)",
+          "type": "number",
+          "minimum": 0,
+          "default": 0
+        },
+        "dDateDeNaissance": {
+          "title": "Child's birthdate",
+          "type": "string",
+          "format": "date"
+        },
+        "dPriseEnCharge": {
+          "title": "Child's custody",
+          "$ref": "#/definitions/PriseEnCharge"
+        },
+        "dADejaOuvertDroitAuxAllocationsFamiliales": {
+          "title": "Child has already been eligible for benefits",
+          "type": "boolean",
+          "default": false
+        },
+        "dBeneficieTitrePersonnelAidePersonnelleLogement": {
+          "title": "Child receives individual housing benefits on his own",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": ["dRemunerationMensuelle", "dDateDeNaissance"]
+    },
+    "France.Collectivite": {
       "type": "object",
       "properties": {
         "kind": {
@@ -61,38 +92,7 @@
         }
       }
     },
-    "enfant_entree": {
-      "type": "object",
-      "properties": {
-        "dRemunerationMensuelle": {
-          "title": "Child's monthly income (€)",
-          "type": "number",
-          "minimum": 0,
-          "default": 0
-        },
-        "dDateDeNaissance": {
-          "title": "Child's birthdate",
-          "type": "string",
-          "format": "date"
-        },
-        "dPriseEnCharge": {
-          "title": "Child's custody",
-          "$ref": "#/definitions/prise_en_charge"
-        },
-        "dADejaOuvertDroitAuxAllocationsFamiliales": {
-          "title": "Child has already been eligible for benefits",
-          "type": "boolean",
-          "default": false
-        },
-        "dBeneficieTitrePersonnelAidePersonnelleLogement": {
-          "title": "Child receives individual housing benefits on his own",
-          "type": "boolean",
-          "default": false
-        }
-      },
-      "required": ["dRemunerationMensuelle", "dDateDeNaissance"]
-    },
-    "prise_en_charge": {
+    "PriseEnCharge": {
       "type": "object",
       "properties": {
         "kind": {
@@ -144,7 +144,7 @@
       "type": "array",
       "default": [],
       "items": {
-        "$ref": "#/definitions/enfant_entree"
+        "$ref": "#/definitions/EnfantEntree"
       }
     },
     "iRessourcesMenageIn": {
@@ -155,7 +155,7 @@
     },
     "iResidenceIn": {
       "title": "Household residence",
-      "$ref": "#/definitions/collectivite"
+      "$ref": "#/definitions/France.Collectivite"
     },
     "iPersonneChargeEffectivePermanenteEstParentIn": {
       "title": "The person with actual and permanent custody is one of the parents",

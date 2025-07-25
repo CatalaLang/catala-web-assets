@@ -1,7 +1,7 @@
 {
    "type": "object",
    "definitions": {
-      "France.collectivite": {
+      "AccordFinancementRepresentantEtatOutreMer": {
         "type": "object",
         "properties": {
           "kind": {
@@ -9,39 +9,11 @@
             "anyOf": [
               {
                 "type": "string",
-                "enum": ["Guadeloupe"]
+                "enum": ["Accord"]
               },
               {
                 "type": "string",
-                "enum": ["Guyane"]
-              },
-              {
-                "type": "string",
-                "enum": ["Martinique"]
-              },
-              {
-                "type": "string",
-                "enum": ["LaReunion"]
-              },
-              {
-                "type": "string",
-                "enum": ["SaintBarthelemy"]
-              },
-              {
-                "type": "string",
-                "enum": ["SaintMartin"]
-              },
-              {
-                "type": "string",
-                "enum": ["Metropole"]
-              },
-              {
-                "type": "string",
-                "enum": ["SaintPierreEtMiquelon"]
-              },
-              {
-                "type": "string",
-                "enum": ["Mayotte"]
+                "enum": ["PasdAccord"]
               }
             ]
           }
@@ -51,14 +23,15 @@
               "if": {
                 "properties": {
                   "kind": {
-                    "const": "Guadeloupe"
+                    "const": "Accord"
                   }
                 }
               },
               "then": {
                 "properties": {
                   "payload": {
-                    
+                    "type": "string",
+                    "format": "date"
                   }
                 }
               }
@@ -67,119 +40,7 @@
               "if": {
                 "properties": {
                   "kind": {
-                    "const": "Guyane"
-                  }
-                }
-              },
-              "then": {
-                "properties": {
-                  "payload": {
-                    
-                  }
-                }
-              }
-            },
-            {
-              "if": {
-                "properties": {
-                  "kind": {
-                    "const": "Martinique"
-                  }
-                }
-              },
-              "then": {
-                "properties": {
-                  "payload": {
-                    
-                  }
-                }
-              }
-            },
-            {
-              "if": {
-                "properties": {
-                  "kind": {
-                    "const": "LaReunion"
-                  }
-                }
-              },
-              "then": {
-                "properties": {
-                  "payload": {
-                    
-                  }
-                }
-              }
-            },
-            {
-              "if": {
-                "properties": {
-                  "kind": {
-                    "const": "SaintBarthelemy"
-                  }
-                }
-              },
-              "then": {
-                "properties": {
-                  "payload": {
-                    
-                  }
-                }
-              }
-            },
-            {
-              "if": {
-                "properties": {
-                  "kind": {
-                    "const": "SaintMartin"
-                  }
-                }
-              },
-              "then": {
-                "properties": {
-                  "payload": {
-                    
-                  }
-                }
-              }
-            },
-            {
-              "if": {
-                "properties": {
-                  "kind": {
-                    "const": "Metropole"
-                  }
-                }
-              },
-              "then": {
-                "properties": {
-                  "payload": {
-                    
-                  }
-                }
-              }
-            },
-            {
-              "if": {
-                "properties": {
-                  "kind": {
-                    "const": "SaintPierreEtMiquelon"
-                  }
-                }
-              },
-              "then": {
-                "properties": {
-                  "payload": {
-                    
-                  }
-                }
-              }
-            },
-            {
-              "if": {
-                "properties": {
-                  "kind": {
-                    "const": "Mayotte"
+                    "const": "PasdAccord"
                   }
                 }
               },
@@ -194,7 +55,7 @@
           ]
         }
    ,
-   "Prestations_familiales.situation_obligation_scolaire": {
+   "AmelioreParOccupant": {
      "type": "object",
      "properties": {
        "kind": {
@@ -202,15 +63,11 @@
          "anyOf": [
            {
              "type": "string",
-             "enum": ["Avant"]
+             "enum": ["Oui"]
            },
            {
              "type": "string",
-             "enum": ["Pendant"]
-           },
-           {
-             "type": "string",
-             "enum": ["Apres"]
+             "enum": ["Non"]
            }
          ]
        }
@@ -220,7 +77,7 @@
            "if": {
              "properties": {
                "kind": {
-                 "const": "Avant"
+                 "const": "Oui"
                }
              }
            },
@@ -236,23 +93,7 @@
            "if": {
              "properties": {
                "kind": {
-                 "const": "Pendant"
-               }
-             }
-           },
-           "then": {
-             "properties": {
-               "payload": {
-                 
-               }
-             }
-           }
-         },
-         {
-           "if": {
-             "properties": {
-               "kind": {
-                 "const": "Apres"
+                 "const": "Non"
                }
              }
            },
@@ -267,114 +108,7 @@
        ]
      }
 ,
-"accord_financement_representant_etat_outre_mer": {
-  "type": "object",
-  "properties": {
-    "kind": {
-      "type": "string",
-      "anyOf": [
-        {
-          "type": "string",
-          "enum": ["Accord"]
-        },
-        {
-          "type": "string",
-          "enum": ["PasdAccord"]
-        }
-      ]
-    }
-    },
-    "allOf": [
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Accord"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              "type": "string",
-              "format": "date"
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "PasdAccord"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      }
-    ]
-  }
-,
-"ameliore_par_occupant": {
-  "type": "object",
-  "properties": {
-    "kind": {
-      "type": "string",
-      "anyOf": [
-        {
-          "type": "string",
-          "enum": ["Oui"]
-        },
-        {
-          "type": "string",
-          "enum": ["Non"]
-        }
-      ]
-    }
-    },
-    "allOf": [
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Oui"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "kind": {
-              "const": "Non"
-            }
-          }
-        },
-        "then": {
-          "properties": {
-            "payload": {
-              
-            }
-          }
-        }
-      }
-    ]
-  }
-,
-"autre_personne_a_charge": {
+"AutrePersonneACharge": {
   "type": "object",
   "properties": {
     "dateNaissance": {
@@ -391,7 +125,7 @@
       "default": false
     },
     "parente": {
-      "$ref": "#/definitions/parente"
+      "$ref": "#/definitions/Parente"
     },
     "incapacite80PourcentOuRestrictionEmploi": {
       "type": "boolean",
@@ -407,7 +141,7 @@
     }
   }
 },
-"categorie_equivalence_loyer_allocation_logement_foyer": {
+"CategorieEquivalenceLoyerAllocationLogementFoyer": {
   "type": "object",
   "properties": {
     "kind": {
@@ -500,7 +234,7 @@
     ]
   }
 ,
-"changement_logement_d842_4": {
+"ChangementLogementD842_4": {
   "type": "object",
   "properties": {
     "kind": {
@@ -529,7 +263,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/infos_changement_logement_d842_4"
+              "$ref": "#/definitions/InfosChangementLogementD842_4"
             }
           }
         }
@@ -553,7 +287,7 @@
     ]
   }
 ,
-"conditions_etrangers": {
+"ConditionsEtrangers": {
   "type": "object",
   "properties": {
     "satisfaitConditionsL5122CodeSecuriteSociale": {
@@ -566,7 +300,7 @@
     }
   }
 },
-"convention_a_n_h_a": {
+"ConventionANHA": {
   "type": "object",
   "properties": {
     "conventionneLivreIIITitreIIChapISec3": {
@@ -575,7 +309,7 @@
     }
   }
 },
-"convention_bailleur_social": {
+"ConventionBailleurSocial": {
   "type": "object",
   "properties": {
     "conventionneLivreIIITitreVChapIII": {
@@ -589,7 +323,7 @@
     }
   }
 },
-"demandeur": {
+"Demandeur": {
   "type": "object",
   "properties": {
     "dateNaissance": {
@@ -597,7 +331,7 @@
       "format": "date"
     },
     "nationalite": {
-      "$ref": "#/definitions/nationalite"
+      "$ref": "#/definitions/Nationalite"
     },
     "personneHebergeeCentreSoinLL162223SecuriteSociale": {
       "type": "boolean",
@@ -613,7 +347,7 @@
     }
   }
 },
-"enfant_a_charge": {
+"EnfantACharge": {
   "type": "object",
   "properties": {
     "identifiant": {
@@ -621,7 +355,7 @@
       "default": 0
     },
     "nationalite": {
-      "$ref": "#/definitions/nationalite"
+      "$ref": "#/definitions/Nationalite"
     },
     "aDejaOuvertDroitAuxAllocationsFamiliales": {
       "type": "boolean",
@@ -637,10 +371,10 @@
       "default": 0
     },
     "obligationScolaire": {
-      "$ref": "#/definitions/Prestations_familiales.situation_obligation_scolaire"
+      "$ref": "#/definitions/Prestations_familiales.SituationObligationScolaire"
     },
     "situationGardeAlternee": {
-      "$ref": "#/definitions/situation_garde_alternee"
+      "$ref": "#/definitions/SituationGardeAlternee"
     },
     "etudesApprentissageStageFormationProImpossibiliteTravail": {
       "type": "boolean",
@@ -648,7 +382,200 @@
     }
   }
 },
-"infos_changement_logement_d842_4": {
+"France.Collectivite": {
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": ["Guadeloupe"]
+        },
+        {
+          "type": "string",
+          "enum": ["Guyane"]
+        },
+        {
+          "type": "string",
+          "enum": ["Martinique"]
+        },
+        {
+          "type": "string",
+          "enum": ["LaReunion"]
+        },
+        {
+          "type": "string",
+          "enum": ["SaintBarthelemy"]
+        },
+        {
+          "type": "string",
+          "enum": ["SaintMartin"]
+        },
+        {
+          "type": "string",
+          "enum": ["Metropole"]
+        },
+        {
+          "type": "string",
+          "enum": ["SaintPierreEtMiquelon"]
+        },
+        {
+          "type": "string",
+          "enum": ["Mayotte"]
+        }
+      ]
+    }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Guadeloupe"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Guyane"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Martinique"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "LaReunion"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "SaintBarthelemy"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "SaintMartin"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Metropole"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "SaintPierreEtMiquelon"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Mayotte"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      }
+    ]
+  }
+,
+"InfosChangementLogementD842_4": {
   "type": "object",
   "properties": {
     "ancienLoyerPrincipal": {
@@ -663,11 +590,11 @@
     }
   }
 },
-"location": {
+"Location": {
   "type": "object",
   "properties": {
     "bailleur": {
-      "$ref": "#/definitions/type_bailleur"
+      "$ref": "#/definitions/TypeBailleur"
     },
     "loyerPrincipal": {
       "type": "number",
@@ -695,11 +622,11 @@
       "default": false
     },
     "changementLogementD8424": {
-      "$ref": "#/definitions/changement_logement_d842_4"
+      "$ref": "#/definitions/ChangementLogementD842_4"
     }
   }
 },
-"logement": {
+"Logement": {
   "type": "object",
   "properties": {
     "residencePrincipale": {
@@ -707,16 +634,16 @@
       "default": false
     },
     "modeOccupation": {
-      "$ref": "#/definitions/mode_occupation"
+      "$ref": "#/definitions/ModeOccupation"
     },
     "proprietaire": {
-      "$ref": "#/definitions/parent_ou_autre"
+      "$ref": "#/definitions/ParentOuAutre"
     },
     "loueOuSousLoueADesTiers": {
-      "$ref": "#/definitions/loue_ou_sous_loue_a_des_tiers"
+      "$ref": "#/definitions/LoueOuSousLoueADesTiers"
     },
     "usufruit": {
-      "$ref": "#/definitions/parent_ou_autre"
+      "$ref": "#/definitions/ParentOuAutre"
     },
     "logementDecentL89462": {
       "type": "boolean",
@@ -727,15 +654,15 @@
       "default": 0
     },
     "zone": {
-      "$ref": "#/definitions/zone_d_habitation"
+      "$ref": "#/definitions/ZoneDHabitation"
     }
   }
 },
-"logement_foyer": {
+"LogementFoyer": {
   "type": "object",
   "properties": {
-    "typeUser": {
-      "$ref": "#/definitions/type_logement_foyer"
+    "typeLogement": {
+      "$ref": "#/definitions/TypeLogementFoyer"
     },
     "logementFoyerJeunesTravailleurs": {
       "type": "boolean",
@@ -767,7 +694,7 @@
       "default": 0
     },
     "categorieEquivalenceLoyerD84216": {
-      "$ref": "#/definitions/categorie_equivalence_loyer_allocation_logement_foyer"
+      "$ref": "#/definitions/CategorieEquivalenceLoyerAllocationLogementFoyer"
     },
     "beneficiaireAideAdulteOuEnfantHandicapes": {
       "type": "boolean",
@@ -787,7 +714,7 @@
     }
   }
 },
-"loue_ou_sous_loue_a_des_tiers": {
+"LoueOuSousLoueADesTiers": {
   "type": "object",
   "properties": {
     "kind": {
@@ -832,7 +759,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/personne_sous_location"
+              "$ref": "#/definitions/PersonneSousLocation"
             }
           }
         }
@@ -840,24 +767,24 @@
     ]
   }
 ,
-"menage": {
+"Menage": {
   "type": "object",
   "properties": {
     "prestationsRecues": {
       "type": "array",
       "default": [],
       "items": {
-        "$ref": "#/definitions/prestation_recue"
+        "$ref": "#/definitions/PrestationRecue"
       }
     },
     "logement": {
-      "$ref": "#/definitions/logement"
+      "$ref": "#/definitions/Logement"
     },
     "personnesACharge": {
       "type": "array",
       "default": [],
       "items": {
-        "$ref": "#/definitions/personne_a_charge"
+        "$ref": "#/definitions/PersonneACharge"
       }
     },
     "nombreAutresOccupantsLogement": {
@@ -865,7 +792,7 @@
       "default": 0
     },
     "situationFamiliale": {
-      "$ref": "#/definitions/situation_familiale"
+      "$ref": "#/definitions/SituationFamiliale"
     },
     "conditionRattacheFoyerFiscalParentIfi": {
       "type": "boolean",
@@ -880,11 +807,11 @@
       "default": false
     },
     "residence": {
-      "$ref": "#/definitions/France.collectivite"
+      "$ref": "#/definitions/France.Collectivite"
     }
   }
 },
-"mode_occupation": {
+"ModeOccupation": {
   "type": "object",
   "properties": {
     "kind": {
@@ -925,7 +852,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/location"
+              "$ref": "#/definitions/Location"
             }
           }
         }
@@ -941,7 +868,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/logement_foyer"
+              "$ref": "#/definitions/LogementFoyer"
             }
           }
         }
@@ -957,7 +884,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/proprietaire"
+              "$ref": "#/definitions/Proprietaire"
             }
           }
         }
@@ -973,7 +900,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/location"
+              "$ref": "#/definitions/Location"
             }
           }
         }
@@ -989,7 +916,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/proprietaire"
+              "$ref": "#/definitions/Proprietaire"
             }
           }
         }
@@ -997,7 +924,7 @@
     ]
   }
 ,
-"nationalite": {
+"Nationalite": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1042,7 +969,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/conditions_etrangers"
+              "$ref": "#/definitions/ConditionsEtrangers"
             }
           }
         }
@@ -1050,7 +977,7 @@
     ]
   }
 ,
-"neuf_ou_ancien": {
+"NeufOuAncien": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1095,7 +1022,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/ameliore_par_occupant"
+              "$ref": "#/definitions/AmelioreParOccupant"
             }
           }
         }
@@ -1103,7 +1030,7 @@
     ]
   }
 ,
-"parent_ou_autre": {
+"ParentOuAutre": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1157,7 +1084,7 @@
     ]
   }
 ,
-"parente": {
+"Parente": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1230,7 +1157,7 @@
     ]
   }
 ,
-"personne_a_charge": {
+"PersonneACharge": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1259,7 +1186,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/enfant_a_charge"
+              "$ref": "#/definitions/EnfantACharge"
             }
           }
         }
@@ -1275,7 +1202,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/autre_personne_a_charge"
+              "$ref": "#/definitions/AutrePersonneACharge"
             }
           }
         }
@@ -1283,7 +1210,7 @@
     ]
   }
 ,
-"personne_sous_location": {
+"PersonneSousLocation": {
   "type": "object",
   "properties": {
     "dateNaissancePersonneSousLocation": {
@@ -1296,7 +1223,7 @@
     }
   }
 },
-"prestation_recue": {
+"PrestationRecue": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1389,25 +1316,98 @@
     ]
   }
 ,
-"pret": {
+"Prestations_familiales.SituationObligationScolaire": {
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": ["Avant"]
+        },
+        {
+          "type": "string",
+          "enum": ["Pendant"]
+        },
+        {
+          "type": "string",
+          "enum": ["Apres"]
+        }
+      ]
+    }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Avant"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Pendant"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "Apres"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "payload": {
+              
+            }
+          }
+        }
+      }
+    ]
+  }
+,
+"Pret": {
   "type": "object",
   "properties": {
     "typePret": {
-      "$ref": "#/definitions/type_pret"
+      "$ref": "#/definitions/TypePret"
     },
     "dateSignature": {
       "type": "string",
       "format": "date"
     },
     "titulairePret": {
-      "$ref": "#/definitions/titulaire_pret"
+      "$ref": "#/definitions/TitulairePret"
     },
     "accordFinancementRepresentantEtatOutreMer": {
-      "$ref": "#/definitions/accord_financement_representant_etat_outre_mer"
+      "$ref": "#/definitions/AccordFinancementRepresentantEtatOutreMer"
     }
   }
 },
-"proprietaire": {
+"Proprietaire": {
   "type": "object",
   "properties": {
     "mensualitePrincipale": {
@@ -1425,10 +1425,10 @@
       "format": "date"
     },
     "typeTravauxLogementD83215": {
-      "$ref": "#/definitions/type_travaux_logement_d832_15"
+      "$ref": "#/definitions/TypeTravauxLogementD832_15"
     },
     "typeTravauxLogementR8425": {
-      "$ref": "#/definitions/type_travaux_logement_r842_5"
+      "$ref": "#/definitions/TypeTravauxLogementR842_5"
     },
     "localHabitePremiereFoisBeneficiaire": {
       "type": "boolean",
@@ -1443,10 +1443,10 @@
       "default": false
     },
     "ancienneteLogement": {
-      "$ref": "#/definitions/neuf_ou_ancien"
+      "$ref": "#/definitions/NeufOuAncien"
     },
     "pret": {
-      "$ref": "#/definitions/pret"
+      "$ref": "#/definitions/Pret"
     },
     "operationsLogementEvolutifsSociauxAccessionProprieteAideeEtat": {
       "type": "boolean",
@@ -1454,7 +1454,7 @@
     }
   }
 },
-"situation_familiale": {
+"SituationFamiliale": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1588,7 +1588,7 @@
     ]
   }
 ,
-"situation_garde_alternee": {
+"SituationGardeAlternee": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1642,7 +1642,7 @@
     ]
   }
 ,
-"titulaire_pret": {
+"TitulairePret": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1695,7 +1695,7 @@
     ]
   }
 ,
-"type_bailleur": {
+"TypeBailleur": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1728,7 +1728,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/convention_bailleur_social"
+              "$ref": "#/definitions/ConventionBailleurSocial"
             }
           }
         }
@@ -1744,7 +1744,7 @@
         "then": {
           "properties": {
             "payload": {
-              "$ref": "#/definitions/convention_a_n_h_a"
+              "$ref": "#/definitions/ConventionANHA"
             }
           }
         }
@@ -1768,7 +1768,7 @@
     ]
   }
 ,
-"type_logement_foyer": {
+"TypeLogementFoyer": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1861,7 +1861,7 @@
     ]
   }
 ,
-"type_pret": {
+"TypePret": {
   "type": "object",
   "properties": {
     "kind": {
@@ -1974,7 +1974,7 @@
     ]
   }
 ,
-"type_travaux_logement_d832_15": {
+"TypeTravauxLogementD832_15": {
   "type": "object",
   "properties": {
     "kind": {
@@ -2047,7 +2047,7 @@
     ]
   }
 ,
-"type_travaux_logement_r842_5": {
+"TypeTravauxLogementR842_5": {
   "type": "object",
   "properties": {
     "kind": {
@@ -2140,7 +2140,7 @@
     ]
   }
 ,
-"zone_d_habitation": {
+"ZoneDHabitation": {
   "type": "object",
   "properties": {
     "kind": {
@@ -2216,10 +2216,10 @@
 },
 "properties": {
    "menageIn": {
-     "$ref": "#/definitions/menage"
+     "$ref": "#/definitions/Menage"
    },
    "demandeurIn": {
-     "$ref": "#/definitions/demandeur"
+     "$ref": "#/definitions/Demandeur"
    },
    "dateCouranteIn": {
      "type": "string",
